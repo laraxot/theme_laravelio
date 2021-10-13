@@ -1,25 +1,20 @@
-
 @extends('pub_theme::layouts.small',['title'=>'Login'])
-  
-{{--  
-@title('Login')
---}}
+
+{{-- @title('Login') --}}
 @section('small-content')
     <form action="{{ route('login') }}" method="POST" class="w-full">
         @csrf
-        {{--  
-        @formGroup('username')
-            <label for="username">Username</label>
-            <input type="text" id="username" name="username" required class="form-control" />
-            @error('username')
-        @endFormGroup
+        <div class="form-group">
+            <label for="handle">email</label>
+            <input type="text" id="email" name="email" required class="form-control" />
 
-        @formGroup('password')
-            <label for="password">Password</label>
+        </div>
+        <div class="form-group">
+            <label for="passwd">password</label>
             <input type="password" id="password" name="password" required class="form-control" />
-            @error('password')
-        @endFormGroup
-        --}}
+
+        </div>
+
         <div class="form-group">
             <label>
                 <input name="remember" type="checkbox" value="1">
@@ -28,14 +23,7 @@
         </div>
 
         <button type="submit" class="w-full button button-primary mb-4">Login</button>
-        {{--  
-        <a href="{{ route('login.github') }}" class="button button-dark mb-4">
-            <span class="flex items-center justify-center">
-                <x-theme::svg icon="github" class="inline h-4 w-4 mr-2" />
-                Github
-            </span>
-        </a>
-        --}}
+
     </form>
 @endsection
 

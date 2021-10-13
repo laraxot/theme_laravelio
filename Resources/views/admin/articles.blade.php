@@ -1,13 +1,13 @@
 @title('Articles')
 
-@extends('layouts.default')
+@extends('pub_theme::layouts.default')
 
 @section('content')
     <div class="container mx-auto px-4 pt-6">
         @include('admin.partials._navigation', [
-            'query' => route('admin.articles'),
-            'search' => $adminSearch,
-            'placeholder' => 'Search for articles...',
+        'query' => route('admin.articles'),
+        'search' => $adminSearch,
+        'placeholder' => 'Search for articles...',
         ])
     </div>
 
@@ -32,10 +32,8 @@
                                             <div class="flex items-center">
                                                 <div class="flex-shrink-0 h-10 w-10">
                                                     <a href="{{ route('profile', $article->author()->username()) }}">
-                                                        <x-avatar
-                                                            :user="$article->author()"
-                                                            class="h-10 w-10 rounded-full"
-                                                        />
+                                                        <x-avatar :user="$article->author()"
+                                                            class="h-10 w-10 rounded-full" />
                                                     </a>
                                                 </div>
                                                 <div class="ml-4">
@@ -62,10 +60,8 @@
                                         </x-tables.table-data>
 
                                         <x-tables.table-data class="text-center w-10">
-                                            <a
-                                                href="{{ route('articles.show', $article->slug()) }}"
-                                                class="text-lio-600 hover:text-lio-800"
-                                            >
+                                            <a href="{{ route('articles.show', $article->slug()) }}"
+                                                class="text-lio-600 hover:text-lio-800">
                                                 <x-heroicon-o-eye class="w-5 h-5 inline" />
                                             </a>
                                         </x-tables.table-data>

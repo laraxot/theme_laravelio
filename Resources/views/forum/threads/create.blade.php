@@ -1,6 +1,6 @@
 @title('Create your thread')
 
-@extends('layouts.default')
+@extends('pub_theme::layouts.default')
 
 @section('subnav')
     <div class="bg-white border-b">
@@ -20,7 +20,7 @@
 
             <div class="md:p-4 md:border-2 md:rounded md:bg-gray-100">
                 @include('forum.threads._form', [
-                    'route' => ['threads.store'],
+                'route' => ['threads.store'],
                 ])
             </div>
 

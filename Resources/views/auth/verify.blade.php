@@ -1,6 +1,6 @@
 @title('Verify Email')
 
-@extends('layouts.small')
+@extends('pub_theme::layouts.small')
 
 @section('small-content')
     <p class="mb-4">Before proceeding, please check your email for a verification link.</p>

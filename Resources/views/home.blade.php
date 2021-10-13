@@ -1,11 +1,11 @@
-@extends('layouts.base', ['bodyClass' => 'home', 'disableFooterAds' => true, 'isTailwindUi' => true])
+@extends('pub_theme::layouts.base', ['bodyClass' => 'home', 'disableFooterAds' => true, 'isTailwindUi' => true])
 
 @push('meta')
     <meta name="google-site-verification" content="LR29frqES-MZYtn3iZ6PtobclBfThr83rlNF4huiu0s" />
 @endpush
 
 @section('body')
-    @include('layouts._alerts')
+    @include('pub_theme::layouts._alerts')
 
     <!-- Head section -->
     <section class="overflow-x-hidden mt-6 lg:mt-20">
@@ -55,7 +55,7 @@
     <!-- Banner ad -->
     <section class="container mx-auto mt-10 lg:mt-40 lg:px-16">
         <div class="px-4 lg:px-10">
-            @include('layouts._ads._footer')
+            @include('pub_theme::layouts._ads._footer')
         </div>
     </section>
     <!-- /Banner ad -->
@@ -82,12 +82,8 @@
                                 </div>
 
                                 <form action="{{ route('forum') }}" method="GET">
-                                    <input
-                                        type="search"
-                                        name="search"
-                                        placeholder="Search here for threads"
-                                        class="p-4 pl-10 text-gray-600 rounded w-full border-gray-100"
-                                    />
+                                    <input type="search" name="search" placeholder="Search here for threads"
+                                        class="p-4 pl-10 text-gray-600 rounded w-full border-gray-100" />
                                 </form>
                             </div>
                         </div>

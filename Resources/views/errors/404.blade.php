@@ -1,6 +1,6 @@
 @title('Page not found')
 
-@extends('layouts.base')
+@extends('pub_theme::layouts.base')
 
 @section('body')
     <div class="my-20 text-center text-gray-800">

@@ -1,7 +1,7 @@
 @title($article->title())
 @shareImage(route('articles.image', $article->slug()))
 
-@extends('layouts.default')
+@extends('pub_theme::layouts.default')
 
 @push('meta')
     <link rel="canonical" href="{{ $article->canonicalUrl() }}" />
@@ -9,11 +9,13 @@
 
 @section('content')
     <article class="bg-white">
-        <div class="w-full bg-center bg-cover bg-gray-900" style="background-image: linear-gradient(rgba(0,0,0,0.2), rgba(0,0,0,0.2)), url({{ $article->heroImage(2000, 384) }});">
+        <div class="w-full bg-center bg-cover bg-gray-900"
+            style="background-image: linear-gradient(rgba(0,0,0,0.2), rgba(0,0,0,0.2)), url({{ $article->heroImage(2000, 384) }});">
             <div class="container mx-auto">
                 <div class="px-4 lg:px-0 lg:mx-48">
                     <div class="flex items-center justify-between pt-6 mb-28">
-                        <a href="{{ route('articles') }}" class="hidden flex items-center text-base text-white hover:underline lg:flex">
+                        <a href="{{ route('articles') }}"
+                            class="hidden flex items-center text-base text-white hover:underline lg:flex">
                             <x-heroicon-s-arrow-left class="w-4 h-4 fill-current" />
                             <span class="text-white ml-1 hover:text-gray-100">Back to articles</span>
                         </a>
@@ -79,11 +81,8 @@
                 <div class="w-full pt-4 lg:w-4/5 lg:pt-10">
                     <x-articles.actions :article="$article" />
 
-                    <div
-                        x-data="{}"
-                        x-init="function () { highlightCode($el); }"
-                        class="prose prose-lg text-gray-800 prose-lio"
-                    >
+                    <div x-data="{}" x-init="function () { highlightCode($el); }"
+                        class="prose prose-lg text-gray-800 prose-lio">
                         <x-buk-markdown>{!! $article->body() !!}</x-buk-markdown>
                     </div>
 
@@ -102,7 +101,7 @@
                         <div class="flex flex-col items-center justify-center gap-y-4 lg:flex-row lg:justify-between">
                             <div class="flex items-center gap-x-4">
                                 <x-avatar :user="$article->author()" class="hidden w-16 h-16 lg:block" />
-                                
+
                                 <div class="flex flex-col items-center text-gray-900 text-xl font-semibold lg:items-start">
                                     {{ $article->author()->username() }} ({{ $article->author()->name() }})
                                     <span class="text-lg text-gray-700 font-medium">
@@ -119,7 +118,8 @@
                                 @endif
 
                                 @if ($article->author()->hasTwitterAccount())
-                                    <a href="https://twitter.com/{{ $article->author()->twitter() }}" class="text-twitter">
+                                    <a href="https://twitter.com/{{ $article->author()->twitter() }}"
+                                        class="text-twitter">
                                         <x-icon-twitter class="w-6 h-6" />
                                     </a>
                                 @endif
@@ -139,10 +139,7 @@
 
             <div class="flex flex-col gap-y-4 gap-x-6 mt-6 lg:flex-row lg:mt-12">
                 @foreach ($trendingArticles as $trendingArticle)
-                    <x-articles.summary 
-                        :article="$trendingArticle"
-                        is-featured
-                    />
+                    <x-articles.summary :article="$trendingArticle" is-featured />
                 @endforeach
             </div>
         </div>
@@ -151,10 +148,10 @@
     @can(App\Policies\ArticlePolicy::APPROVE, $article)
         @if ($article->isAwaitingApproval())
             @include('_partials._update_modal', [
-                'identifier' => 'approveArticle',
-                'route' => ['admin.articles.approve', $article->slug()],
-                'title' => "Approve article",
-                'body' => '<p>Are you sure you want to approve this article?</p>',
+            'identifier' => 'approveArticle',
+            'route' => ['admin.articles.approve', $article->slug()],
+            'title' => "Approve article",
+            'body' => '<p>Are you sure you want to approve this article?</p>',
             ])
         @endif
     @endcan
@@ -162,29 +159,32 @@
     @can(App\Policies\ArticlePolicy::DISAPPROVE, $article)
         @if ($article->isPublished())
             @include('_partials._update_modal', [
-                'identifier' => 'disapproveArticle',
-                'route' => ['admin.articles.disapprove', $article->slug()],
-                'title' => "Disapprove article",
-                'body' => '<p>Are you sure you want to disapprove this article? Doing so will mean it is no longer live on the site.</p>',
+            'identifier' => 'disapproveArticle',
+            'route' => ['admin.articles.disapprove', $article->slug()],
+            'title' => "Disapprove article",
+            'body' => '<p>Are you sure you want to disapprove this article? Doing so will mean it is no longer live on the site.
+            </p>',
             ])
         @endif
     @endcan
 
     @can(App\Policies\ArticlePolicy::DELETE, $article)
         @include('_partials._delete_modal', [
-            'identifier' => 'deleteArticle',
-            'route' => ['articles.delete', $article->slug()],
-            'title' => "Delete article",
-            'body' => '<p>Are you sure you want to delete this article? Doing so will mean it is permanently removed from the site.</p>',
+        'identifier' => 'deleteArticle',
+        'route' => ['articles.delete', $article->slug()],
+        'title' => "Delete article",
+        'body' => '<p>Are you sure you want to delete this article? Doing so will mean it is permanently removed from the site.
+        </p>',
         ])
     @endcan
 
     @can(App\Policies\ArticlePolicy::PINNED, $article)
         @include('_partials._update_modal', [
-            'identifier' => 'togglePinnedStatus',
-            'route' => ['admin.articles.pinned', $article->slug()],
-            'title' => $article->isPinned() ? "Unpin article" : "Pin article",
-            'body' => $article->isPinned() ? '<p>Are you sure you want to unpin this article?</p>' : '<p>Are you sure you want to pin this article?</p>',
+        'identifier' => 'togglePinnedStatus',
+        'route' => ['admin.articles.pinned', $article->slug()],
+        'title' => $article->isPinned() ? "Unpin article" : "Pin article",
+        'body' => $article->isPinned() ? '<p>Are you sure you want to unpin this article?</p>' : '<p>Are you sure you want to
+            pin this article?</p>',
         ])
     @endcan
 @endsection
