@@ -1,13 +1,11 @@
 @title("{$user->username()} ({$user->name()})")
 
-@extends('layouts.default')
+@extends('pub_theme::layouts.default')
 
 @section('content')
     <section class="bg-white">
-        <div 
-            class="bg-gray-900 bg-contain h-60 w-full" 
-            style="background-image: url('{{ asset('images/profile-background.svg') }}')"
-        ></div>
+        <div class="bg-gray-900 bg-contain h-60 w-full"
+            style="background-image: url('{{ asset('images/profile-background.svg') }}')"></div>
 
         <div class="container mx-auto">
             <div class="flex justify-center lg:justify-start">
@@ -150,10 +148,14 @@
         <div class="mt-16 lg:mt-32" x-data="{ tab: 'threads' }">
             <div class="container mx-auto">
                 <nav class="flex items-center justify-between lg:justify-start">
-                    <button @click="tab = 'threads'" :class="{ 'text-lio-500 border-lio-500 border-b-2': tab === 'threads' }"  class="px-4 whitespace-nowrap py-5 font-medium text-lg text-gray-900 hover:text-lio-500 hover:border-lio-500 focus:outline-none focus:text-lio-500 focus:border-lio-500 lg:w-1/3">
+                    <button @click="tab = 'threads'"
+                        :class="{ 'text-lio-500 border-lio-500 border-b-2': tab === 'threads' }"
+                        class="px-4 whitespace-nowrap py-5 font-medium text-lg text-gray-900 hover:text-lio-500 hover:border-lio-500 focus:outline-none focus:text-lio-500 focus:border-lio-500 lg:w-1/3">
                         Threads posted
                     </button>
-                    <button @click="tab = 'replies'" :class="{ 'text-lio-500 border-lio-500 border-b-2': tab === 'replies' }"  class="px-4 whitespace-nowrap py-5 font-medium text-lg text-gray-900 hover:text-lio-500 hover:border-lio-500 focus:outline-none focus:text-lio-500 focus:border-lio-500 lg:w-1/3">
+                    <button @click="tab = 'replies'"
+                        :class="{ 'text-lio-500 border-lio-500 border-b-2': tab === 'replies' }"
+                        class="px-4 whitespace-nowrap py-5 font-medium text-lg text-gray-900 hover:text-lio-500 hover:border-lio-500 focus:outline-none focus:text-lio-500 focus:border-lio-500 lg:w-1/3">
                         Replies posted
                     </button>
                 </nav>
@@ -176,27 +178,28 @@
     @can(App\Policies\UserPolicy::BAN, $user)
         @if ($user->isBanned())
             @include('_partials._update_modal', [
-                'identifier' => 'unbanUser',
-                'route' => ['admin.users.unban', $user->username()],
-                'title' => "Unban {$user->username()}",
-                'body' => '<p>Unbanning this user will allow them to login again and post content.</p>',
+            'identifier' => 'unbanUser',
+            'route' => ['admin.users.unban', $user->username()],
+            'title' => "Unban {$user->username()}",
+            'body' => '<p>Unbanning this user will allow them to login again and post content.</p>',
             ])
         @else
             @include('_partials._update_modal', [
-                'identifier' => 'banUser',
-                'route' => ['admin.users.ban', $user->username()],
-                'title' => "Ban {$user->username()}",
-                'body' => '<p>Banning this user will prevent them from logging in, posting threads and replying to threads.</p>',
+            'identifier' => 'banUser',
+            'route' => ['admin.users.ban', $user->username()],
+            'title' => "Ban {$user->username()}",
+            'body' => '<p>Banning this user will prevent them from logging in, posting threads and replying to threads.</p>',
             ])
         @endif
     @endcan
 
     @can(App\Policies\UserPolicy::DELETE, $user)
         @include('_partials._delete_modal', [
-            'identifier' => 'deleteUser',
-            'route' => ['admin.users.delete', $user->username()],
-            'title' => "Delete {$user->username()}",
-            'body' => '<p>Deleting this user will remove their account and any related content like threads & replies. This cannot be undone.</p>',
+        'identifier' => 'deleteUser',
+        'route' => ['admin.users.delete', $user->username()],
+        'title' => "Delete {$user->username()}",
+        'body' => '<p>Deleting this user will remove their account and any related content like threads & replies. This cannot
+            be undone.</p>',
         ])
     @endcan
 @endsection

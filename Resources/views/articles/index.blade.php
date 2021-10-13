@@ -1,6 +1,6 @@
 @title('Community Articles')
 
-@extends('layouts.default', ['isTailwindUi' => true])
+@extends('pub_theme::layouts.default', ['isTailwindUi' => true])
 
 @section('content')
     <div class="bg-white pt-5 lg:pt-2">
@@ -17,7 +17,7 @@
 
             <div class="lg:w-1/4">
                 <div class="hidden lg:block">
-                    @include('layouts._ads._forum_sidebar')
+                    @include('pub_theme::layouts._ads._forum_sidebar')
                 </div>
 
                 <div class="mt-6">

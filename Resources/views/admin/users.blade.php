@@ -1,13 +1,13 @@
 @title('Users')
 
-@extends('layouts.default')
+@extends('pub_theme::layouts.default')
 
 @section('content')
     <div class="container mx-auto px-4 pt-6">
         @include('admin.partials._navigation', [
-            'query' => route('admin'),
-            'search' => $adminSearch,
-            'placeholder' => 'Search for users...',
+        'query' => route('admin'),
+        'search' => $adminSearch,
+        'placeholder' => 'Search for users...',
         ])
     </div>
 
@@ -51,7 +51,8 @@
                                         </x-tables.table-data>
 
                                         <x-tables.table-data>
-                                            <span class="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-gray-100 text-gray-800">
+                                            <span
+                                                class="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-gray-100 text-gray-800">
                                                 @if ($user->isBanned())
                                                     banned
                                                 @elseif ($user->isAdmin())
@@ -69,10 +70,8 @@
                                         </x-tables.table-data>
 
                                         <x-tables.table-data class="text-center w-10">
-                                            <a
-                                                href="{{ route('profile', $user->username()) }}"
-                                                class="text-lio-600 hover:text-lio-800"
-                                            >
+                                            <a href="{{ route('profile', $user->username()) }}"
+                                                class="text-lio-600 hover:text-lio-800">
                                                 <x-heroicon-o-user-circle class="w-5 h-5 inline" />
                                             </a>
                                         </x-tables.table-data>

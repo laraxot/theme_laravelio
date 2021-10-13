@@ -1,6 +1,6 @@
 @title($thread->subject())
 
-@extends('layouts.default', ['hasShadow' => true])
+@extends('pub_theme::layouts.default', ['hasShadow' => true])
 
 @section('subnav')
     <section class="container mx-auto bg-white pb-4 px-4 lg:pb-10">
@@ -30,7 +30,8 @@
             @can(App\Policies\ReplyPolicy::CREATE, App\Models\Reply::class)
                 @if ($thread->isConversationOld())
                     <x-info-panel class="flex justify-between gap-x-16">
-                        <p>The last reply to this thread was more than six months ago. Please consider opening a new thread if you have a similar question.</p>
+                        <p>The last reply to this thread was more than six months ago. Please consider opening a new thread if
+                            you have a similar question.</p>
 
                         <x-buttons.arrow-button href="{{ route('threads.create') }}" class="flex-shrink-0">
                             Create thread
@@ -42,31 +43,35 @@
                             @csrf
 
                             @formGroup('body')
-                                <label for="body">Write a reply</label>
+                            <label for="body">Write a reply</label>
 
-                                @include('_partials._editor', ['content' => old('body')])
+                            @include('_partials._editor', ['content' => old('body')])
 
-                                @error('body')
-                            @endFormGroup
+                            @error('body')
+                    @endFormGroup
 
-                            <input type="hidden" name="replyable_id" value="{{ $thread->id() }}" />
+                    <input type="hidden" name="replyable_id" value="{{ $thread->id() }}" />
 
-                            <input type="hidden" name="replyable_type" value="threads" />
+                    <input type="hidden" name="replyable_type" value="threads" />
 
-                            <div class="flex justify-between items-start mt-4 gap-x-8 lg:items-center">
-                                <p>
-                                    Please make sure you've read our <a href="{{ route('rules') }}" class="text-lio-500 border-b-2 pb-0.5 border-lio-100 hover:text-lio-600">rules</a> before replying to this thread.
-                                </p>
+                    <div class="flex justify-between items-start mt-4 gap-x-8 lg:items-center">
+                        <p>
+                            Please make sure you've read our <a href="{{ route('rules') }}"
+                                class="text-lio-500 border-b-2 pb-0.5 border-lio-100 hover:text-lio-600">rules</a> before replying
+                            to this thread.
+                        </p>
 
-                                <button type="submit" class="button button-primary">Reply</button>
-                            </div>
-                        </form>
+                        <button type="submit" class="button button-primary">Reply</button>
                     </div>
+                    </form>
+                </div>
                 @endif
             @else
                 @if (Auth::guest())
                     <p class="text-center py-8">
-                        <a href="{{ route('login') }}" class="text-lio-500 border-b-2 pb-0.5 border-lio-100 hover:text-lio-600">Sign in</a> to participate in this thread!
+                        <a href="{{ route('login') }}"
+                            class="text-lio-500 border-b-2 pb-0.5 border-lio-100 hover:text-lio-600">Sign in</a> to participate in
+                        this thread!
                     </p>
                 @else
                     <x-info-panel class="flex justify-between gap-x-16">
@@ -81,24 +86,24 @@
                     </x-info-panel>
                 @endif
             @endcan
-        </div>
-
-        <div class="w-full lg:w-1/4">
-            @include('layouts._ads._forum_sidebar')
-
-            <div class="mt-6">
-                <x-users.profile-block :user="$thread->author()" />
             </div>
 
-            @auth
+            <div class="w-full lg:w-1/4">
+                @include('pub_theme::layouts._ads._forum_sidebar')
+
                 <div class="mt-6">
-                    <x-threads.subscribe :thread="$thread" />
+                    <x-users.profile-block :user="$thread->author()" />
                 </div>
-            @endauth
 
-            <div class="my-6">
-                <x-moderators :moderators="$moderators" />
+                @auth
+                    <div class="mt-6">
+                        <x-threads.subscribe :thread="$thread" />
+                    </div>
+                @endauth
+
+                <div class="my-6">
+                    <x-moderators :moderators="$moderators" />
+                </div>
             </div>
-        </div>
-    </section>
-@endsection
+        </section>
+    @endsection

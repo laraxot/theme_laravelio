@@ -1,6 +1,6 @@
 @title('Edit your reply')
 
-@extends('layouts.default')
+@extends('pub_theme::layouts.default')
 
 @section('subnav')
     <div class="bg-white border-b">
@@ -20,19 +20,19 @@
 
                     @formGroup('body')
 
-                        @include('_partials._editor', [
-                            'content' => old('body') ?: $reply->body()
-                        ])
-                        
-                        @error('body')
-                    @endFormGroup
+                    @include('_partials._editor', [
+                    'content' => old('body') ?: $reply->body()
+                    ])
 
-                    <div class="flex items-center justify-end">
-                        <a href="{{ route_to_reply_able($reply->replyAble()) }}" class="text-lio-700 mr-4">Cancel</a>
-                        <button type="submit" class="button button-primary">Update</button>
-                    </div>
-                </form>
+                    @error('body')
+                        @endFormGroup
+
+                        <div class="flex items-center justify-end">
+                            <a href="{{ route_to_reply_able($reply->replyAble()) }}" class="text-lio-700 mr-4">Cancel</a>
+                            <button type="submit" class="button button-primary">Update</button>
+                        </div>
+                    </form>
+                </div>
             </div>
         </div>
-    </div>
-@endsection
+    @endsection

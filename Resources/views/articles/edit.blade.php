@@ -1,6 +1,6 @@
 @title('Edit your article')
 
-@extends('layouts.default')
+@extends('pub_theme::layouts.default')
 
 @section('subnav')
     <div class="bg-white border-b">
@@ -20,13 +20,14 @@
 
             <div class="md:p-4 md:border-2 md:rounded md:bg-gray-100">
                 @include('articles._form', [
-                    'route' => ['articles.update', $article->slug()],
-                    'method' => 'PUT',
+                'route' => ['articles.update', $article->slug()],
+                'method' => 'PUT',
                 ])
             </div>
 
             <x-forms.info>
-                After submission for approval, articles are reviewed before being published. No notification of declined articles will be provided. Instead, we encourage to also cross-post articles on your own channel as well.
+                After submission for approval, articles are reviewed before being published. No notification of declined
+                articles will be provided. Instead, we encourage to also cross-post articles on your own channel as well.
             </x-forms.info>
         </div>
     </div>
