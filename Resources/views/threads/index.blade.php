@@ -1,9 +1,8 @@
 @php($subTitle = isset($activeTag) ? $activeTag->name() : null)
-@title('Forum' . (isset($subTitle) ? ' > ' . $subTitle : ''))
+{{-- @title('Forum' . (isset($subTitle) ? ' > ' . $subTitle : '')) --}}
 @php($threads = $rows)
 @php($filter = null)
 @extends('pub_theme::layouts.default', ['hasShadow' => true, 'isTailwindUi' => true])
-
 @section('content')
     <div class="pt-5 pb-10 lg:pt-10 lg:pb-0">
         <div class="container mx-auto flex flex-col gap-x-12 px-4 lg:flex-row">
@@ -14,7 +13,8 @@
                             Forum
                         </h1>
 
-                        <x-theme::buttons.primary-button href="{{-- route('threads.create') --}}" class="hidden lg:block">
+                        <x-theme::buttons.primary-button href="{{ $_panel->url(['act' => 'create']) }}"
+                            class="hidden lg:block">
                             Create Thread
                         </x-theme::buttons.primary-button>
                     </div>
