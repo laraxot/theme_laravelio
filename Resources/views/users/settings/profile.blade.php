@@ -16,13 +16,13 @@
                 <div class="flex flex-col space-y-6 lg:flex-row lg:space-y-0 lg:space-x-6">
                     <div class="flex-grow space-y-6">
                         <div class="space-y-1">
-                            <x-forms.label for="name"/>
+                            <x-forms.label for="name" />
 
                             <x-forms.inputs.input name="name" :value="Auth::user()->name()" required />
                         </div>
 
                         <div class="space-y-1">
-                            <x-forms.label for="bio"/>
+                            <x-forms.label for="bio" />
 
                             <x-forms.inputs.textarea name="bio" rows="3" maxlength="160">
                                 {{ Auth::user()->bio() }}
@@ -41,12 +41,13 @@
 
                         <div class="flex items-center mt-2">
                             <div class="flex-shrink-0 inline-block overflow-hidden" aria-hidden="true">
-                                <x-avatar :user="Auth::user()" class="h-32 w-32 mt-4" />
+                                <x-theme::avatar :user="Auth::user()" class="h-32 w-32 mt-4" />
 
                                 <span class="mt-4 inline-block text-sm text-gray-500">
                                     Change your avatar for
 
-                                    <a href="https://github.com/{{ Auth::user()->githubUsername() }}" class="text-lio-700">
+                                    <a href="https://github.com/{{ Auth::user()->githubUsername() }}"
+                                        class="text-lio-700">
                                         your GitHub profile
                                     </a>.
                                 </span>
@@ -81,11 +82,12 @@
                     <div class="col-span-12 sm:col-span-6">
                         <x-forms.label for="twitter">Twitter handle</x-label>
 
-                        <x-forms.inputs.input name="twitter" :value="Auth::user()->twitter()" prefix-icon="heroicon-o-at-symbol" class="nav-search" />
+                            <x-forms.inputs.input name="twitter" :value="Auth::user()->twitter()"
+                                prefix-icon="heroicon-o-at-symbol" class="nav-search" />
 
-                        <span class="mt-2 text-sm text-gray-500">
-                            Enter your Twitter handle without the leading @ symbol
-                        </span>
+                            <span class="mt-2 text-sm text-gray-500">
+                                Enter your Twitter handle without the leading @ symbol
+                            </span>
                     </div>
                 </div>
             </div>
@@ -98,5 +100,5 @@
                 </span>
             </div>
         </div>
-    </x-form>
+        </x-form>
 </section>

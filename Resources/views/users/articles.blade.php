@@ -67,7 +67,7 @@
                     <div class="flex items-center">
                         <div class="flex-shrink-0">
                             <a href="#">
-                                <x-avatar :user="$article->author()" class="h-10 w-10" />
+                                <x-theme::avatar :user="$article->author()" class="h-10 w-10" />
                             </a>
                         </div>
                         <div class="ml-3">

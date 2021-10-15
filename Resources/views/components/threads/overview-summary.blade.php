@@ -1,6 +1,4 @@
-@props([
-    'thread',
-])
+@props(['thread'])
 
 <div class="h-full rounded shadow-lg p-5 bg-white">
     <div class="flex flex-col lg:flex-row lg:justify-between lg:items-center">
@@ -8,7 +6,7 @@
             <div class="flex flex-col lg:flex-row lg:items-center">
                 <div class="flex">
                     <a href="{{ route('profile', $thread->author()->username()) }}">
-                        <x-avatar :user="$thread->author()" class="w-6 h-6 rounded-full mr-3" />
+                        <x-theme::avatar :user="$thread->author()" class="w-6 h-6 rounded-full mr-3" />
                     </a>
 
                     <a href="{{ route('profile', $thread->author()->username()) }}" class="hover:underline">
@@ -63,10 +61,8 @@
         </div>
 
         @if ($thread->isSolved())
-            <a
-                href="{{ route('thread', $thread->slug()) }}#{{ $thread->solution_reply_id }}"
-                class="flex items-center gap-x-2 font-medium text-lio-500"
-            >
+            <a href="{{ route('thread', $thread->slug()) }}#{{ $thread->solution_reply_id }}"
+                class="flex items-center gap-x-2 font-medium text-lio-500">
                 <x-heroicon-o-badge-check class="w-6 h-6" />
                 <span class="hover:underline">Solved</span>
             </a>

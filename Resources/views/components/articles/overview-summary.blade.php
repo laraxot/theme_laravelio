@@ -1,14 +1,10 @@
-@props([
-    'article',
-])
+@props(['article'])
 
 <div class="h-full rounded-lg shadow-lg bg-white lg:p-5">
     <div class="flex flex-col gap-x-8 lg:flex-row">
         <a href="{{ route('articles.show', $article->slug()) }}" class="block">
-            <div 
-                class="w-full h-32 rounded-t-lg bg-center bg-cover bg-gray-900 lg:w-48 lg:h-full lg:rounded-lg" 
-                style="background-image: url({{ $article->heroImage() }});"
-            >
+            <div class="w-full h-32 rounded-t-lg bg-center bg-cover bg-gray-900 lg:w-48 lg:h-full lg:rounded-lg"
+                style="background-image: url({{ $article->heroImage() }});">
             </div>
         </a>
 
@@ -16,7 +12,7 @@
             <div>
                 <div class="flex flex-col gap-y-2 lg:flex-row lg:items-center">
                     <div class="flex">
-                        <x-avatar :user="$article->author()" class="w-6 h-6 rounded-full mr-3" />
+                        <x-theme::avatar :user="$article->author()" class="w-6 h-6 rounded-full mr-3" />
 
                         <a href="{{ route('profile', $article->author()->username()) }}" class="hover:underline">
                             <span class="text-gray-900 mr-5">{{ $article->author()->username() }}</span>
