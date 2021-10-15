@@ -6,8 +6,9 @@
             <div>
                 <div class="flex flex-col lg:flex-row lg:items-center">
                     <div>
-                        <a href="{{ route('profile', $reply->author()->username()) }}" class="flex items-center hover:underline">
-                            <x-avatar :user="$reply->author()" class="w-6 h-6 rounded-full mr-3" />
+                        <a href="{{ route('profile', $reply->author()->username()) }}"
+                            class="flex items-center hover:underline">
+                            <x-theme::avatar :user="$reply->author()" class="w-6 h-6 rounded-full mr-3" />
                             <span class="text-gray-900 mr-5">{{ $reply->author()->username() }}</span>
                         </a>
                     </div>
@@ -22,15 +23,11 @@
         </div>
     </div>
 
-    <div
-        class="prose prose-lio max-w-none p-6 break-words"
-        x-data="{}"
-        x-init="function () { highlightCode($el); }"
-        x-html="{{ json_encode(replace_links(md_to_html($reply->body()))) }}"
-    >
+    <div class="prose prose-lio max-w-none p-6 break-words" x-data="{}" x-init="function () { highlightCode($el); }"
+        x-html="{{ json_encode(replace_links(md_to_html($reply->body()))) }}">
     </div>
 
     <div class="px-6 pb-6">
-        <livewire:like-reply :reply="$reply"/>
+        <livewire:like-reply :reply="$reply" />
     </div>
 </div>

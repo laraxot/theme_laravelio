@@ -6,7 +6,7 @@
             <div class="flex flex-col lg:flex-row lg:items-center">
                 <div class="flex">
                     <a href="{{ route('profile', $reply->author()->username()) }}">
-                        <x-avatar :user="$reply->author()" class="w-6 h-6 rounded-full mr-3" />
+                        <x-theme::avatar :user="$reply->author()" class="w-6 h-6 rounded-full mr-3" />
                     </a>
 
                     <a href="{{ route('profile', $reply->author()->username()) }}" class="hover:underline">
@@ -46,7 +46,7 @@
             <span class="flex items-center gap-x-2 font-medium text-lio-500">
                 <x-heroicon-o-badge-check class="w-6 h-6" />
                 <span class="hover:underline">Solved</span>
-            </a>
+                </a>
         @endif
     </div>
 </div>

@@ -9,7 +9,7 @@
 
         <a href="{{ route('login.github') }}" class="button button-dark">
             <span class="flex items-center justify-center">
-                <x-icon-github class="inline h-5 w-5 mr-2" />
+                <x-theme::svg icon="github" class="inline h-5 w-5 mr-2" />
                 Github
             </span>
         </a>

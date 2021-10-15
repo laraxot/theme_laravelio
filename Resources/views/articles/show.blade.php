@@ -49,7 +49,7 @@
 
                     <div class="flex flex-col gap-y-2 text-white pb-4 lg:pb-12 lg:flex-row lg:items-center">
                         <div class="flex items-center">
-                            <x-avatar :user="$article->author()" class="w-6 h-6 rounded-full mr-3" />
+                            <x-theme::avatar :user="$article->author()" class="w-6 h-6 rounded-full mr-3" />
 
                             <a href="{{ route('profile', $article->author()->username()) }}" class="hover:underline">
                                 <span class="mr-5">{{ $article->author()->name() }}</span>
@@ -74,12 +74,12 @@
             <div class="flex px-4 lg:px-0 lg:mx-48">
                 <div class="hidden lg:block lg:w-1/5">
                     <div class="py-12 mt-48 sticky top-0">
-                        <x-articles.engage :article="$article" />
+                        <x-theme::articles.engage :article="$article" />
                     </div>
                 </div>
 
                 <div class="w-full pt-4 lg:w-4/5 lg:pt-10">
-                    <x-articles.actions :article="$article" />
+                    <x-theme::articles.actions :article="$article" />
 
                     <div x-data="{}" x-init="function () { highlightCode($el); }"
                         class="prose prose-lg text-gray-800 prose-lio">
@@ -100,7 +100,7 @@
                     <div class="border-t-2 border-gray-200 py-8 lg:pt-14 lg:pb-16">
                         <div class="flex flex-col items-center justify-center gap-y-4 lg:flex-row lg:justify-between">
                             <div class="flex items-center gap-x-4">
-                                <x-avatar :user="$article->author()" class="hidden w-16 h-16 lg:block" />
+                                <x-theme::avatar :user="$article->author()" class="hidden w-16 h-16 lg:block" />
 
                                 <div class="flex flex-col items-center text-gray-900 text-xl font-semibold lg:items-start">
                                     {{ $article->author()->username() }} ({{ $article->author()->name() }})
@@ -113,14 +113,14 @@
                             <div class="flex items-center gap-x-6">
                                 @if ($article->author()->githubUsername())
                                     <a href="https://github.com/{{ $article->author()->githubUsername() }}">
-                                        <x-icon-github class="w-6 h-6" />
+                                        <x-theme::svg icon="github" class="w-6 h-6" />
                                     </a>
                                 @endif
 
                                 @if ($article->author()->hasTwitterAccount())
                                     <a href="https://twitter.com/{{ $article->author()->twitter() }}"
                                         class="text-twitter">
-                                        <x-icon-twitter class="w-6 h-6" />
+                                        <x-theme::svg icon="twitter" class="w-6 h-6" />
                                     </a>
                                 @endif
                             </div>
@@ -139,7 +139,7 @@
 
             <div class="flex flex-col gap-y-4 gap-x-6 mt-6 lg:flex-row lg:mt-12">
                 @foreach ($trendingArticles as $trendingArticle)
-                    <x-articles.summary :article="$trendingArticle" is-featured />
+                    <x-theme::articles.summary :article="$trendingArticle" is-featured />
                 @endforeach
             </div>
         </div>

@@ -102,7 +102,7 @@
                 @endauth
 
                 <div class="my-6">
-                    <x-moderators :moderators="$moderators" />
+                    <x-theme::moderators :moderators="$moderators" />
                 </div>
             </div>
         </section>

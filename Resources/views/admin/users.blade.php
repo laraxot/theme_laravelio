@@ -32,7 +32,7 @@
                                             <div class="flex items-center">
                                                 <div class="flex-shrink-0 h-10 w-10">
                                                     <a href="{{ route('profile', $user->username()) }}">
-                                                        <x-avatar :user="$user" class="h-10 w-10 rounded-full" />
+                                                        <x-theme::avatar :user="$user" class="h-10 w-10 rounded-full" />
                                                     </a>
                                                 </div>
                                                 <div class="ml-4">

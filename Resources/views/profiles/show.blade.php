@@ -1,4 +1,5 @@
-@title("{$user->username()} ({$user->name()})")
+@php($user = $row)
+@php($title = "{$user->username()} ({$user->name()})")
 
 @extends('pub_theme::layouts.default')
 
@@ -17,16 +18,15 @@
                     <div>
                         <div class="flex items-center gap-x-4">
                             <h1 class="text-4xl font-bold">{{ $user->name() }}</h1>
-
-                            @if ($user->isAdmin() || $user->isModerator())
+                            {{-- @if ($user->isAdmin() || $user->isModerator())
                                 <span class="border border-lio-500 text-lio-500 rounded px-3 py-1">
                                     {{ $user->isAdmin() ? 'Admin' : 'Moderator' }}
                                 </span>
-                            @endif
+                            @endif --}}
                         </div>
 
                         <span class="text-gray-600">
-                            Joined {{ $user->createdAt()->format('j M Y') }}
+                            Joined {{ $user->created_at->format('j M Y') }}
                         </span>
                     </div>
 
@@ -35,8 +35,7 @@
                             {{ $user->bio() }}
                         </span>
                     </div>
-
-                    <div class="mt-4 mb-6 flex items-center gap-x-3">
+                    {{-- <div class="mt-4 mb-6 flex items-center gap-x-3">
                         @if ($user->githubUsername())
                             <a href="https://github.com/{{ $user->githubUsername() }}">
                                 <x-theme::svg icon="github" class="w-6 h-6" />
@@ -48,7 +47,7 @@
                                 <x-theme::svg icon="twitter" class="w-6 h-6" />
                             </a>
                         @endif
-                    </div>
+                    </div> --}}
 
                     <div class="flex flex-col gap-y-4">
                         @if ($user->isLoggedInUser())
@@ -60,28 +59,26 @@
                                 </span>
                                 </x-buttons.secondary-button>
                         @endif
-
-                        @can(App\Policies\UserPolicy::BAN, $user)
-                            @if ($user->isBanned())
-                                <x-theme::buttons.secondary-button class="w-full"
-                                    @click.prevent="activeModal = 'unbanUser'">
+                        {{-- @can(App\Policies\UserPolicy::BAN, $user) --}}
+                        @if ($user->isBanned())
+                            <x-theme::buttons.secondary-button class="w-full"
+                                @click.prevent="activeModal = 'unbanUser'">
+                                <span class="flex items-center gap-x-2">
+                                    <x-theme::svg icon="o-check" class="w-5 h-5" />
+                                    Unban User
+                                </span>
+                                </x-buttons.secondary-button>
+                            @else
+                                <x-theme::buttons.danger-button class="w-full"
+                                    @click.prevent="activeModal = 'banUser'">
                                     <span class="flex items-center gap-x-2">
-                                        <x-theme::svg icon="o-check" class="w-5 h-5" />
-                                        Unban User
+                                        <x-theme::svg icon="hammer" class="w-5 h-5" />
+                                        Ban User
                                     </span>
-                                    </x-buttons.secondary-button>
-                                @else
-                                    <x-theme::buttons.danger-button class="w-full"
-                                        @click.prevent="activeModal = 'banUser'">
-                                        <span class="flex items-center gap-x-2">
-                                            <x-theme::svg icon="hammer" class="w-5 h-5" />
-                                            Ban User
-                                        </span>
-                                        </x-buttons.danger-button>
-                            @endif
-                        @endcan
-
-                        @if (Auth::check() && Auth::user()->isAdmin())
+                                    </x-buttons.danger-button>
+                        @endif
+                        {{-- @endcan --}}
+                        {{-- @if (Auth::check() && Auth::user()->isAdmin())
                             @can(App\Policies\UserPolicy::DELETE, $user)
                                 <x-theme::buttons.danger-button class="w-full"
                                     @click.prevent="activeModal = 'deleteUser'">
@@ -91,7 +88,7 @@
                                     </span>
                                     </x-buttons.danger-button>
                                 @endcan
-                        @endif
+                        @endif --}}
                     </div>
                 </div>
 
@@ -131,7 +128,7 @@
                     </div>
                 </div>
             </div>
-
+            @php($articles = $user->latestArticles(3))
             @if ($articles->count() > 0)
                 <div class="mt-10 px-4 lg:mt-28">
                     <h2 class="text-3xl font-semibold">
@@ -168,27 +165,27 @@
             <div class="bg-gray-100 py-14 px-4">
                 <div class="container mx-auto">
                     <div x-show="tab === 'threads'">
-                        @include('users._latest_threads')
+                        @include('pub_theme::users._latest_threads')
                     </div>
 
                     <div x-show="tab === 'replies'" x-cloak>
-                        @include('users._latest_replies')
+                        @include('pub_theme::users._latest_replies')
                     </div>
                 </div>
             </div>
         </div>
     </section>
 
-    @can(App\Policies\UserPolicy::BAN, $user)
+    @can('userBan', $user)
         @if ($user->isBanned())
-            @include('_partials._update_modal', [
+            @include('pub_theme::_partials._update_modal', [
             'identifier' => 'unbanUser',
             'route' => ['admin.users.unban', $user->username()],
             'title' => "Unban {$user->username()}",
             'body' => '<p>Unbanning this user will allow them to login again and post content.</p>',
             ])
         @else
-            @include('_partials._update_modal', [
+            @include('pub_theme::_partials._update_modal', [
             'identifier' => 'banUser',
             'route' => ['admin.users.ban', $user->username()],
             'title' => "Ban {$user->username()}",
@@ -197,8 +194,8 @@
         @endif
     @endcan
 
-    @can(App\Policies\UserPolicy::DELETE, $user)
-        @include('_partials._delete_modal', [
+    @can('userDelete', $user)
+        @include('pub_theme::_partials._delete_modal', [
         'identifier' => 'deleteUser',
         'route' => ['admin.users.delete', $user->username()],
         'title' => "Delete {$user->username()}",
