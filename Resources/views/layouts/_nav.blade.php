@@ -159,7 +159,7 @@
                                     <x-theme::buttons.secondary-cta class="flex items-center"
                                         href="{{ route('login') }}">
                                         <span class="flex items-center">
-                                            <x-theme::svg icon="o-user" class="w-5 h-5 mr-1" /> --}}
+                                            <x-theme::svg icon="o-user" class="w-5 h-5 mr-1" />
                                             Login
                                         </span>
                                     </x-theme::buttons.secondary-cta>
