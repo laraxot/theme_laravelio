@@ -12,7 +12,7 @@
 
                         <div class="flex lg:hidden">
                             <button @click="search = !search" :class="{ 'text-lio-500': search }">
-                                {{-- <x-heroicon-o-search class="w-6 h-6 mr-4" /> --}}
+                                {{-- <x-svg icon="o-search" class="w-6 h-6 mr-4" /> --}}
                             </button>
 
                             <button @click="nav = !nav">
@@ -20,7 +20,7 @@
                             </button>
 
                             <button @click="nav = !nav" x-cloak>
-                                {{-- <x-heroicon-o-x x-show="nav" class="w-6 h-6" /> --}}
+                                {{-- <x-svg icon="o-x" x-show="nav" class="w-6 h-6" /> --}}
                             </button>
                         </div>
                     </div>

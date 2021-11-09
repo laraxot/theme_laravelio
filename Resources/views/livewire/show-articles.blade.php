@@ -5,7 +5,7 @@
                 Articles
             </h1>
 
-            <x-buttons.primary-button href="{{ route('articles.create') }}" class="hidden lg:block">
+            <x-buttons.primary-button href="{{-- route('articles.create') --}}" class="hidden lg:block">
                 Create Article
             </x-buttons.primary-button>
         </div>
@@ -21,7 +21,7 @@
                 <div class="flex-shrink-0">
                     <x-theme::buttons.secondary-button class="flex items-center gap-x-2"
                         @click="activeModal = 'tag-filter'">
-                        <x-heroicon-o-filter class="w-5 h-5" />
+                        <x-svg icon="o-filter" class="w-5 h-5" />
                         Tag filter
                         </x-buttons.secondary-button>
                 </div>
@@ -35,7 +35,7 @@
                     <span class="flex items-center gap-x-1">
                         {{ $selectedTag->name() }}
                         <button type="button" wire:click="toggleTag('')">
-                            <x-heroicon-o-x class="w-5 h-5" />
+                            <x-svg ico="o-x" class="w-5 h-5" />
                         </button>
                     </span>
                 </x-tag>
@@ -50,14 +50,14 @@
         <div class="w-1/2">
             <x-buttons.secondary-cta class="w-full" @click="activeModal = 'tag-filter'">
                 <span class="flex items-center gap-x-2">
-                    <x-heroicon-o-filter class="w-5 h-5" />
+                    <x-svg icon="o-filter" class="w-5 h-5" />
                     Tag filter
                 </span>
             </x-buttons.secondary-cta>
         </div>
 
         <div class="w-1/2">
-            <x-buttons.primary-cta href="{{ route('articles.create') }}" class="w-full">
+            <x-buttons.primary-cta href="{{-- route('articles.create') --}}" class="w-full">
                 Create Article
             </x-buttons.primary-cta>
         </div>
@@ -74,7 +74,7 @@
                 <span class="flex items-center gap-x-1">
                     {{ $selectedTag->name() }}
                     <button type="button" wire:click="toggleTag('')">
-                        <x-heroicon-o-x class="w-5 h-5" />
+                        <x-svg icon="o-x" class="w-5 h-5" />
                     </button>
                 </span>
             </x-tag>

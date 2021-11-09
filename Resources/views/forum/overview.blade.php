@@ -43,7 +43,7 @@
                                 <span class="flex items-center gap-x-1">
                                     {{ $activeTag->name() }}
                                     <a href="{{ route('forum') }}">
-                                        <x-heroicon-o-x class="w-5 h-5" />
+                                        <x-svg icon="o-x" class="w-5 h-5" />
                                     </a>
                                 </span>
                             </x-tag>
@@ -89,7 +89,7 @@
                                 <span class="flex items-center gap-x-1">
                                     {{ $activeTag->name() }}
                                     <a href="{{ route('forum') }}">
-                                        <x-heroicon-o-x class="w-5 h-5" />
+                                        <x-svg icon="o-x" class="w-5 h-5" />
                                     </a>
                                 </span>
                             </x-tag>
