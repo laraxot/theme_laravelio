@@ -9,7 +9,7 @@
                 <h3 class="text-3xl font-semibold">Filter tag</h3>
 
                 <button @click="$dispatch('close-modal')">
-                    <x-heroicon-o-x class="w-6 h-6" />
+                    <x-svg icon="o-x" class="w-6 h-6" />
                 </button>
             </div>
 
@@ -19,7 +19,7 @@
 
             <div class="relative">
                 <div class="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
-                    <x-heroicon-o-search class="h-5 w-5 text-gray-800" />
+                    <x-svg icon="o-search" class="h-5 w-5 text-gray-800" />
                 </div>
 
                 <input type="search" name="filter" id="search" class="border block pl-10 border-gray-300 rounded w-full"

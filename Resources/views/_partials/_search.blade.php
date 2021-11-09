@@ -4,7 +4,7 @@
     <div class="relative">
         <div class="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
             {{--  
-            <x-heroicon-o-search class="h-5 w-5 text-gray-800"/>
+            <x-svg icon="o-search" class="h-5 w-5 text-gray-800"/>
             --}}
             <x-theme::svg icon="o-search" class="h-5 w-5 text-gray-800"/>
         </div>

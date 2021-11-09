@@ -19,10 +19,11 @@
                 <div class="hidden lg:block">
                     @include('pub_theme::layouts._ads._forum_sidebar')
                 </div>
-
+                {{--  
                 <div class="mt-6">
-                    <x-theme::moderators :moderators="$moderators" />
+                    <x-theme::moderators :moderators="$_theme->moderators()" />
                 </div>
+                --}}
             </div>
         </div>
     </div>
