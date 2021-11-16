@@ -1,6 +1,6 @@
-@title('Community Articles')
+{{-- @title('CommunityArticles') --}}
 
-@extends('pub_theme::layouts.default', ['isTailwindUi' => true])
+@extends('pub_theme::layouts.default', ['isTailwindUi' => true, 'title' => 'Community Articles'])
 
 @section('content')
     <div class="bg-white pt-5 lg:pt-2">
@@ -19,11 +19,9 @@
                 <div class="hidden lg:block">
                     @include('pub_theme::layouts._ads._forum_sidebar')
                 </div>
-                {{--  
                 <div class="mt-6">
                     <x-theme::moderators :moderators="$_theme->moderators()" />
                 </div>
-                --}}
             </div>
         </div>
     </div>

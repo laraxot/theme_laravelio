@@ -19,10 +19,6 @@
                     <div class="mb-5">
                         <p class="text-gray-800 text-lg leading-8 font-medium">
                             The Laravel portal for problem solving, knowledge sharing and community building.
-                            @php
-                                //dddx(get_defined_vars());
-                                dddx(\Modules\Xot\Services\ActionService::totalUsers()); // usiamo questo invece di andare a sporcare homepanel??
-                            @endphp
                             Join <x-theme::accent-text>{{ $_theme->totalUsers() }}</x-theme::accent-text> other artisans.
                         </p>
                     </div>

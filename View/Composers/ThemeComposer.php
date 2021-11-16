@@ -8,11 +8,13 @@ use Illuminate\Support\Facades\Cache;
 //use Themes\LaravelIo\Services\AdminLTE;
 use Illuminate\View\View;
 use Modules\Blog\Models\Article;
+use Modules\Forum\Models\Reply;
+use Modules\Forum\Models\Thread;
 use Modules\LU\Models\User;
 use Modules\Xot\Services\PanelService;
 
 class ThemeComposer {
-    /**
+    /*
      * @var AdminLte
      */
     /*
@@ -138,5 +140,18 @@ class ThemeComposer {
         ->get();
 
         return $pinnedArticles;
+    }
+
+    public function moderators() {
+        /*
+        $moderators = Cache::remember('moderators', now()->addMinutes(30), function () {
+            //return User::moderators()->get();
+            return User::take('5')->get();
+        });
+        */
+
+        $moderators = User::take('5')->get();
+
+        return $moderators;
     }
 }
