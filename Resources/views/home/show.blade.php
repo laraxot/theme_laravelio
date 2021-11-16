@@ -19,30 +19,35 @@
                     <div class="mb-5">
                         <p class="text-gray-800 text-lg leading-8 font-medium">
                             The Laravel portal for problem solving, knowledge sharing and community building.
-                            Join <x-theme::accent-text>{{ $_theme->totalUsers() }}</x-accent-text> other artisans.
+                            @php
+                                //dddx(get_defined_vars());
+                                dddx(\Modules\Xot\Services\ActionService::totalUsers()); // usiamo questo invece di andare a sporcare homepanel??
+                            @endphp
+                            Join <x-theme::accent-text>{{ $_theme->totalUsers() }}</x-theme::accent-text> other artisans.
                         </p>
                     </div>
 
                     <div>
                         @if (Auth::guest())
-                            <x-buttons.primary-cta href="{{ route('register') }}" class="w-full mb-3 lg:w-auto lg:mr-2">
+                            <x-theme::buttons.primary-cta href="{{ route('register') }}"
+                                class="w-full mb-3 lg:w-auto lg:mr-2">
                                 Join the community
-                            </x-buttons.primary-cta>
+                                </x-buttons.primary-cta>
 
-                            <x-theme::buttons.secondary-cta href="{{ $_theme->url('thread', 'index') }}"
-                                class="w-full lg:w-auto">
-                                Visit the forum
-                            </x-theme::buttons.secondary-cta>
-                        @else
-                            <x-buttons.primary-cta href="{{ $_theme->url('thread', 'index') }}"
-                                class="w-full mb-3 lg:w-auto lg:mr-2">
-                                Start a Thread
-                            </x-buttons.primary-cta>
+                                <x-theme::buttons.secondary-cta href="{{ $_theme->url('thread', 'index') }}"
+                                    class="w-full lg:w-auto">
+                                    Visit the forum
+                                </x-theme::buttons.secondary-cta>
+                            @else
+                                <x-theme::buttons.primary-cta href="{{ $_theme->url('thread', 'index') }}"
+                                    class="w-full mb-3 lg:w-auto lg:mr-2">
+                                    Start a Thread
+                                </x-theme::buttons.primary-cta>
 
-                            <x-buttons.primary-cta href="{{ $_theme->url('article', 'index') }}"
-                                class="w-full mb-3 lg:w-auto lg:mr-2">
-                                Share an Article
-                            </x-buttons.primary-cta>
+                                <x-theme::buttons.primary-cta href="{{ $_theme->url('article', 'index') }}"
+                                    class="w-full mb-3 lg:w-auto lg:mr-2">
+                                    Share an Article
+                                </x-theme::buttons.primary-cta>
                         @endif
                     </div>
                 </div>
