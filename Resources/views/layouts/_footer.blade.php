@@ -23,15 +23,18 @@
                         </h6>
 
                         <div class="flex flex-wrap lg:flex-col lg:flex-no-wrap">
-                            <a href="{{-- route('forum') --}}" class="w-1/2 text-gray-400 mb-4 hover:text-gray-200 lg:mb-6">
+                            <a href="{{-- route('forum') --}}"
+                                class="w-1/2 text-gray-400 mb-4 hover:text-gray-200 lg:mb-6">
                                 Forum
                             </a>
 
-                            <a href="{{-- route('articles') --}}" class="w-1/2 text-gray-400 mb-4 hover:text-gray-200 lg:mb-6">
+                            <a href="{{-- route('articles') --}}"
+                                class="w-1/2 text-gray-400 mb-4 hover:text-gray-200 lg:mb-6">
                                 Articles
                             </a>
 
-                            <a href="https://paste.laravel.io" class="w-1/2 text-gray-400 mb-4 hover:text-gray-200 lg:mb-6">
+                            <a href="https://paste.laravel.io"
+                                class="w-1/2 text-gray-400 mb-4 hover:text-gray-200 lg:mb-6">
                                 Pastebin
                             </a>
                         </div>
@@ -43,15 +46,17 @@
                         </h6>
 
                         <div class="flex flex-wrap lg:flex-col lg:flex-no-wrap">
-                            <a href="https://twitter.com/laravelio" class="w-1/2 text-gray-400 mb-4 hover:text-gray-200 lg:mb-6">
-                                  
-                                <x-theme::svg icon="twitter" class="text-white w-4 h-4 inline mr-3.5"/>
-                                
+                            <a href="https://twitter.com/laravelio"
+                                class="w-1/2 text-gray-400 mb-4 hover:text-gray-200 lg:mb-6">
+
+                                <x-theme::svg icon="twitter" class="text-white w-4 h-4 inline mr-3.5" />
+
                                 Twitter
                             </a>
 
-                            <a href="https://github.com/laravelio" class="w-1/2 text-gray-400 mb-4 hover:text-gray-200 lg:mb-6">
-                                <x-theme::icon.github class="text-white w-4 h-4 inline mr-3.5"/>
+                            <a href="https://github.com/laravelio"
+                                class="w-1/2 text-gray-400 mb-4 hover:text-gray-200 lg:mb-6">
+                                <x-theme::svg icon="github" class="text-white w-4 h-4 inline mr-3.5" />
                                 GitHub
                             </a>
                         </div>
@@ -65,24 +70,29 @@
                         <div class="flex flex-col flex-nowrap">
                             <div class="flex mb-4 lg:mb-6">
                                 <a href="https://laravel.com" class="w-1/2 text-gray-400 hover:text-gray-200">
-                                    <img src="{{ asset('images/laravel.png') }}" alt="Laravel" class="w-4 h-4 inline mr-2" />
+                                    <img src="{{ asset('images/laravel.png') }}" alt="Laravel"
+                                        class="w-4 h-4 inline mr-2" />
                                     Laravel
                                 </a>
 
                                 <a href="https://laravel-news.com" class="w-1/2 text-gray-400 hover:text-gray-200">
-                                    <img src="{{ asset('images/laravel-news.png') }}" alt="Laravel News" class="w-4 h-4 inline mr-2" />
+                                    <img src="{{ asset('images/laravel-news.png') }}" alt="Laravel News"
+                                        class="w-4 h-4 inline mr-2" />
                                     Laravel News
                                 </a>
                             </div>
 
                             <div class="flex">
                                 <a href="https://laracasts.com" class="w-1/2 text-gray-400 hover:text-gray-200">
-                                    <img src="{{ asset('images/laracasts.png') }}" alt="Laracasts" class="w-4 h-4 inline mr-2" />
+                                    <img src="{{ asset('images/laracasts.png') }}" alt="Laracasts"
+                                        class="w-4 h-4 inline mr-2" />
                                     Laracasts
                                 </a>
 
-                                <a href="https://www.laravelpodcast.com" class="w-1/2 text-gray-400 hover:text-gray-200">
-                                    <img src="{{ asset('images/podcast.png') }}" alt="Laravel Podcast" class="w-4 h-4 inline mr-2" />
+                                <a href="https://www.laravelpodcast.com"
+                                    class="w-1/2 text-gray-400 hover:text-gray-200">
+                                    <img src="{{ asset('images/podcast.png') }}" alt="Laravel Podcast"
+                                        class="w-4 h-4 inline mr-2" />
                                     Laravel Podcast
                                 </a>
                             </div>
