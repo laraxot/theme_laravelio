@@ -1,6 +1,6 @@
-@title('Page not found')
+{{-- @title('Pagenotfound') --}}
 
-@extends('pub_theme::layouts.base')
+@extends('pub_theme::layouts.base', ['title' => 'Page not found'])
 
 @section('body')
     <div class="my-20 text-center text-gray-800">
