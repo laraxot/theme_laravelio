@@ -1,6 +1,6 @@
-@title('Something went wrong')
+{{-- @title('Somethingwentwrong') --}}
 
-@extends('pub_theme::layouts.base')
+@extends('pub_theme::layouts.base', ['title' => 'Something went wrong'])
 
 @section('body')
     <div class="my-20 text-center text-gray-800">
