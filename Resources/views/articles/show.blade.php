@@ -1,3 +1,7 @@
+@php
+$article = $row;
+@endphp
+
 @title($article->title())
 @shareImage(route('articles.image', $article->slug()))
 
@@ -14,7 +18,7 @@
             <div class="container mx-auto">
                 <div class="px-4 lg:px-0 lg:mx-48">
                     <div class="flex items-center justify-between pt-6 mb-28">
-                        <a href="{{ route('articles') }}"
+                        <a href="{{-- route('articles') --}}{{ $_panel->url(['act' => 'index']) }}"
                             class="hidden flex items-center text-base text-white hover:underline lg:flex">
                             {{-- <x-heroicon-s-arrow-leftclass="w-4h-4fill-current"/> --}}
                             <span class="text-white ml-1 hover:text-gray-100">Back to articles</span>
@@ -22,13 +26,13 @@
 
                         <div class="hidden lg:flex">
                             @if ($article->isNotPublished())
-                                <x-light-tag>
-                                    @if ($article->isAwaitingApproval())
-                                        Awaiting Approval
-                                    @else
-                                        Draft
-                                    @endif
-                                </x-light-tag>
+                                {{-- <x-light-tag> --}}
+                                @if ($article->isAwaitingApproval())
+                                    Awaiting Approval
+                                @else
+                                    Draft
+                                @endif
+                                {{-- </x-light-tag> --}}
                             @endif
                         </div>
                     </div>
@@ -36,9 +40,9 @@
                     @if (count($tags = $article->tags()))
                         <div class="flex flex-wrap gap-2 lg:gap-x-4 mb-4">
                             @foreach ($tags as $tag)
-                                <x-light-tag>
-                                    {{ $tag->name() }}
-                                </x-light-tag>
+                                {{-- <x-light-tag> --}}
+                                {{ $tag->name() }}
+                                {{-- </x-light-tag> --}}
                             @endforeach
                         </div>
                     @endif
@@ -83,7 +87,7 @@
 
                     <div x-data="{}" x-init="function () { highlightCode($el); }"
                         class="prose prose-lg text-gray-800 prose-lio">
-                        <x-buk-markdown>{!! $article->body() !!}</x-buk-markdown>
+                        {{-- <x-buk-markdown> --}}{!! $article->body() !!}{{-- </x-buk-markdown> --}}
                     </div>
 
                     <div class="flex items-center gap-x-6 pt-6 pb-10">
