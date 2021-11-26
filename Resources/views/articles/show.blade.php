@@ -37,18 +37,21 @@ $article = $row;
                         </div>
                     </div>
 
-                    @if (count($tags = $article->tags()))
+                    @php
+                        $article_tags = $article->tags()->get();
+                    @endphp
+                    @if (count($article_tags) > 0)
                         <div class="flex flex-wrap gap-2 lg:gap-x-4 mb-4">
-                            @foreach ($tags as $tag)
+                            @foreach ($article_tags as $tag)
                                 {{-- <x-light-tag> --}}
-                                {{ $tag->name() }}
+                                {{ $tag->title }}
                                 {{-- </x-light-tag> --}}
                             @endforeach
                         </div>
                     @endif
 
                     <h1 class="text-white text-5xl font-bold mb-4">
-                        {{ $article->title() }}
+                        {{ $article->title }}
                     </h1>
 
                     <div class="flex flex-col gap-y-2 text-white pb-4 lg:pb-12 lg:flex-row lg:items-center">
