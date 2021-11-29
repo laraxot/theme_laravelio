@@ -58,14 +58,15 @@ $article = $row;
                         <div class="flex items-center">
                             <x-theme::avatar :user="$article->author()" class="w-6 h-6 rounded-full mr-3" />
 
-                            <a href="{{ route('profile', $article->author()->username()) }}" class="hover:underline">
-                                <span class="mr-5">{{ $article->author()->name() }}</span>
+                            <a href="{{-- route('profile',$article->author()->username()) --}}{{ Panel::get($article->profile)->url() }}"
+                                class="hover:underline">
+                                <span class="mr-5">{{-- $article->author()->name() --}}{{ $article->handle() }}</span>
                             </a>
                         </div>
 
                         <div class="flex items-center">
                             <span class="font-mono text-sm mr-6 lg:mt-0">
-                                {{ $article->createdAt()->format('j M, Y') }}
+                                {{ $article->created_at->format('j M, Y') }}
                             </span>
 
                             <span class="text-sm">
@@ -87,6 +88,11 @@ $article = $row;
 
                 <div class="w-full pt-4 lg:w-4/5 lg:pt-10">
                     <x-theme::articles.actions :article="$article" />
+
+                    @php
+                        dddx($article->body());
+                    @endphp
+
 
                     <div x-data="{}" x-init="function () { highlightCode($el); }"
                         class="prose prose-lg text-gray-800 prose-lio">
