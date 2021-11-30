@@ -7,7 +7,7 @@
                     class="text-gray-600 mr-4 cursor-pointer"
                     @click="handleClick('header', $el)"
                 >
-                    <x-zondicon-format-text-size class="w-4 h-4"/>
+                    <x-svg icon="format-text-size" class="w-4 h-4"/>
                 </button>
             </li>
             <li>
@@ -16,7 +16,7 @@
                     class="text-gray-600 mr-4 cursor-pointer"
                     @click="handleClick('bold', $el)"
                 >
-                    <x-zondicon-format-bold class="w-4 h-4"/>
+                    <x-svg icon="format-bold" class="w-4 h-4"/>
                 </button>
             </li>
             <li>
@@ -25,7 +25,7 @@
                     class="text-gray-600 mr-4 cursor-pointer"
                     @click="handleClick('italic', $el)"
                 >
-                    <x-zondicon-format-italic class="w-4 h-4"/>
+                    <x-svg icon="format-italic" class="w-4 h-4"/>
                 </button>
             </li>
             <li>
@@ -34,7 +34,7 @@
                     class="text-gray-600 mr-4 cursor-pointer"
                     @click="handleClick('quote', $el)"
                 >
-                    <x-heroicon-s-chevron-right class="w-5 h-5"/>
+                    <x-svg icon="s-chevron-right" class="w-5 h-5"/>
                 </button>
             </li>
             <li>
@@ -43,7 +43,7 @@
                     class="text-gray-600 mr-4 cursor-pointer"
                     @click="handleClick('code', $el)"
                 >
-                    <x-heroicon-o-code class="w-5 h-5"/>
+                    <x-svg icon="o-code" class="w-5 h-5"/>
                 </button>
             </li>
             <li>
@@ -52,7 +52,7 @@
                     class="text-gray-600 mr-4 cursor-pointer"
                     @click="handleClick('link', $el)"
                 >
-                    <x-heroicon-o-link class="w-4 h-4"/>
+                    <x-svg icon="o-link" class="w-4 h-4"/>
                 </button>
             </li>
             <li>
@@ -61,7 +61,7 @@
                     class="text-gray-600 mr-4 cursor-pointer"
                     @click="handleClick('image', $el)"
                 >
-                    <x-heroicon-s-photograph class="w-5 h-5"/>
+                    <x-svg icon="s-photograph" class="w-5 h-5"/>
                 </button>
             </li>
         </ul>
