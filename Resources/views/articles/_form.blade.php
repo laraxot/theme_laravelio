@@ -1,7 +1,9 @@
+{{--  
 <form action="{{ route(...$route) }}" method="POST" x-data="{ showAdvanced: false }">
+    --}}
     @csrf
     @method($method ?? 'POST')
-
+    
     <div class="px-4 pt-4">
         @formGroup('title')
             <label for="title">Title</label>
@@ -20,14 +22,14 @@
         @formGroup('body')
             <label for="body">Body</label>
 
-            @include('_partials._editor', [
+            @include('pub_theme::_partials._editor', [
                 'content' => isset($article) ? $article->body() : null
             ])
             
             @error('body')
         @endFormGroup
     </div>
-
+   
     <div x-show="showAdvanced" x-cloak class="px-4 pt-4 border-t-2">
         @formGroup('original_url')
             <label for="original_url">Original URL</label>
@@ -46,14 +48,17 @@
             <label for="tags">Tags</label>
 
             <select name="tags[]" id="create-article" multiple x-data="{}" x-init="function () { choices($el) }">
+                {{--  
                 @foreach($tags as $tag)
                     <option value="{{ $tag->id }}" @if(in_array($tag->id, $selectedTags)) selected @endif>{{ $tag->name }}</option>
                 @endforeach
+                --}}
             </select>
 
             @error('tags')
         @endFormGroup
     </div>
+    
 
     <div class="px-4 pb-4">
         <button 
@@ -64,9 +69,11 @@
         ></button>
 
         <div class="flex justify-end items-center">
+             {{--  
             <a href="{{ isset($article) ? route('articles.show', $article->slug()) : route('user.articles') }}" class="text-lio-700 mr-4">
                 Cancel
             </a>
+            --}}
 
             @if (isset($article) && $article->isSubmitted())
                 <button 
@@ -115,7 +122,7 @@
                 </span>
             @endif
         </div>
-
+        {{--  
         @unless (Auth::user()->twitter())
             <span class="text-gray-600 text-sm mt-4 block">
                 Articles will be shared on Twitter. 
@@ -123,5 +130,6 @@
                 and we'll include that too.
             </span>
         @endunless
+        --}}
     </div>
 </form>

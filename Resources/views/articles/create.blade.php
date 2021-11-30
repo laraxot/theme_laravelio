@@ -1,12 +1,11 @@
 @title('Write your article')
-
 @extends('pub_theme::layouts.default')
 
 @section('subnav')
     <div class="bg-white border-b">
         <div class="container mx-auto flex justify-between items-center px-4">
             <h1 class="text-xl py-4 text-gray-900">
-                <a href="{{ route('user.articles') }}">Your Articles</a>
+                <a href="{{-- route('user.articles') --}}">Your Articles</a>
                 > {{ $title }}
             </h1>
         </div>
@@ -19,7 +18,7 @@
             <x-rules-banner />
 
             <div class="md:border-2 md:rounded md:bg-gray-100">
-                @include('articles._form', [
+                @include('pub_theme::articles._form', [
                 'route' => ['articles.store'],
                 ])
             </div>
