@@ -3,8 +3,9 @@ $article = $row;
 @endphp
 
 @title($article->title())
+{{--  
 @shareImage(route('articles.image', $article->slug()))
-
+--}}
 @extends('pub_theme::layouts.default')
 
 @push('meta')
