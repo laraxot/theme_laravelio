@@ -19,34 +19,37 @@
                     <div class="mb-5">
                         <p class="text-gray-800 text-lg leading-8 font-medium">
                             The Laravel portal for problem solving, knowledge sharing and community building.
-                            Join <x-theme::accent-text>{{ $totalUsers }}</x-accent-text> other artisans.
+                            Join <x-theme::accent-text>{{ $_theme->totalUsers() }}</x-theme::accent-text> other artisans.
                         </p>
                     </div>
 
                     <div>
                         @if (Auth::guest())
-                            <x-buttons.primary-cta href="{{ route('register') }}" class="w-full mb-3 lg:w-auto lg:mr-2">
+                            <x-theme::buttons.primary-cta href="{{ route('register') }}"
+                                class="w-full mb-3 lg:w-auto lg:mr-2">
                                 Join the community
-                            </x-buttons.primary-cta>
+                                </x-buttons.primary-cta>
 
-                            <x-buttons.secondary-cta href="{{ route('forum') }}" class="w-full lg:w-auto">
-                                Visit the forum
-                            </x-buttons.secondary-cta>
-                        @else
-                            <x-buttons.primary-cta href="{{ route('forum') }}" class="w-full mb-3 lg:w-auto lg:mr-2">
-                                Start a Thread
-                            </x-buttons.primary-cta>
+                                <x-theme::buttons.secondary-cta href="{{ $_theme->url('thread', 'index') }}"
+                                    class="w-full lg:w-auto">
+                                    Visit the forum
+                                </x-theme::buttons.secondary-cta>
+                            @else
+                                <x-theme::buttons.primary-cta href="{{ $_theme->url('thread', 'index') }}"
+                                    class="w-full mb-3 lg:w-auto lg:mr-2">
+                                    Start a Thread
+                                </x-theme::buttons.primary-cta>
 
-                            <x-buttons.primary-cta href="{{ route('articles') }}" class="w-full mb-3 lg:w-auto lg:mr-2">
-                                Share an Article
-                            </x-buttons.primary-cta>
+                                <x-theme::buttons.primary-cta href="{{ $_theme->url('article', 'index') }}"
+                                    class="w-full mb-3 lg:w-auto lg:mr-2">
+                                    Share an Article
+                                </x-theme::buttons.primary-cta>
                         @endif
                     </div>
                 </div>
-
-                <div class="lg:w-1/2">
-                    <x-community-members :members="$communityMembers" />
-                </div>
+                {{-- <div class="lg:w-1/2">
+                    <x-theme::community-members :members="$communityMembers" />
+                </div> --}}
             </div>
         </div>
     </section>
@@ -78,10 +81,10 @@
                         <div class="mb-10">
                             <div class="relative">
                                 <div class="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
-                                    <x-svg icon="o-search" class="w-4 h-4 text-gray-900" />
+                                    <x-theme::svg icon="o-search" class="w-4 h-4 text-gray-900" />
                                 </div>
 
-                                <form action="{{ route('forum') }}" method="GET">
+                                <form action="{{-- route('forum') --}}" method="GET">
                                     <input type="search" name="search" placeholder="Search here for threads"
                                         class="p-4 pl-10 text-gray-600 rounded w-full border-gray-100" />
                                 </form>
@@ -91,7 +94,7 @@
                         <div class="text-lg">
                             <p>
                                 Can't find what you're looking for?<br class="sm:hidden">
-                                <a href="{{ route('threads.create') }}" class="border-b border-white pb-1">
+                                <a href="{{-- route('threads.create') --}}" class="border-b border-white pb-1">
                                     Create a new thread
                                 </a>
                             </p>
@@ -116,17 +119,17 @@
             </div>
 
             <div class="flex gap-4 mb-4 -mx-4 p-4 overflow-x-scroll lg:mb-10 lg:gap-8">
-                @foreach ($latestThreads as $thread)
+                {{-- @foreach ($latestThreads as $thread)
                     <div class="flex-shrink-0 w-11/12 lg:w-1/3 lg:flex-shrink">
-                        <x-threads.summary :thread="$thread" />
+                        <x-theme::threads.summary :thread="$thread" />
                     </div>
-                @endforeach
+                @endforeach --}}
             </div>
 
             <div class="flex justify-center">
-                <x-buttons.primary-cta href="{{ route('forum') }}" class="w-full lg:w-auto">
+                <x-theme::buttons.primary-cta href="{{-- route('forum') --}}" class="w-full lg:w-auto">
                     View all threads
-                </x-buttons.primary-cta>
+                </x-theme::buttons.primary-cta>
             </div>
         </div>
     </section>
@@ -137,20 +140,19 @@
         <h2 class="text-4xl leading-tight font-bold text-center text-gray-900 mb-6 lg:mb-12">
             Laravel.io in numbers
         </h2>
-
-        <div class="flex flex-col lg:mb-10 lg:flex-row lg:gap-x-8">
+        {{-- <div class="flex flex-col lg:mb-10 lg:flex-row lg:gap-x-8">
             <div class="w-full">
-                <x-number-block title="Users" :total="$totalUsers" :background="asset('images/users.png')" />
+                <x-theme::number-block title="Users" :total="$totalUsers" :background="asset('images/users.png')" />
             </div>
 
             <div class="w-full">
-                <x-number-block title="Threads" :total="$totalThreads" :background="asset('images/threads.png')" />
+                <x-theme::number-block title="Threads" :total="$totalThreads" :background="asset('images/threads.png')" />
             </div>
 
             <div class="w-full">
-                <x-number-block title="Replies" :total="$totalReplies" :background="asset('images/replies.png')" />
+                <x-theme::number-block title="Replies" :total="$totalReplies" :background="asset('images/replies.png')" />
             </div>
-        </div>
+        </div> --}}
     </section>
     <!-- /Laravel.io in numbers -->
 
@@ -164,13 +166,11 @@
                 Have a look a the latest shared articles by our community members
             </p>
         </div>
-
-        <x-theme::articles.featured :articles="$latestArticles" />
-
+        {{-- <x-theme::articles.featured :articles="$latestArticles" /> --}}
         <div class="flex justify-center">
-            <x-buttons.primary-cta href="{{ route('articles') }}" class="w-full lg:w-auto">
+            <x-theme::buttons.primary-cta href="{{-- route('articles') --}}" class="w-full lg:w-auto">
                 View all articles
-            </x-buttons.primary-cta>
+            </x-theme::buttons.primary-cta>
         </div>
     </section>
     <!-- /Popular articles -->
