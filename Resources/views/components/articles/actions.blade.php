@@ -36,7 +36,7 @@
             <x-theme::buttons.secondary-button tag="button" @click.prevent="activeModal = 'togglePinnedStatus'"
                 :selected="$article->isPinned()" class="w-full">
                 <span class="flex items-center gap-x-2">
-                    <x-icon-pin class="w-5 h-5" title="{{ $article->isPinned() ? 'Unpin' : 'Pin' }}" />
+                    <x-svg icon="pin" class="w-5 h-5" title="{{ $article->isPinned() ? 'Unpin' : 'Pin' }}" />
                     {{ $article->isPinned() ? 'Unpin article' : 'Pin article' }}
                 </span>
                 </x-buttons.secondary-button>
