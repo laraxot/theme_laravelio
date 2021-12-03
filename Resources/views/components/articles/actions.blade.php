@@ -15,7 +15,7 @@
                 <x-theme::buttons.secondary-button tag="button" @click.prevent="activeModal = 'approveArticle'"
                     class="w-full">
                     <span class="flex items-center gap-x-2">
-                        <x-heroicon-o-eye class="w-5 h-5" title="Publish" />
+                        <x-x-svg icon="o-eye" class="w-5 h-5" title="Publish" />
                         Publish article
                     </span>
                     </x-buttons.secondary-button>
@@ -25,7 +25,7 @@
                     <x-theme::buttons.secondary-button tag="button" @click.prevent="activeModal = 'disapproveArticle'"
                         class="w-full">
                         <span class="flex items-center gap-x-2">
-                            <x-heroicon-o-eye-off class="w-5 h-5" title="Unpublish" />
+                            <x-x-svg icon="o-eye"-off class="w-5 h-5" title="Unpublish" />
                             Unpublish article
                         </span>
                         </x-buttons.secondary-button>
