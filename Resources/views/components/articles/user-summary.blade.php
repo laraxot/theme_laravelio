@@ -54,7 +54,7 @@
                     </span>
 
                     <span class="flex items-center gap-x-2">
-                        <x-heroicon-o-thumb-up class="w-6 h-6" />
+                        <x-svg icon="o-thumb-up" class="w-6 h-6" />
                         <span>{{ count($article->likes()) }}</span>
                         <span class="sr-only">Likes</span>
                     </span>

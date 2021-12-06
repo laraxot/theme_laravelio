@@ -36,7 +36,7 @@
     <div class="flex justify-between items-center mt-4">
         <div class="flex gap-x-5">
             <span class="flex items-center gap-x-2">
-                <x-heroicon-o-thumb-up class="w-6 h-6" />
+                <x-svg icon="o-thumb-up" class="w-6 h-6" />
                 <span>{{ count($reply->likes()) }}</span>
                 <span class="sr-only">Likes</span>
             </span>

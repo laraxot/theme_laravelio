@@ -12,12 +12,12 @@
 
             <a class="text-gray-300 hover:text-facebook" target="_blank" rel="noopener" aria-label="Share on Facebook"
                 href="https://www.facebook.com/sharer/sharer.php?u={{ urlencode(route('articles.show', $article->slug())) }}&quote={{ urlencode('"' . $article->title() . '" by ' . $article->author()->name() . ' - ') }}">
-                <x-icon-facebook class="w-6 h-6" />
+                <x-svg icon="facebook" class="w-6 h-6" />
             </a>
 
             <a class="text-gray-300 hover:text-linkedin" target="_blank" rel="noopener" aria-label="Share on LinkedIn"
                 href="https://www.linkedin.com/shareArticle?mini=true&url={{ urlencode(route('articles.show', $article->slug())) }}&title={{ urlencode('"' . $article->title() . '" by ' . $article->author()->name() . ' - ') }}">
-                <x-icon-linkedin class="w-6 h-6" />
+                <x-svg icon="linkedin" class="w-6 h-6" />
             </a>
         </div>
     </div>
