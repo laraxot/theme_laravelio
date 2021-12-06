@@ -7,8 +7,9 @@ namespace Themes\LaravelIo\Providers;
 use Illuminate\Support\Facades\Blade;
 use Illuminate\Support\Facades\File;
 use Illuminate\Support\Str;
+use Modules\Xot\Providers\XotBaseThemeServiceProvider;
 
-class LaravelIoServiceProvider {
+class LaravelIoServiceProvider extends XotBaseThemeServiceProvider {
     public string $dir = __DIR__;
     public string $name = 'LaravelIo';
     public string $ns = 'pub_theme';
@@ -57,7 +58,7 @@ class LaravelIoServiceProvider {
             return '<'."?php \$canonical = $expression ?".'>';
         });
     }
-
+    /*
     public function registerBladeComponents(): void {
         $components_json = $this->dir.'/../View/Components/_components.json';
         $exists = File::exists($components_json);
@@ -174,4 +175,5 @@ class LaravelIoServiceProvider {
             }
         }
     }
+    */
 }
