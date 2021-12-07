@@ -154,4 +154,16 @@ class ThemeComposer {
 
         return $moderators;
     }
+
+    public function trendingArticles(Article $article) {
+        $trendingArticles = Cache::remember('trendingArticles', now()->addHour(), function () use ($article) {
+            return Article::published()
+            ->trending()
+            ->whereKeyNot($article->id)
+            ->limit(3)
+            ->get();
+        });
+
+        return $trendingArticles;
+    }
 }

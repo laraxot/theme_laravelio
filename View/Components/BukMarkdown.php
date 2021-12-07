@@ -24,6 +24,8 @@ class BukMarkdown extends Component {
      * @return \Illuminate\Contracts\View\View|string
      */
     public function render() {
+        return 'wip';
+
         return view()->make('pub_theme::components.buk-markdown');
     }
 }
