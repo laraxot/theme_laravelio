@@ -9,7 +9,7 @@
                 </span>
                 </x-buttons.primary-menu-button>
         @endif
-
+        {{--  
         @if ($article->isNotPublished() && $article->isAwaitingApproval())
             @can(App\Policies\ArticlePolicy::APPROVE, $article)
                 <x-theme::buttons.secondary-button tag="button" @click.prevent="activeModal = 'approveArticle'"
@@ -41,8 +41,9 @@
                 </span>
                 </x-buttons.secondary-button>
             @endcan
+        --}}
     </div>
-
+    {{--  
     @can(App\Policies\ArticlePolicy::DELETE, $article)
         <x-theme::buttons.danger-button tag="button" @click.prevent="activeModal = 'deleteArticle'" class="w-full">
             <span class="flex items-center gap-x-2">
@@ -51,4 +52,5 @@
             </span>
             </x-buttons.danger-button>
         @endcan
+    --}}
 </div>
