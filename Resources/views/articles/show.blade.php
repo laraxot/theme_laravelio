@@ -109,30 +109,30 @@ $article = $row;
                         <div class="flex flex-col items-center justify-center gap-y-4 lg:flex-row lg:justify-between">
                             <div class="flex items-start gap-x-4">
                                 <div class="flex-shrink-0">
-                                    <x-avatar :user="$article->author()" class="hidden w-16 h-16 lg:block" />
+                                    <x-avatar :user="$article->author" class="hidden w-16 h-16 lg:block" />
                                 </div>
 
                                 <div class="flex flex-col items-center text-gray-900 text-xl font-semibold lg:items-start">
-                                    <a href="{{ route('profile', $article->author()->username()) }}"
-                                        class="hover:underline">
-                                        {{ $article->author()->username() }} ({{ $article->author()->name() }})
+                                    <a href="{{-- route('profile',$article->author->username()) --}}" class="hover:underline">
+                                        {{ optional($article->author)->username() }}
+                                        ({{ optional($article->author)->name() }})
                                     </a>
 
                                     <span class="text-lg text-gray-700 font-medium">
-                                        {{ $article->author()->bio() }}
+                                        {{ optional($article->author)->bio() }}
                                     </span>
                                 </div>
                             </div>
 
                             <div class="flex items-center gap-x-6">
-                                @if ($article->author()->githubUsername())
-                                    <a href="https://github.com/{{ $article->author()->githubUsername() }}">
+                                @if (optional($article->author)->githubUsername())
+                                    <a href="https://github.com/{{ $article->author->githubUsername() }}">
                                         <x-svg icon="github" class="w-6 h-6" />
                                     </a>
                                 @endif
 
-                                @if ($article->author()->hasTwitterAccount())
-                                    <a href="https://twitter.com/{{ $article->author()->twitter() }}"
+                                @if (optional($article->author)->hasTwitterAccount())
+                                    <a href="https://twitter.com/{{ $article->author->twitter() }}"
                                         class="text-twitter">
                                         <x-svg icon="twitter" class="w-6 h-6" />
                                     </a>
@@ -152,14 +152,13 @@ $article = $row;
             </h2>
 
             <div class="flex flex-col gap-y-4 gap-x-6 mt-6 lg:flex-row lg:mt-12">
-                @foreach ($trendingArticles as $trendingArticle)
+                @foreach ($_theme->trendingArticles($article) as $trendingArticle)
                     <x-articles.summary :article="$trendingArticle" is-featured />
                 @endforeach
             </div>
         </div>
     </section>
-
-    @can(App\Policies\ArticlePolicy::APPROVE, $article)
+    {{-- @can(App\Policies\ArticlePolicy::APPROVE, $article)
         @if ($article->isAwaitingApproval())
             <x-modal identifier="approveArticle" :action="route('admin.articles.approve', $article->slug())"
                 title="Approve article" type="update">
@@ -201,5 +200,5 @@ $article = $row;
                 <p>Are you sure you want to pin this article?</p>
             @endif
         </x-modal>
-    @endcan
+    @endcan --}}
 @endsection
