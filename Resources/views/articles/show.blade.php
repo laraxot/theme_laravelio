@@ -37,7 +37,7 @@ $article = $row;
                         <div class="flex flex-wrap gap-2 lg:gap-x-4 mb-4">
                             @foreach ($article->tags()->get() as $tag)
                                 <x-light-tag>
-                                    {{ $tag->name() }}
+                                    {{ $tag->title }}
                                 </x-light-tag>
                             @endforeach
                         </div>
