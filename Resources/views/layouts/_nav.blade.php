@@ -149,7 +149,7 @@
                     <ul class="block lg:flex lg:items-center gap-x-8" x-cloak :class="{ 'block': nav, 'hidden': !nav }">
                         @if (Auth::guest())
                             <li class="w-full rounded text-center lg:hover:bg-gray-100">
-                                <a href="{{ route('register') }}" class="inline-block w-full  p-2.5">
+                                <a href="{{ route('register',['lang'=>'it']) }}" class="inline-block w-full  p-2.5">
                                     Register
                                 </a>
                             </li>
@@ -157,7 +157,7 @@
                             <li>
                                 <div class="hidden lg:block">
                                     <x-theme::buttons.secondary-cta class="flex items-center"
-                                        href="{{ route('login') }}">
+                                        href="{{ route('login',['lang'=>'it']) }}">
                                         <span class="flex items-center">
                                             <x-theme::svg icon="o-user" class="w-5 h-5 mr-1" />
                                             Login
@@ -165,7 +165,7 @@
                                     </x-theme::buttons.secondary-cta>
                                 </div>
 
-                                <a href="{{ route('login') }}"
+                                <a href="{{ route('login',['lang'=>'it']) }}"
                                     class="block w-full text-center bg-lio-500 text-white p-2.5 lg:hidden">
                                     Login
                                 </a>
