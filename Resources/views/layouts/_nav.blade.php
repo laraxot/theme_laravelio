@@ -230,10 +230,13 @@
                                         @endcan --}}
 
                                         <li class="mb-4 lg:hover:bg-gray-100 lg:mb-0">
+                                            {{--  
                                             <a href="{{ route('logout') }}"
                                                 class="inline-block w-full lg:px-4 lg:py-3">
                                                 Sign out
                                             </a>
+                                            --}}
+                                            <x-logout class="inline-block w-full lg:px-4 lg:py-3">Sign out</x-logout>
                                         </li>
                                     </ul>
                                 </div>
