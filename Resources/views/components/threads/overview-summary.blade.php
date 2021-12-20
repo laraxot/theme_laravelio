@@ -6,7 +6,7 @@
             <div class="flex flex-col lg:flex-row lg:items-center">
                 <div class="flex">
                     <a href="{{ route('profile', $thread->author()->username()) }}">
-                        <x-theme::avatar :user="$thread->author()" class="w-6 h-6 rounded-full mr-3" />
+                        <x-avatar :user="$thread->author()" class="w-6 h-6 rounded-full mr-3" />
                     </a>
 
                     <a href="{{ route('profile', $thread->author()->username()) }}" class="hover:underline">

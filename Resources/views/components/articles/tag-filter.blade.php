@@ -36,7 +36,7 @@
                     :class="{ 'text-lio-500': '{{ $tag->id() }}' === selectedTag }"
                     x-show="isFiltered('{{ $tag->name() }}')">
                     {{ $tag->name() }}
-                    <x-theme::svg icon="o-check" -circle class="ml-3 w-6 h-6 text-lio-500" x-cloak
+                    <x-svg icon="o-check" -circle class="ml-3 w-6 h-6 text-lio-500" x-cloak
                         x-show="'{{ $tag->id() }}' === selectedTag" />
                 </button>
             @endforeach
@@ -44,11 +44,11 @@
     </div>
 
     <div class="flex gap-x-2 justify-end p-4">
-        <x-theme::buttons.secondary-button @click="$dispatch('close-modal')">
+        <x-buttons.secondary-button @click="$dispatch('close-modal')">
             Cancel
             </x-buttons.secondary-button>
 
-            <x-theme::buttons.secondary-button wire:click="toggleTag('')" @click="$dispatch('close-modal')">
+            <x-buttons.secondary-button wire:click="toggleTag('')" @click="$dispatch('close-modal')">
                 Remove filter
                 </x-buttons.secondary-button>
     </div>

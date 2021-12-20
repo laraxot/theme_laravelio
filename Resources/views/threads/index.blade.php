@@ -13,10 +13,10 @@
                             Forum
                         </h1>
 
-                        <x-theme::buttons.primary-button href="{{ $_panel->url(['act' => 'create']) }}"
+                        <x-buttons.primary-button href="{{ $_panel->url(['act' => 'create']) }}"
                             class="hidden lg:block">
                             Create Thread
-                        </x-theme::buttons.primary-button>
+                        </x-buttons.primary-button>
                     </div>
 
                     <div class="flex items-center justify-between lg:mt-6">
@@ -25,14 +25,14 @@
                         </h3>
 
                         <div class="hidden lg:flex gap-x-2">
-                            <x-theme::threads.filter :filter="$filter" />
+                            <x-threads.filter :filter="$filter" />
 
                             <div class="flex-shrink-0">
-                                <x-theme::buttons.secondary-button class="flex items-center gap-x-2"
+                                <x-buttons.secondary-button class="flex items-center gap-x-2"
                                     @click="activeModal = 'tag-filter'">
-                                    <x-theme::svg icon="o-filter" class="w-5 h-5" />
+                                    <x-svg icon="o-filter" class="w-5 h-5" />
                                     Tag filter
-                                </x-theme::buttons.secondary-button>
+                                </x-buttons.secondary-button>
                             </div>
                         </div>
                     </div>
@@ -40,14 +40,14 @@
                     @isset($activeTag)
                         <div class="hidden lg:flex gap-x-4 items-center mt-4 pt-5 border-t">
                             Filter applied
-                            <x-theme::tag>
+                            <x-tag>
                                 <span class="flex items-center gap-x-1">
                                     {{ $activeTag->name() }}
                                     <a href="{{ route('forum') }}">
-                                        <x-theme::svg icon="o-x" class="w-5 h-5" />
+                                        <x-svg icon="o-x" class="w-5 h-5" />
                                     </a>
                                 </span>
-                            </x-theme::tag>
+                            </x-tag>
                         </div>
                     @endisset
                 </div>
@@ -56,44 +56,44 @@
                     @include('pub_theme::layouts._ads._forum_sidebar')
 
                     <div class="flex justify-center mt-6">
-                        <x-theme::buttons.dark-cta>
-                            <x-theme::svg icon="s-rss" class="w-6 h-6 mr-2" />
+                        <x-buttons.dark-cta>
+                            <x-svg icon="s-rss" class="w-6 h-6 mr-2" />
                             RSS Feed
-                        </x-theme::buttons.dark-cta>
+                        </x-buttons.dark-cta>
                     </div>
 
                     <div class="flex gap-x-4 mt-10">
                         <div class="w-1/2">
-                            <x-theme::buttons.secondary-cta class="w-full" @click="activeModal = 'tag-filter'">
+                            <x-buttons.secondary-cta class="w-full" @click="activeModal = 'tag-filter'">
                                 <span class="flex items-center gap-x-2">
-                                    <x-theme::svg icon="o-filter" class="w-5 h-5" />
+                                    <x-svg icon="o-filter" class="w-5 h-5" />
                                     Tag filter
                                 </span>
-                            </x-theme::buttons.secondary-cta>
+                            </x-buttons.secondary-cta>
                         </div>
 
                         <div class="w-1/2">
-                            <x-theme::buttons.primary-cta href="{{-- route('threads.create') --}}" class="w-full">
+                            <x-buttons.primary-cta href="{{-- route('threads.create') --}}" class="w-full">
                                 Create Thread
-                            </x-theme::buttons.primary-cta>
+                            </x-buttons.primary-cta>
                         </div>
                     </div>
 
                     <div class="flex mt-4">
-                        <x-theme::threads.filter :filter="$filter" />
+                        <x-threads.filter :filter="$filter" />
                     </div>
 
                     @isset($activeTag)
                         <div class="flex gap-x-4 items-center mt-4">
                             Filter applied
-                            <x-theme::tag>
+                            <x-tag>
                                 <span class="flex items-center gap-x-1">
                                     {{ $activeTag->name() }}
                                     <a href="{{ route('forum') }}">
-                                        <x-theme::svg icon="o-x" class="w-5 h-5" />
+                                        <x-svg icon="o-x" class="w-5 h-5" />
                                     </a>
                                 </span>
-                            </x-theme::tag>
+                            </x-tag>
                         </div>
                     @endisset
                 </div>
@@ -101,7 +101,7 @@
                 <section class="mt-8 mb-5 lg:mb-32">
                     <div class="flex flex-col gap-y-4">
                         @foreach ($threads as $thread)
-                            <x-theme::threads.overview-summary :thread="$thread" />
+                            <x-threads.overview-summary :thread="$thread" />
                         @endforeach
                     </div>
 
@@ -127,7 +127,7 @@
                                 <div class="flex justify-between items-center px-5">
                                     <div class="flex items-center gap-x-5">
                                         <a href="{{ route('profile', $member->username()) }}">
-                                            <x-theme::avatar :user="$member" class="w-10 h-10" />
+                                            <x-avatar :user="$member" class="w-10 h-10" />
                                         </a>
 
                                         <span class="flex flex-col">
@@ -162,14 +162,14 @@
                     </p>
                 </div>
                 {{-- <div class="mt-6">
-                    <x-theme::moderators :moderators="$moderators" />
+                    <x-moderators :moderators="$moderators" />
                 </div> --}}
 
                 <div class="hidden lg:block mt-6">
-                    <x-theme::buttons.dark-cta class="w-full">
-                        <x-theme::svg icon="s-rss" class="w-6 h-6 mr-2" />
+                    <x-buttons.dark-cta class="w-full">
+                        <x-svg icon="s-rss" class="w-6 h-6 mr-2" />
                         RSS Feed
-                    </x-theme::buttons.dark-cta>
+                    </x-buttons.dark-cta>
                 </div>
             </div>
         </div>
@@ -177,7 +177,7 @@
 
     <div class="modal" x-show="activeModal === 'tag-filter'" x-cloak>
         <div class="w-full h-full p-8 lg:w-96 lg:h-3/4 overflow-y-scroll">
-            {{-- <x-theme::tag-filter :activeTag="$activeTag ?? null" :tags="$tags" :filter="$filter" /> --}}
+            {{-- <x-tag-filter :activeTag="$activeTag ?? null" :tags="$tags" :filter="$filter" /> --}}
         </div>
     </div>
 @endsection

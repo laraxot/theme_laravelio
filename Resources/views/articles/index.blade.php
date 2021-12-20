@@ -5,7 +5,7 @@
 @section('content')
     <div class="bg-white pt-5 lg:pt-2">
         <div class="container mx-auto flex flex-col gap-x-12 px-4 lg:flex-row">
-            <x-theme::articles.featured :articles="$_theme->pinnedArticles()" />
+            <x-articles.featured :articles="$_theme->pinnedArticles()" />
         </div>
     </div>
 
@@ -20,7 +20,7 @@
                     @include('pub_theme::layouts._ads._forum_sidebar')
                 </div>
                 <div class="mt-6">
-                    <x-theme::moderators :moderators="$_theme->moderators()" />
+                    <x-moderators :moderators="$_theme->moderators()" />
                 </div>
             </div>
         </div>
