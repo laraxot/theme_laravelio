@@ -12,14 +12,14 @@
 
                 @can(App\Policies\ThreadPolicy::UPDATE, $thread)
                     <a class="flex gap-x-2 p-3 rounded hover:bg-gray-100" href="{{ route('threads.edit', $thread->slug()) }}">
-                        <x-theme::svg icon="o-pencil" class="w-6 h-6" />
+                        <x-svg icon="o-pencil" class="w-6 h-6" />
                         Edit
                     </a>
                 @endcan
 
                 @can(App\Policies\ThreadPolicy::DELETE, $thread)
                     <button class="flex gap-x-2 p-3 rounded hover:bg-gray-100" @click="$dispatch('open-modal', 'delete-thread')">
-                        <x-theme::svg icon="o-trash" class="w-6 h-6 text-red-500" />
+                        <x-svg icon="o-trash" class="w-6 h-6 text-red-500" />
                         Delete
                     </button>
                 @endcan

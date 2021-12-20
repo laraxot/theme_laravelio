@@ -16,10 +16,10 @@
             </h3>
 
             <div class="hidden lg:flex gap-x-2">
-                <x-theme::articles.filter :selectedSortBy="$selectedSortBy" />
+                <x-articles.filter :selectedSortBy="$selectedSortBy" />
 
                 <div class="flex-shrink-0">
-                    <x-theme::buttons.secondary-button class="flex items-center gap-x-2"
+                    <x-buttons.secondary-button class="flex items-center gap-x-2"
                         @click="activeModal = 'tag-filter'">
                         <x-svg icon="o-filter" class="w-5 h-5" />
                         Tag filter
@@ -64,7 +64,7 @@
     </div>
 
     <div class="flex mt-4">
-        <x-theme::articles.filter :selectedSortBy="$selectedSortBy" />
+        <x-articles.filter :selectedSortBy="$selectedSortBy" />
     </div>
 
     @if ($selectedTag)
@@ -85,7 +85,7 @@
 <section class="mt-8 mb-5 lg:mb-16">
     <div class="flex flex-col gap-y-4">
         @foreach ($articles as $article)
-            <x-theme::articles.overview-summary :article="$article" />
+            <x-articles.overview-summary :article="$article" />
         @endforeach
     </div>
 
@@ -96,7 +96,7 @@
 
 <div class="modal" x-show="activeModal === 'tag-filter'" x-cloak>
     <div class="w-full h-full p-8 lg:w-96 lg:h-3/4 overflow-y-scroll">
-        <x-theme::articles.tag-filter :selectedTag="$selectedTag ?? null" :tags="$tags" />
+        <x-articles.tag-filter :selectedTag="$selectedTag ?? null" :tags="$tags" />
     </div>
 </div>
 </div>

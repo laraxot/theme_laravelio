@@ -13,7 +13,7 @@
             </div>
             <div class="px-4 py-3 bg-gray-50 text-right sm:px-6">
                 <span class="inline-flex rounded-md shadow-sm">
-                    <x-theme::buttons.danger-button @click.prevent="activeModal = 'delete-user'">
+                    <x-buttons.danger-button @click.prevent="activeModal = 'delete-user'">
                         Delete Account
                         </x-buttons.danger-button>
                 </span>

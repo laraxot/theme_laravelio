@@ -3,7 +3,7 @@ $article = $row;
 @endphp
 
 @title($article->title())
-{{--  
+{{--
 @shareImage(route('articles.image', $article->slug()))
 --}}
 @extends('pub_theme::layouts.default')
@@ -57,7 +57,7 @@ $article = $row;
 
                     <div class="flex flex-col gap-y-2 text-white pb-4 lg:pb-12 lg:flex-row lg:items-center">
                         <div class="flex items-center">
-                            <x-theme::avatar :user="$article->author()" class="w-6 h-6 rounded-full mr-3" />
+                            <x-avatar :user="$article->author()" class="w-6 h-6 rounded-full mr-3" />
 
                             <a href="{{-- route('profile',$article->author()->username()) --}}{{ Panel::get($article->profile)->url() }}"
                                 class="hover:underline">
@@ -83,12 +83,12 @@ $article = $row;
             <div class="flex px-4 lg:px-0 lg:mx-48">
                 <div class="hidden lg:block lg:w-1/5">
                     <div class="py-12 mt-48 sticky top-0">
-                        <x-theme::articles.engage :article="$article" />
+                        <x-articles.engage :article="$article" />
                     </div>
                 </div>
 
                 <div class="w-full pt-4 lg:w-4/5 lg:pt-10">
-                    <x-theme::articles.actions :article="$article" />
+                    <x-articles.actions :article="$article" />
 
                     @php
                         dddx($article->body());
@@ -114,7 +114,7 @@ $article = $row;
                     <div class="border-t-2 border-gray-200 py-8 lg:pt-14 lg:pb-16">
                         <div class="flex flex-col items-center justify-center gap-y-4 lg:flex-row lg:justify-between">
                             <div class="flex items-center gap-x-4">
-                                <x-theme::avatar :user="$article->author()" class="hidden w-16 h-16 lg:block" />
+                                <x-avatar :user="$article->author()" class="hidden w-16 h-16 lg:block" />
 
                                 <div class="flex flex-col items-center text-gray-900 text-xl font-semibold lg:items-start">
                                     {{ $article->author()->username() }} ({{ $article->author()->name() }})
@@ -127,14 +127,14 @@ $article = $row;
                             <div class="flex items-center gap-x-6">
                                 @if ($article->author()->githubUsername())
                                     <a href="https://github.com/{{ $article->author()->githubUsername() }}">
-                                        <x-theme::svg icon="github" class="w-6 h-6" />
+                                        <x-svg icon="github" class="w-6 h-6" />
                                     </a>
                                 @endif
 
                                 @if ($article->author()->hasTwitterAccount())
                                     <a href="https://twitter.com/{{ $article->author()->twitter() }}"
                                         class="text-twitter">
-                                        <x-theme::svg icon="twitter" class="w-6 h-6" />
+                                        <x-svg icon="twitter" class="w-6 h-6" />
                                     </a>
                                 @endif
                             </div>
@@ -153,7 +153,7 @@ $article = $row;
 
             <div class="flex flex-col gap-y-4 gap-x-6 mt-6 lg:flex-row lg:mt-12">
                 @foreach ($trendingArticles as $trendingArticle)
-                    <x-theme::articles.summary :article="$trendingArticle" is-featured />
+                    <x-articles.summary :article="$trendingArticle" is-featured />
                 @endforeach
             </div>
         </div>

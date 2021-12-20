@@ -7,7 +7,7 @@
         @foreach ($moderators as $moderator)
             <li class="{{ !$loop->last ? 'border-b ' : '' }}flex items-center gap-x-5 pb-3 pt-5">
                 <a href="{{-- route('profile', $moderator->username()) --}}" class="hover:underline">
-                    <x-theme::avatar :user="$moderator" class="w-10 h-10" />
+                    <x-avatar :user="$moderator" class="w-10 h-10" />
                 </a>
 
                 <span class="flex flex-col">

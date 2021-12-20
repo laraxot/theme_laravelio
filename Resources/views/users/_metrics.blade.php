@@ -11,7 +11,7 @@
 </div>
 
 <div class="flex items-center mr-8 mb-4 md:mb-8">
-    <x-theme::svg icon="o-check" -circle class="text-lio-500 h-12 w-12 mr-2" />
+    <x-svg icon="o-check" -circle class="text-lio-500 h-12 w-12 mr-2" />
     <p class="tex-xl uppercase">{{ $countedSolutions = $user->countSolutions() }}
         {{ Str::plural('solution', $countedSolutions) }}</p>
 </div>
