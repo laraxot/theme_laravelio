@@ -8,7 +8,7 @@
     <section class="container mx-auto bg-white pb-4 px-4 lg:pb-10">
         <h1 class="flex items-center gap-x-3.5 text-xl font-semibold lg:text-3xl">
             <a href="{{-- route('forum') --}}" class="text-gray-400 hover:underline">Forum</a>
-            <x-theme::svg icon="o-chevron-right" class="w-6 h-6" />
+            <x-svg icon="o-chevron-right" class="w-6 h-6" />
             {{ $title }}
         </h1>
     </section>
@@ -19,10 +19,10 @@
         <div class="w-full lg:w-3/4">
             <div class="relative">
                 <div class="relative flex flex-col gap-y-6 z-20">
-                    <x-theme::threads.thread :thread="$thread" />
+                    <x-threads.thread :thread="$thread" />
 
                     @foreach ($thread->replies() as $reply)
-                        <x-theme::threads.reply :thread="$thread" :reply="$reply" />
+                        <x-threads.reply :thread="$thread" :reply="$reply" />
                     @endforeach
                 </div>
 
@@ -31,14 +31,14 @@
             {{-- @can(App\Policies\ReplyPolicy::CREATE, App\Models\Reply::class) --}}
             @can('replyCreate', $_panel)
                 @if ($thread->isConversationOld())
-                    <x-theme::info-panel class="flex justify-between gap-x-16">
+                    <x-info-panel class="flex justify-between gap-x-16">
                         <p>The last reply to this thread was more than six months ago. Please consider opening a new thread if
                             you have a similar question.</p>
 
-                        <x-theme::buttons.arrow-button href="{{ route('threads.create') }}" class="flex-shrink-0">
+                        <x-buttons.arrow-button href="{{ route('threads.create') }}" class="flex-shrink-0">
                             Create thread
-                        </x-theme::buttons.arrow-button>
-                    </x-theme::info-panel>
+                        </x-buttons.arrow-button>
+                    </x-info-panel>
                 @else
                     <div class="my-8">
                         <form action="{{ route('replies.store') }}" method="POST">
@@ -76,16 +76,16 @@
                         this thread!
                     </p>
                 @else
-                    <x-theme::info-panel class="flex justify-between gap-x-16">
+                    <x-info-panel class="flex justify-between gap-x-16">
                         <p>You'll need to verify your account before participating in this thread.</p>
 
                         <form action="{{ route('verification.resend') }}" method="POST" class="block">
                             @csrf
-                            <x-theme::buttons.arrow-button type="submit" class="flex-shrink-0">
+                            <x-buttons.arrow-button type="submit" class="flex-shrink-0">
                                 Click here to resend the verification link.
-                            </x-theme::buttons.arrow-button>
+                            </x-buttons.arrow-button>
                         </form>
-                    </x-theme::info-panel>
+                    </x-info-panel>
                 @endif
             @endcan
         </div>
@@ -94,16 +94,16 @@
             @include('pub_theme::layouts._ads._forum_sidebar')
 
             <div class="mt-6">
-                <x-theme::users.profile-block :user="$thread->author()" />
+                <x-users.profile-block :user="$thread->author()" />
             </div>
 
             @auth
                 <div class="mt-6">
-                    <x-theme::threads.subscribe :thread="$thread" />
+                    <x-threads.subscribe :thread="$thread" />
                 </div>
             @endauth
             {{-- <div class="my-6">
-                <x-theme::moderators :moderators="$moderators" />
+                <x-moderators :moderators="$moderators" />
             </div> --}}
         </div>
     </section>

@@ -4,14 +4,14 @@ declare(strict_types=1);
 
 namespace Themes\LaravelIo\View\Components\Articles;
 
-use Illuminate\Database\Eloquent\Collection;
+use Illuminate\Support\Collection;
 use Illuminate\View\Component;
 
 /**
  * Undocumented class.
  */
 class Featured extends Component {
-    public $articles;
+    public Collection $articles;
 
     /**
      * Create a new component instance.

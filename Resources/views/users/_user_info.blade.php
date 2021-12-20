@@ -1,7 +1,7 @@
 <div class="flex flex-col mb-4 w-full @if (isset($centered) && $centered) items-center @endif">
     <div class="mb-4">
         <a href="{{ route('profile', $user->username()) }}">
-            <x-theme::avatar :user="$user" class="w-56 h-56" />
+            <x-avatar :user="$user" class="w-56 h-56" />
         </a>
     </div>
 
@@ -60,7 +60,7 @@
             <a href="https://github.com/{{ $user->githubUsername() }}"
                 class="text-lio-700 text-3xl block flex items-center">
                 <span class="flex items-center justify-center mb-1">
-                    <x-theme::svg icon="github" class="h-5 w-5 mr-2" />
+                    <x-svg icon="github" class="h-5 w-5 mr-2" />
                 </span>
             </a>
         @endif
@@ -69,7 +69,7 @@
             <a href="https://twitter.com/{{ $user->twitter() }}"
                 class="text-lio-700 text-3xl block flex items-center">
                 <span class="flex items-center justify-center mb-1">
-                    <x-theme::svg icon="twitter" class="h-5 w-5 mr-2" />
+                    <x-svg icon="twitter" class="h-5 w-5 mr-2" />
                 </span>
             </a>
         @endif

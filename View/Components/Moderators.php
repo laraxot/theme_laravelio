@@ -9,13 +9,16 @@ use Illuminate\View\Component;
 /**
  * Undocumented class.
  */
-class AccentText extends Component {
+class Moderators extends Component {
+    public $moderators;
+
     /**
      * Create a new component instance.
      *
      * @return void
      */
-    public function __construct() {
+    public function __construct($moderators) {
+        $this->moderators = $moderators;
     }
 
     /**
@@ -24,6 +27,6 @@ class AccentText extends Component {
      * @return \Illuminate\Contracts\View\View|string
      */
     public function render() {
-        return view()->make('pub_theme::components.accent-text');
+        return view()->make('pub_theme::components.moderators');
     }
 }

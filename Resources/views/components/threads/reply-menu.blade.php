@@ -55,13 +55,13 @@
             <div x-cloak x-show="open" class="absolute top-12 right-1 flex flex-col bg-white rounded shadow w-48">
 
                 <a class="flex gap-x-2 p-3 rounded hover:bg-gray-100" href="{{ route('replies.edit', $reply->id()) }}">
-                    <x-theme::svg icon="o-pencil" class="w-6 h-6" />
+                    <x-svg icon="o-pencil" class="w-6 h-6" />
                     Edit
                 </a>
 
                 <button class="flex gap-x-2 p-3 rounded hover:bg-gray-100"
                     @click="$dispatch('open-modal', 'delete-reply-{{ $reply->id }}')">
-                    <x-theme::svg icon="o-trash" class="w-6 h-6 text-red-500" />
+                    <x-svg icon="o-trash" class="w-6 h-6 text-red-500" />
                     Delete
                 </button>
             </div>

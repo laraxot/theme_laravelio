@@ -9,7 +9,7 @@
 
         <div class="container mx-auto">
             <div class="flex justify-center lg:justify-start">
-                <x-theme::avatar :user="$user" class="-mt-24 w-48 h-48 rounded-full border-8 border-white" />
+                <x-avatar :user="$user" class="-mt-24 w-48 h-48 rounded-full border-8 border-white" />
             </div>
 
             <div class="flex flex-col mt-5 p-4 lg:flex-row lg:gap-x-12">
@@ -39,23 +39,23 @@
                     <div class="mt-4 mb-6 flex items-center gap-x-3">
                         @if ($user->githubUsername())
                             <a href="https://github.com/{{ $user->githubUsername() }}">
-                                <x-theme::svg icon="github" class="w-6 h-6" />
+                                <x-svg icon="github" class="w-6 h-6" />
                             </a>
                         @endif
 
                         @if ($user->hasTwitterAccount())
                             <a href="https://twitter.com/{{ $user->twitter() }}" class="text-twitter">
-                                <x-theme::svg icon="twitter" class="w-6 h-6" />
+                                <x-svg icon="twitter" class="w-6 h-6" />
                             </a>
                         @endif
                     </div>
 
                     <div class="flex flex-col gap-y-4">
                         @if ($user->isLoggedInUser())
-                            <x-theme::buttons.secondary-button href="{{ route('settings.profile') }}"
+                            <x-buttons.secondary-button href="{{ route('settings.profile') }}"
                                 class="w-full">
                                 <span class="flex items-center gap-x-2">
-                                    <x-theme::svg icon="o-pencil" class="w-5 h-5" />
+                                    <x-svg icon="o-pencil" class="w-5 h-5" />
                                     Edit profile
                                 </span>
                                 </x-buttons.secondary-button>
@@ -63,18 +63,18 @@
 
                         @can(App\Policies\UserPolicy::BAN, $user)
                             @if ($user->isBanned())
-                                <x-theme::buttons.secondary-button class="w-full"
+                                <x-buttons.secondary-button class="w-full"
                                     @click.prevent="activeModal = 'unbanUser'">
                                     <span class="flex items-center gap-x-2">
-                                        <x-theme::svg icon="o-check" class="w-5 h-5" />
+                                        <x-svg icon="o-check" class="w-5 h-5" />
                                         Unban User
                                     </span>
                                     </x-buttons.secondary-button>
                                 @else
-                                    <x-theme::buttons.danger-button class="w-full"
+                                    <x-buttons.danger-button class="w-full"
                                         @click.prevent="activeModal = 'banUser'">
                                         <span class="flex items-center gap-x-2">
-                                            <x-theme::svg icon="hammer" class="w-5 h-5" />
+                                            <x-svg icon="hammer" class="w-5 h-5" />
                                             Ban User
                                         </span>
                                         </x-buttons.danger-button>
@@ -83,10 +83,10 @@
 
                         @if (Auth::check() && Auth::user()->isAdmin())
                             @can(App\Policies\UserPolicy::DELETE, $user)
-                                <x-theme::buttons.danger-button class="w-full"
+                                <x-buttons.danger-button class="w-full"
                                     @click.prevent="activeModal = 'deleteUser'">
                                     <span class="flex items-center gap-x-2">
-                                        <x-theme::svg icon="o-trash" class="w-5 h-5" />
+                                        <x-svg icon="o-trash" class="w-5 h-5" />
                                         Delete User
                                     </span>
                                     </x-buttons.danger-button>
@@ -141,7 +141,7 @@
                     <div class="mt-8 flex flex-col gap-y-8 lg:flex-row lg:gap-x-8 lg:mb-16">
                         @foreach ($articles as $article)
                             <div class="w-full lg:w-1/3">
-                                <x-theme::articles.user-summary :article="$article" />
+                                <x-articles.user-summary :article="$article" />
                             </div>
                         @endforeach
                     </div>
