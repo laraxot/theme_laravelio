@@ -1,3 +1,7 @@
+@php
+//dddx([get_defined_vars(), $_panel->url(['act' => 'create']), url('it/pages/create-thread')]);
+@endphp
+
 @php($subTitle = isset($activeTag) ? $activeTag->name() : null)
 {{-- @title('Forum' . (isset($subTitle) ? ' > ' . $subTitle : '')) --}}
 @php($threads = $rows)
@@ -12,8 +16,8 @@
                         <h1 class="text-4xl text-gray-900 font-bold">
                             Forum
                         </h1>
-
-                        <x-buttons.primary-button href="{{ $_panel->url(['act' => 'create']) }}" class="hidden lg:block">
+                        <x-buttons.primary-button href="{{-- $_panel->url(['act'=>'create']) --}}{{ url('it/pages/create-thread') }}"
+                            class="hidden lg:block">
                             Create Thread
                         </x-buttons.primary-button>
                     </div>
