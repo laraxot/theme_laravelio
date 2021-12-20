@@ -3,19 +3,19 @@
 
     <div class="relative">
         <div class="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
-            {{--  
+            {{--
             <x-svg icon="o-search" class="h-5 w-5 text-gray-800"/>
             --}}
-            <x-theme::svg icon="o-search" class="h-5 w-5 text-gray-800"/>
+            <x-svg icon="o-search" class="h-5 w-5 text-gray-800"/>
         </div>
 
-        <input 
-            @click.away="results = false" 
-            @keyup="search(event).then(function({ results: hits }) { results = true; threads = hits[0].hits; articles = hits[1].hits; })" 
-            type="search" 
-            name="search" 
-            id="search" 
-            class="border-0 border-t border-b block pl-10 border-gray-300 md:border md:rounded w-full" 
+        <input
+            @click.away="results = false"
+            @keyup="search(event).then(function({ results: hits }) { results = true; threads = hits[0].hits; articles = hits[1].hits; })"
+            type="search"
+            name="search"
+            id="search"
+            class="border-0 border-t border-b block pl-10 border-gray-300 md:border md:rounded w-full"
             placeholder="Search for threads and articles..."
         />
 

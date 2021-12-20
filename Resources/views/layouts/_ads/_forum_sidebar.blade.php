@@ -5,6 +5,6 @@
         src="{{ asset("/images/showcase/{$banner['image']}-small.png") }}" alt="{{ $banner['alt'] }}">
 </a> --}}
 
-<x-theme::ads.cta class="mt-4 md:mt-6">
+<x-ads.cta class="mt-4 md:mt-6">
     Your banner here too?
-</x-theme::ads.cta>
+</x-ads.cta>
