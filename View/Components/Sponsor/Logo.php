@@ -10,12 +10,19 @@ use Illuminate\View\Component;
  * Undocumented class.
  */
 class Logo extends Component {
+    public string $url;
+    public string $logo;
+    public string $company;
+
     /**
      * Create a new component instance.
      *
      * @return void
      */
-    public function __construct() {
+    public function __construct(string $url, string $logo, string $company) {
+        $this->url = $url;
+        $this->logo = $logo;
+        $this->company = $company;
     }
 
     /**
@@ -29,3 +36,7 @@ class Logo extends Component {
         return view()->make('pub_theme::components.sponsor.logo');
     }
 }
+
+/*
+ <x-sponsor.logo url="https://beyondco.de" logo="{{ asset('images/sponsors/beyondcode.png') }}" company="Beyond Code" />
+ */
