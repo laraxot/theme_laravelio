@@ -12,15 +12,15 @@
 
                         <div class="flex lg:hidden">
                             <button @click="search = !search" :class="{ 'text-lio-500': search }">
-                                <x-svg icon="o-search" class="w-6 h-6 mr-4" />
+                                {{-- <x-svg icon="o-search" class="w-6 h-6 mr-4" /> --}}
                             </button>
 
                             <button @click="nav = !nav">
-                                <x-svg icon="o-menu-alt-1" x-show="!nav" class="w-6 h-6" />
+                                {{-- <x-heroicon-o-menu-alt-1 x-show="!nav" class="w-6 h-6" /> --}}
                             </button>
 
                             <button @click="nav = !nav" x-cloak>
-                                <x-svg icon="o-x" x-show="nav" class="w-6 h-6" />
+                                {{-- <x-svg icon="o-x" x-show="nav" class="w-6 h-6" /> --}}
                             </button>
                         </div>
                     </div>
@@ -51,8 +51,8 @@
                                     <div>
                                         <button @click="chat = !chat" class="flex items-center lg:mb-0 py-1 px-2">
                                             Chat
-                                            <x-theme::svg icon="s-chevron-down" x-show="!chat" class="w-4 h-4 ml-1" />
-                                            <x-theme::svg icon="s-chevron-left" x-cloak x-show="chat"
+                                            <x-svg icon="s-chevron-down" x-show="!chat" class="w-4 h-4 ml-1" />
+                                            <x-svg icon="s-chevron-left" x-cloak x-show="chat"
                                                 class="w-4 h-4 ml-1" />
                                         </button>
                                     </div>
@@ -83,9 +83,9 @@
                                     x-data="{ community: false }">
                                     <button @click="community = !community" class="flex items-center lg:mb-0 py-1 px-2">
                                         Community
-                                        <x-theme::svg icon="s-chevron-down" x-show="!community"
+                                        <x-svg icon="s-chevron-down" x-show="!community"
                                             class="w-4 h-4 ml-1" />
-                                        <x-theme::svg icon="s-chevron-left" x-cloak x-show="community"
+                                        <x-svg icon="s-chevron-left" x-cloak x-show="community"
                                             class="w-4 h-4 ml-1" />
                                     </button>
 
@@ -149,23 +149,23 @@
                     <ul class="block lg:flex lg:items-center gap-x-8" x-cloak :class="{ 'block': nav, 'hidden': !nav }">
                         @if (Auth::guest())
                             <li class="w-full rounded text-center lg:hover:bg-gray-100">
-                                <a href="{{ route('register',['lang'=>'it']) }}" class="inline-block w-full  p-2.5">
+                                <a href="{{ route('register') }}" class="inline-block w-full  p-2.5">
                                     Register
                                 </a>
                             </li>
 
                             <li>
                                 <div class="hidden lg:block">
-                                    <x-theme::buttons.secondary-cta class="flex items-center"
-                                        href="{{ route('login',['lang'=>'it']) }}">
+                                    <x-buttons.secondary-cta class="flex items-center"
+                                        href="{{ route('login') }}">
                                         <span class="flex items-center">
-                                            <x-theme::svg icon="o-user" class="w-5 h-5 mr-1" />
+                                            <x-svg icon="o-user" class="w-5 h-5 mr-1" />
                                             Login
                                         </span>
-                                    </x-theme::buttons.secondary-cta>
+                                    </x-buttons.secondary-cta>
                                 </div>
 
-                                <a href="{{ route('login',['lang'=>'it']) }}"
+                                <a href="{{ route('login') }}"
                                     class="block w-full text-center bg-lio-500 text-white p-2.5 lg:hidden">
                                     Login
                                 </a>
@@ -175,20 +175,20 @@
                                 <div class="flex items-center justify-center gap-3">
                                     <a href="{{-- route('dashboard') --}}" class="hidden flex-shrink-0 rounded-full lg:block">
                                         <span class="block relative">
-                                            <x-theme::svg icon="o-bell"
+                                            <x-svg icon="o-bell"
                                                 class="h-5 w-5 hover:fill-current hover:text-lio-500" />
                                             <livewire:theme::notification_indicator />
                                         </span>
                                     </a>
 
-                                    <x-theme::avatar :user="Auth::user()" class="h-8 w-8" />
+                                    <x-avatar :user="Auth::user()" class="h-8 w-8" />
 
                                     <div @click.away="settings = false">
                                         <button @click="settings = !settings" class="flex items-center">
                                             {{ Auth::user()->username() }}
-                                            <x-theme::svg icon="s-chevron-down" x-show="!settings"
+                                            <x-svg icon="s-chevron-down" x-show="!settings"
                                                 class="w-4 h-4 ml-1" />
-                                            <x-theme::svg icon="s-chevron-left" x-show="settings"
+                                            <x-svg icon="s-chevron-left" x-show="settings"
                                                 class="w-4 h-4 ml-1" />
                                         </button>
                                     </div>
@@ -230,13 +230,10 @@
                                         @endcan --}}
 
                                         <li class="mb-4 lg:hover:bg-gray-100 lg:mb-0">
-                                            {{--  
                                             <a href="{{ route('logout') }}"
                                                 class="inline-block w-full lg:px-4 lg:py-3">
                                                 Sign out
                                             </a>
-                                            --}}
-                                            <x-logout class="inline-block w-full lg:px-4 lg:py-3">Sign out</x-logout>
                                         </li>
                                     </ul>
                                 </div>

@@ -27,7 +27,7 @@
                             <x-threads.filter :filter="$filter" />
 
                             <div class="flex-shrink-0">
-                                <x-theme::buttons.secondary-button class="flex items-center gap-x-2"
+                                <x-buttons.secondary-button class="flex items-center gap-x-2"
                                     @click="activeModal = 'tag-filter'">
                                     <x-heroicon-o-filter class="w-5 h-5" />
                                     Tag filter
@@ -100,7 +100,7 @@
                 <section class="mt-8 mb-5 lg:mb-32">
                     <div class="flex flex-col gap-y-4">
                         @foreach ($threads as $thread)
-                            <x-theme::threads.overview-summary :thread="$thread" />
+                            <x-threads.overview-summary :thread="$thread" />
                         @endforeach
                     </div>
 
@@ -126,7 +126,7 @@
                                 <div class="flex justify-between items-center px-5">
                                     <div class="flex items-center gap-x-5">
                                         <a href="{{ route('profile', $member->username()) }}">
-                                            <x-theme::avatar :user="$member" class="w-10 h-10" />
+                                            <x-avatar :user="$member" class="w-10 h-10" />
                                         </a>
 
                                         <span class="flex flex-col">
@@ -164,7 +164,7 @@
                 </div>
 
                 <div class="mt-6">
-                    <x-theme::moderators :moderators="$moderators" />
+                    <x-moderators :moderators="$moderators" />
                 </div>
 
                 <div class="hidden lg:block mt-6">

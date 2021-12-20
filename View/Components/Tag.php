@@ -9,7 +9,7 @@ use Illuminate\View\Component;
 /**
  * Undocumented class.
  */
-class AccentText extends Component {
+class Tag extends Component {
     /**
      * Create a new component instance.
      *
@@ -24,6 +24,6 @@ class AccentText extends Component {
      * @return \Illuminate\Contracts\View\View|string
      */
     public function render() {
-        return view()->make('pub_theme::components.accent-text');
+        return view()->make('pub_theme::components.tag');
     }
 }

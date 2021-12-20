@@ -2,20 +2,25 @@
 
 declare(strict_types=1);
 
-namespace Themes\LaravelIo\View\Components;
+namespace Themes\LaravelIo\View\Components\Articles;
 
 use Illuminate\View\Component;
 
 /**
  * Undocumented class.
  */
-class AccentText extends Component {
+class TagFilter extends Component {
+    public $selectedTag;
+    public $tags;
+
     /**
      * Create a new component instance.
      *
      * @return void
      */
-    public function __construct() {
+    public function __construct($selectedTag, $tags) {
+        $this->selectedTag = $selectedTag;
+        $this->tags = $tags;
     }
 
     /**
@@ -24,6 +29,6 @@ class AccentText extends Component {
      * @return \Illuminate\Contracts\View\View|string
      */
     public function render() {
-        return view()->make('pub_theme::components.accent-text');
+        return view()->make('pub_theme::components.articles.tag-filter');
     }
 }

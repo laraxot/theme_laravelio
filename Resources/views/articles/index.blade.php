@@ -20,7 +20,7 @@
                     @include('pub_theme::layouts._ads._forum_sidebar')
                 </div>
                 <div class="mt-6">
-                    <x-theme::moderators :moderators="$_theme->moderators()" />
+                    <x-moderators :moderators="$_theme->moderators()" />
                 </div>
             </div>
         </div>
