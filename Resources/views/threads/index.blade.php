@@ -13,8 +13,7 @@
                             Forum
                         </h1>
 
-                        <x-buttons.primary-button href="{{ $_panel->url(['act' => 'create']) }}"
-                            class="hidden lg:block">
+                        <x-buttons.primary-button href="{{ $_panel->url(['act' => 'create']) }}" class="hidden lg:block">
                             Create Thread
                         </x-buttons.primary-button>
                     </div>
@@ -149,7 +148,7 @@
                                             <span class="text-xl font-medium">
                                                 {{ $loop->iteration }}
                                             </span>
-                                             <x-icon-trophy class="w-6 h-6" />
+                                             <x-svg icon="trophy" class="w-6 h-6" />
                                         </span>
                                     </div>
                                 </div>
