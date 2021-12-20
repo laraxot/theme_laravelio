@@ -5,22 +5,17 @@ declare(strict_types=1);
 namespace Themes\LaravelIo\View\Components\Articles;
 
 use Illuminate\View\Component;
-use Modules\Blog\Models\Article;
 
 /**
  * Undocumented class.
  */
 class Summary extends Component {
-    public Article $article;
-    public bool $isFeatured = false;
-
     /**
      * Create a new component instance.
      *
      * @return void
      */
-    public function __construct(Article $article) {
-        $this->article = $article;
+    public function __construct() {
     }
 
     /**

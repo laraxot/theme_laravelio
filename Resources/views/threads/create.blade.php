@@ -16,7 +16,7 @@
 @section('content')
     <div class="container mx-auto p-4 flex justify-center">
         <div class="w-full md:w-2/3 xl:w-1/2">
-            <x-theme::rules-banner />
+            <x-rules-banner />
 
             <div class="md:p-4 md:border-2 md:rounded md:bg-gray-100">
                 {{-- @include('forum.threads._form', [
@@ -25,9 +25,9 @@
                 @include($view.'._form',['form_action'=>$_panel->url(['act'=>'store'])])
             </div>
 
-            <x-theme::forms.info>
+            <x-forms.info>
                 Please search for your question before posting your thread by using the search box in the navigation bar.
-            </x-theme::forms.info>
+            </x-forms.info>
         </div>
     </div>
 @endsection
