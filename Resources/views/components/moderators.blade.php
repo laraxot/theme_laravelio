@@ -18,7 +18,7 @@
                     </a>
 
                     <span class="text-gray-700">
-                        Joined {{ $moderator->createdAt()->format('j M Y') }}
+                        Joined {{-- $moderator->createdAt()->format('j M Y') --}}{{ $moderator->created_at->format('j M Y') }}
                     </span>
                 </span>
             </li>
