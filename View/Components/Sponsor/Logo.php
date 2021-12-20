@@ -24,7 +24,7 @@ class Logo extends Component {
      * @return \Illuminate\Contracts\View\View|string
      */
     public function render() {
-        return 'WIP['.__LINE__.']['.__FILE__.']';
+        //return 'WIP['.__LINE__.']['.__FILE__.']';
 
         return view()->make('pub_theme::components.sponsor.logo');
     }
