@@ -31,7 +31,7 @@
                                     @click="activeModal = 'tag-filter'">
                                     <x-heroicon-o-filter class="w-5 h-5" />
                                     Tag filter
-                                    </x-buttons.secondary-button>
+                                </x-buttons.secondary-button>
                             </div>
                         </div>
                     </div>
@@ -150,7 +150,7 @@
                                                 {{ $loop->iteration }}
                                             </span>
 
-                                            <x-icon-trophy class="w-6 h-6" />
+                                            <x-svg icon="trophy" class="w-6 h-6" />
                                         </span>
                                     </div>
                                 </div>
