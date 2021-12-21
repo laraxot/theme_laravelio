@@ -11,6 +11,7 @@ use Modules\Blog\Models\Article;
 use Modules\Forum\Models\Reply;
 use Modules\Forum\Models\Thread;
 use Modules\LU\Models\User;
+use Modules\Tag\Models\Tag;
 use Modules\Xot\Services\PanelService;
 
 class ThemeComposer {
@@ -165,5 +166,14 @@ class ThemeComposer {
         });
 
         return $trendingArticles;
+    }
+
+    public function tags() {
+        return Tag::all();
+    }
+
+    public function selectedTags() {
+        return old('tags', []);
+        //old('tags', $article->tags()->pluck('id')->toArray()),
     }
 }

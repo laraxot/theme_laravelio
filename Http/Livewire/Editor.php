@@ -6,7 +6,11 @@ namespace Themes\LaravelIo\Http\Livewire;
 
 use Livewire\Component;
 
-class Editor extends Component {
+/**
+ * Undocumented class
+ */
+class Editor extends Component
+{
     public $label;
 
     public $placeholder = 'Write a reply...';
@@ -21,17 +25,20 @@ class Editor extends Component {
 
     public $buttonIcon;
 
-    public function render() {
+    public function render()
+    {
         $this->body = old('body', $this->body);
 
-        return view('livewire.editor');
+        return view('pub_theme::livewire.editor');
     }
 
-    public function getPreviewProperty() {
+    public function getPreviewProperty()
+    {
         return replace_links(md_to_html($this->body ?: ''));
     }
 
-    public function preview() {
+    public function preview()
+    {
         $this->emit('previewRequested');
     }
 }
