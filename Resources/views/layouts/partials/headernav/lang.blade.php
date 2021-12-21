@@ -23,7 +23,7 @@
 						</a>
 					@endif
 				@else
-				<a class="dropdown-item" href="{{ asset($lang) }}" title="lang {{ $lang }}">
+				<a class="dropdown-item" href="{{ Theme::asset($lang) }}" title="lang {{ $lang }}">
 					<span class="lang-sm lang-lbl" lang="{{ $lang }}"></span>
 				</a>
 				@endif

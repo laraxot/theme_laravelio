@@ -8,7 +8,7 @@
             <div class="flex flex-col pb-8 mb-8 border-b lg:pb-16 border-gray-800 lg:flex-row">
                 <div class="w-full mb-6 lg:w-2/5 lg:pr-20 lg:mb-0">
                     <a href="" class="block mb-5">
-                        <img src="{{ asset('images/laravelio-logo-white.svg') }}" />
+                        <img src="{{ Theme::asset('pub_theme::images/laravelio-logo-white.svg') }}" />
                     </a>
 
                     <p class="text-gray-100 lg:leading-loose">
@@ -70,13 +70,13 @@
                         <div class="flex flex-col flex-nowrap">
                             <div class="flex mb-4 lg:mb-6">
                                 <a href="https://laravel.com" class="w-1/2 text-gray-400 hover:text-gray-200">
-                                    <img src="{{ asset('images/laravel.png') }}" alt="Laravel"
+                                    <img src="{{ Theme::asset('pub_theme::images/laravel.png') }}" alt="Laravel"
                                         class="w-4 h-4 inline mr-2" />
                                     Laravel
                                 </a>
 
                                 <a href="https://laravel-news.com" class="w-1/2 text-gray-400 hover:text-gray-200">
-                                    <img src="{{ asset('images/laravel-news.png') }}" alt="Laravel News"
+                                    <img src="{{ Theme::asset('pub_theme::images/laravel-news.png') }}" alt="Laravel News"
                                         class="w-4 h-4 inline mr-2" />
                                     Laravel News
                                 </a>
@@ -84,14 +84,14 @@
 
                             <div class="flex">
                                 <a href="https://laracasts.com" class="w-1/2 text-gray-400 hover:text-gray-200">
-                                    <img src="{{ asset('images/laracasts.png') }}" alt="Laracasts"
+                                    <img src="{{ Theme::asset('pub_theme::images/laracasts.png') }}" alt="Laracasts"
                                         class="w-4 h-4 inline mr-2" />
                                     Laracasts
                                 </a>
 
                                 <a href="https://www.laravelpodcast.com"
                                     class="w-1/2 text-gray-400 hover:text-gray-200">
-                                    <img src="{{ asset('images/podcast.png') }}" alt="Laravel Podcast"
+                                    <img src="{{ Theme::asset('pub_theme::images/podcast.png') }}" alt="Laravel Podcast"
                                         class="w-4 h-4 inline mr-2" />
                                     Laravel Podcast
                                 </a>

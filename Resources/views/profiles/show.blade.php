@@ -6,7 +6,7 @@
 @section('content')
     <section class="bg-white">
         <div class="bg-gray-900 bg-contain h-60 w-full"
-            style="background-image: url('{{ asset('images/profile-background.svg') }}')"></div>
+            style="background-image: url('{{ Theme::asset('pub_theme::images/profile-background.svg') }}')"></div>
 
         <div class="container mx-auto">
             <div class="flex justify-center lg:justify-start">

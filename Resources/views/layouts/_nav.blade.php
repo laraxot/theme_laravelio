@@ -7,7 +7,7 @@
                 <div class="block lg:flex lg:items-center lg:flex-shrink-0">
                     <div class="flex justify-between items-center p-4 lg:p-0">
                         <a href="{{ route('home') }}" class="mr-4">
-                            <img class="h-6 w-auto lg:h-8" src="{{ asset('images/laravelio-logo.svg') }}" alt="" />
+                            <img class="h-6 w-auto lg:h-8" src="{{ Theme::asset('pub_theme::images/laravelio-logo.svg') }}" alt="" />
                         </a>
 
                         <div class="flex lg:hidden">

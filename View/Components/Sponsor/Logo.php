@@ -38,5 +38,5 @@ class Logo extends Component {
 }
 
 /*
- <x-sponsor.logo url="https://beyondco.de" logo="{{ asset('images/sponsors/beyondcode.png') }}" company="Beyond Code" />
+ <x-sponsor.logo url="https://beyondco.de" logo="{{ Theme::asset('pub_theme::images/sponsors/beyondcode.png') }}" company="Beyond Code" />
  */

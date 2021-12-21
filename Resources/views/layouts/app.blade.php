@@ -49,6 +49,7 @@
 @include('pub_theme::layouts._nav')
 
 @yield('body')
+@yield('content')
 
 @include('pub_theme::layouts._footer')
 
