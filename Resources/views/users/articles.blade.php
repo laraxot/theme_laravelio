@@ -11,7 +11,7 @@
 
             <div class="flex">
                 <a href="{{ route('articles.create') }}" class="button button-primary">
-                    Create Article
+                    Create Article!
                 </a>
             </div>
         </div>
