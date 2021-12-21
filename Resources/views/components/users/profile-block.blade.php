@@ -2,7 +2,7 @@
 
 <div class="flex flex-col rounded-md shadow mt-6">
     <div class="bg-gray-900 rounded-t-md h-28"
-        style="background-image: url('{{ asset('images/profile-background.svg') }}')"></div>
+        style="background-image: url('{{ Theme::asset('pub_theme::images/profile-background.svg') }}')"></div>
 
     <div class="flex flex-col items-center justify-center bg-white rounded-b-md pb-8">
         <a href="{{ route('profile', $user->username()) }}">

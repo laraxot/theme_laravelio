@@ -11,6 +11,6 @@
 @if (isset($shareImage))
     <meta property="og:image" content="{{ $shareImage }}" />
 @else
-    <meta property="og:image" content="{{ asset('images/laravelio-share.png') }}" />
+    <meta property="og:image" content="{{ Theme::asset('pub_theme::images/laravelio-share.png') }}" />
 @endif
 <!-- /Facebook sharing -->

@@ -66,7 +66,7 @@
                 </div>
 
                 <a href="https://algolia.com" class="flex justify-end px-4 py-2">
-                    <img src="{{ asset('images/algolia.svg') }}" class="h-4 mx-4 my-2" />
+                    <img src="{{ Theme::asset('pub_theme::images/algolia.svg') }}" class="h-4 mx-4 my-2" />
                 </a>
             </div>
         </template>
