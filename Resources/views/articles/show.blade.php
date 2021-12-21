@@ -158,7 +158,7 @@ $article = $row;
         </div>
     </section>
 
-    @can(\Modules\Blog\Models\Panel\Policies\ArticlePanelPolicy::APPROVE, $article)
+    @can(\Modules\Blog\Models\Panels\Policies\ArticlePanelPolicy::APPROVE, $article)
         @if ($article->isAwaitingApproval())
             @include('_partials._update_modal', [
             'identifier' => 'approveArticle',
@@ -169,7 +169,7 @@ $article = $row;
         @endif
     @endcan
 
-    @can(\Modules\Blog\Models\Panel\Policies\ArticlePanelPolicy::DISAPPROVE, $article)
+    @can(\Modules\Blog\Models\Panels\Policies\ArticlePanelPolicy::DISAPPROVE, $article)
         @if ($article->isPublished())
             @include('_partials._update_modal', [
             'identifier' => 'disapproveArticle',
@@ -181,7 +181,7 @@ $article = $row;
         @endif
     @endcan
 
-    @can(\Modules\Blog\Models\Panel\Policies\ArticlePanelPolicy::DELETE, $article)
+    @can(\Modules\Blog\Models\Panels\Policies\ArticlePanelPolicy::DELETE, $article)
         @include('_partials._delete_modal', [
         'identifier' => 'deleteArticle',
         'route' => ['articles.delete', $article->slug()],
@@ -191,7 +191,7 @@ $article = $row;
         ])
     @endcan
 
-    @can(\Modules\Blog\Models\Panel\Policies\ArticlePanelPolicy::PINNED, $article)
+    @can(\Modules\Blog\Models\Panels\Policies\ArticlePanelPolicy::PINNED, $article)
         @include('_partials._update_modal', [
         'identifier' => 'togglePinnedStatus',
         'route' => ['admin.articles.pinned', $article->slug()],

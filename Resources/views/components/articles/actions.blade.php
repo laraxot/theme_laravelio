@@ -11,7 +11,7 @@
         @endif
         {{--  
         @if ($article->isNotPublished() && $article->isAwaitingApproval())
-            @can(\Modules\Blog\Models\Panel\Policies\ArticlePanelPolicy::APPROVE, $article)
+            @can(\Modules\Blog\Models\Panels\Policies\ArticlePanelPolicy::APPROVE, $article)
                 <x-buttons.secondary-button tag="button" @click.prevent="activeModal = 'approveArticle'"
                     class="w-full">
                     <span class="flex items-center gap-x-2">
@@ -21,7 +21,7 @@
                     </x-buttons.secondary-button>
                 @endcan
             @else
-                @can(\Modules\Blog\Models\Panel\Policies\ArticlePanelPolicy::DISAPPROVE, $article)
+                @can(\Modules\Blog\Models\Panels\Policies\ArticlePanelPolicy::DISAPPROVE, $article)
                     <x-buttons.secondary-button tag="button" @click.prevent="activeModal = 'disapproveArticle'"
                         class="w-full">
                         <span class="flex items-center gap-x-2">
@@ -32,7 +32,7 @@
                     @endcan
         @endif
 
-        @can(\Modules\Blog\Models\Panel\Policies\ArticlePanelPolicy::PINNED, $article)
+        @can(\Modules\Blog\Models\Panels\Policies\ArticlePanelPolicy::PINNED, $article)
             <x-buttons.secondary-button tag="button" @click.prevent="activeModal = 'togglePinnedStatus'"
                 :selected="$article->isPinned()" class="w-full">
                 <span class="flex items-center gap-x-2">
@@ -44,7 +44,7 @@
         --}}
     </div>
     {{--  
-    @can(\Modules\Blog\Models\Panel\Policies\ArticlePanelPolicy::DELETE, $article)
+    @can(\Modules\Blog\Models\Panels\Policies\ArticlePanelPolicy::DELETE, $article)
         <x-buttons.danger-button tag="button" @click.prevent="activeModal = 'deleteArticle'" class="w-full">
             <span class="flex items-center gap-x-2">
                 <x-svg icon="o-trash" class="w-5 h-5" title="Delete" />
