@@ -1,4 +1,4 @@
-@extends('pub_theme::layouts.app')
-@section('content')
-    @livewire('forum::thread.create')
+@extends('pub_theme::layouts.base')
+@section('body')
+    @livewire('forum::thread.create', ['model' => 'thread'])
 @endsection
