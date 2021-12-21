@@ -90,9 +90,7 @@ $article = $row;
                 <div class="w-full pt-4 lg:w-4/5 lg:pt-10">
                     <x-articles.actions :article="$article" />
 
-                    @php
-                        dddx($article->body());
-                    @endphp
+                   
 
 
                     <div x-data="{}" x-init="function () { highlightCode($el); }"
