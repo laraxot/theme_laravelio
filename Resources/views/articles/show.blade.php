@@ -151,7 +151,7 @@ $article = $row;
             </h2>
 
             <div class="flex flex-col gap-y-4 gap-x-6 mt-6 lg:flex-row lg:mt-12">
-                @foreach ($trendingArticles as $trendingArticle)
+                @foreach ($_theme->trendingArticles() as $trendingArticle)
                     <x-articles.summary :article="$trendingArticle" is-featured />
                 @endforeach
             </div>
