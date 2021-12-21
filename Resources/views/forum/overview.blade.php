@@ -29,7 +29,7 @@
                             <div class="flex-shrink-0">
                                 <x-buttons.secondary-button class="flex items-center gap-x-2"
                                     @click="activeModal = 'tag-filter'">
-                                    <x-heroicon-o-filter class="w-5 h-5" />
+                                    <x-svg icon="o-filter" class="w-5 h-5" />
                                     Tag filter
                                 </x-buttons.secondary-button>
                             </div>
@@ -56,7 +56,7 @@
 
                     <div class="flex justify-center mt-6">
                         <x-buttons.dark-cta>
-                            <x-heroicon-s-rss class="w-6 h-6 mr-2" />
+                            <x-svg icon="s-rss" class="w-6 h-6 mr-2" />
                             RSS Feed
                         </x-buttons.dark-cta>
                     </div>
@@ -65,7 +65,7 @@
                         <div class="w-1/2">
                             <x-buttons.secondary-cta class="w-full" @click="activeModal = 'tag-filter'">
                                 <span class="flex items-center gap-x-2">
-                                    <x-heroicon-o-filter class="w-5 h-5" />
+                                    <x-svg icon="o-filter" class="w-5 h-5" />
                                     Tag filter
                                 </span>
                             </x-buttons.secondary-cta>
@@ -169,7 +169,7 @@
 
                 <div class="hidden lg:block mt-6">
                     <x-buttons.dark-cta class="w-full">
-                        <x-heroicon-s-rss class="w-6 h-6 mr-2" />
+                        <x-svg icon="s-rss" class="w-6 h-6 mr-2" />
                         RSS Feed
                     </x-buttons.dark-cta>
                 </div>

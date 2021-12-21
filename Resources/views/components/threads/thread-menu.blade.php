@@ -5,7 +5,7 @@
         <div class="relative -mr-3" x-data="{ open: false }" @click.away="open = false">
 
             <button class="p-2 rounded hover:bg-gray-100" @click="open = !open">
-                <x-heroicon-o-dots-horizontal class="w-6 h-6" />
+                <x-svg icon="o-dots-horizontal" class="w-6 h-6" />
             </button>
 
             <div x-cloak x-show="open" class="absolute top-12 right-1 flex flex-col bg-white rounded shadow w-48">

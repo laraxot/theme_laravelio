@@ -72,7 +72,7 @@
                                         <x-tables.table-data class="text-center w-10">
                                             <a href="{{ route('profile', $user->username()) }}"
                                                 class="text-lio-600 hover:text-lio-800">
-                                                <x-heroicon-o-user-circle class="w-5 h-5 inline" />
+                                                <x-svg icon="o-user-circle" class="w-5 h-5 inline" />
                                             </a>
                                         </x-tables.table-data>
                                     </tr>

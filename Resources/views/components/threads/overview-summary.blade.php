@@ -54,7 +54,7 @@
             </span>
 
             <span class="flex items-center gap-x-2">
-                <x-heroicon-o-chat-alt-2 class="w-6 h-6" />
+                <x-svg icon="o-chat-alt-"2 class="w-6 h-6" />
                 <span>{{ count($thread->replies()) }}</span>
                 <span class="sr-only">Replies</span>
             </span>
@@ -63,7 +63,7 @@
         @if ($thread->isSolved())
             <a href="{{ route('thread', $thread->slug()) }}#{{ $thread->solution_reply_id }}"
                 class="flex items-center gap-x-2 font-medium text-lio-500">
-                <x-heroicon-o-badge-check class="w-6 h-6" />
+                <x-svg icon="o-badge-check" class="w-6 h-6" />
                 <span class="hover:underline">Solved</span>
             </a>
         @endif
