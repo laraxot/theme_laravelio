@@ -24,7 +24,6 @@ class BukLabel extends Component {
      * @return \Illuminate\Contracts\View\View|string
      */
     public function render() {
-        return 'buk label';
-        //return view()->make('pub_theme::components.buk-avatar');
+        return view()->make('pub_theme::components.buk-label');
     }
 }
