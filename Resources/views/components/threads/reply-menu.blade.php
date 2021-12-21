@@ -1,7 +1,7 @@
 @props(['thread', 'reply'])
 
 <div class="flex items-center lg:gap-x-3">
-    @if ($reply->author()->isModerator() || $reply->author()->isAdmin())
+    @if ($reply->author->isModerator() || $reply->author->isAdmin())
         <span class="text-sm text-lio-500 border border-lio-200 rounded py-1.5 px-3 leading-none">
             moderator
         </span>

@@ -9,7 +9,7 @@
                         <x-avatar :user="$thread->author()" class="w-8 h-8 rounded-full mr-2" />
                     </a>
                     <a href="{{ Panel::get($thread->author())->url() }}">
-                        <span class="font-heading text-sm text-black">{{ $thread->author()->username() }}</span>
+                        <span class="font-heading text-sm text-black">{{ $thread->author->username() }}</span>
                     </a>
                 </div>
 

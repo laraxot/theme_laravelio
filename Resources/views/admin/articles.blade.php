@@ -39,12 +39,12 @@
                                                 <div class="ml-4">
                                                     <div class="text-sm font-medium text-gray-900">
                                                         <a href="{{ Panel::get($article->author())->url() }}">
-                                                            {{ $article->author()->name() }}
+                                                            {{ $article->author->name() }}
                                                         </a>
                                                     </div>
                                                     <div class="text-sm text-gray-500">
                                                         <a href="{{ Panel::get($article->author())->url() }}">
-                                                            {{ $article->author()->username() }}
+                                                            {{ $article->author->username() }}
                                                         </a>
                                                     </div>
                                                 </div>
