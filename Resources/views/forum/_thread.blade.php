@@ -66,7 +66,7 @@
 
                 <span class="inline-flex items-center text-sm">
                     <div class="inline-flex space-x-2 text-gray-400">
-                        <x-heroicon-s-thumb-up class="h-5 w-5" />
+                        <x-svg icon="s-thumb-up" class="h-5 w-5" />
                         <span class="font-medium text-gray-900">{{ count($thread->likes()) }}</span>
                         <span class="sr-only">Likes</span>
                     </div>
@@ -74,7 +74,7 @@
 
                 <span class="inline-flex items-center text-sm">
                     <div class="inline-flex space-x-2 text-gray-400">
-                        <x-heroicon-s-chat-alt class="h-5 w-5" />
+                        <x-svg icon="s-chat-alt" class="h-5 w-5" />
                         <span class="font-medium text-gray-900">{{ count($thread->replies()) }}</span>
                         <span class="sr-only">Replies</span>
                     </div>

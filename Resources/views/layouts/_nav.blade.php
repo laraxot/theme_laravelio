@@ -16,7 +16,7 @@
                             </button>
 
                             <button @click="nav = !nav">
-                                {{-- <x-heroicon-o-menu-alt-1 x-show="!nav" class="w-6 h-6" /> --}}
+                                {{-- <x-svg icon="o-menu-alt-"1 x-show="!nav" class="w-6 h-6" /> --}}
                             </button>
 
                             <button @click="nav = !nav" x-cloak>
