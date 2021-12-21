@@ -40,7 +40,7 @@
                     <p class="text-sm text-gray-900">
                         <a href="{{ Panel::get($thread->author())->url() }}"
                             class="font-medium hover:underline">
-                            {{ $thread->author()->name() }}
+                            {{ $thread->author->name() }}
                         </a>
 
                         &bull;

@@ -59,9 +59,9 @@ $article = $row;
                         <div class="flex items-center">
                             <x-avatar :user="$article->author()" class="w-6 h-6 rounded-full mr-3" />
 
-                            <a href="{{-- route('profile',$article->author()->username()) --}}{{ Panel::get($article->profile)->url() }}"
+                            <a href="{{-- route('profile',$article->author->username()) --}}{{ Panel::get($article->profile)->url() }}"
                                 class="hover:underline">
-                                <span class="mr-5">{{-- $article->author()->name() --}}{{ $article->handle() }}</span>
+                                <span class="mr-5">{{-- $article->author->name() --}}{{ $article->handle() }}</span>
                             </a>
                         </div>
 
@@ -115,22 +115,22 @@ $article = $row;
                                 <x-avatar :user="$article->author()" class="hidden w-16 h-16 lg:block" />
 
                                 <div class="flex flex-col items-center text-gray-900 text-xl font-semibold lg:items-start">
-                                    {{ $article->author()->username() }} ({{ $article->author()->name() }})
+                                    {{ $article->author->username() }} ({{ $article->author->name() }})
                                     <span class="text-lg text-gray-700 font-medium">
-                                        {{ $article->author()->bio() }}
+                                        {{ $article->author->bio() }}
                                     </span>
                                 </div>
                             </div>
 
                             <div class="flex items-center gap-x-6">
-                                @if ($article->author()->githubUsername())
-                                    <a href="https://github.com/{{ $article->author()->githubUsername() }}">
+                                @if ($article->author->githubUsername())
+                                    <a href="https://github.com/{{ $article->author->githubUsername() }}">
                                         <x-svg icon="github" class="w-6 h-6" />
                                     </a>
                                 @endif
 
-                                @if ($article->author()->hasTwitterAccount())
-                                    <a href="https://twitter.com/{{ $article->author()->twitter() }}"
+                                @if ($article->author->hasTwitterAccount())
+                                    <a href="https://twitter.com/{{ $article->author->twitter() }}"
                                         class="text-twitter">
                                         <x-svg icon="twitter" class="w-6 h-6" />
                                     </a>

@@ -14,7 +14,7 @@
                     <div class="flex">
                         <x-avatar :user="$article->author()" class="w-6 h-6 rounded-full mr-3" />
 
-                        <span class="text-gray-900 mr-5">{{ $article->author()->username() }}</span>
+                        <span class="text-gray-900 mr-5">{{ $article->author->username() }}</span>
                     </div>
 
                     <span class="font-mono text-gray-700 mt-1">

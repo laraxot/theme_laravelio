@@ -10,7 +10,7 @@
                     </a>
 
                     <a href="{{ Panel::get($thread->author())->url() }}" class="hover:underline">
-                        <span class="text-gray-900 mr-5">{{ $thread->author()->username() }}</span>
+                        <span class="text-gray-900 mr-5">{{ $thread->author->username() }}</span>
                     </a>
                 </div>
 
