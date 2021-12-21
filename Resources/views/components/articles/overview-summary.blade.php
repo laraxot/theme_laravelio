@@ -14,7 +14,7 @@
                     <div class="flex">
                         <x-avatar :user="$article->author()" class="w-6 h-6 rounded-full mr-3" />
 
-                        <a href="{{ route('profile', $article->author()->username()) }}" class="hover:underline">
+                        <a href="{{ Panel::get($article->author())->url() }}" class="hover:underline">
                             <span class="text-gray-900 mr-5">{{ $article->author()->username() }}</span>
                         </a>
                     </div>

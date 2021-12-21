@@ -5,11 +5,11 @@
         <div>
             <div class="flex flex-col lg:flex-row lg:items-center">
                 <div class="flex">
-                    <a href="{{ route('profile', $reply->author()->username()) }}">
+                    <a href="{{ Panel::get($reply->author())->url() }}">
                         <x-avatar :user="$reply->author()" class="w-6 h-6 rounded-full mr-3" />
                     </a>
 
-                    <a href="{{ route('profile', $reply->author()->username()) }}" class="hover:underline">
+                    <a href="{{ Panel::get($reply->author())->url() }}" class="hover:underline">
                         <span class="text-gray-900 mr-5">{{ $reply->author()->username() }}</span>
                     </a>
                 </div>
