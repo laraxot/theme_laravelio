@@ -5,7 +5,9 @@
                 Articles
             </h1>
 
-            <x-buttons.primary-button href="{{-- route('articles.create') --}}" class="hidden lg:block">
+            <x-buttons.primary-button
+                href="{{ route('containers.show', ['container0' => 'pages', 'item0' => 'article-create']) }}"
+                class="hidden lg:block">
                 Create Article
             </x-buttons.primary-button>
         </div>
@@ -19,11 +21,10 @@
                 <x-articles.filter :selectedSortBy="$selectedSortBy" />
 
                 <div class="flex-shrink-0">
-                    <x-buttons.secondary-button class="flex items-center gap-x-2"
-                        @click="activeModal = 'tag-filter'">
+                    <x-buttons.secondary-button class="flex items-center gap-x-2" @click="activeModal = 'tag-filter'">
                         <x-svg icon="o-filter" class="w-5 h-5" />
                         Tag filter
-                        </x-buttons.secondary-button>
+                    </x-buttons.secondary-button>
                 </div>
             </div>
         </div>
@@ -58,7 +59,7 @@
 
         <div class="w-1/2">
             <x-buttons.primary-cta href="{{-- route('articles.create') --}}" class="w-full">
-                Create Article
+                Create Article3
             </x-buttons.primary-cta>
         </div>
     </div>

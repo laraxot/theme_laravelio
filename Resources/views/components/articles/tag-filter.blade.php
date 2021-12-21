@@ -33,11 +33,11 @@
             @foreach ($tags as $tag)
                 <button type="button" wire:click="toggleTag('{{ $tag->slug() }}')" @click="$dispatch('close-modal')"
                     class="flex items-center py-3.5 hover:text-lio-500"
-                    :class="{ 'text-lio-500': '{{ $tag->id() }}' === selectedTag }"
-                    x-show="isFiltered('{{ $tag->name() }}')">
-                    {{ $tag->name() }}
+                    :class="{ 'text-lio-500': '{{ $tag->getKey() }}' === selectedTag }"
+                    x-show="isFiltered('{{ $tag->title }}')">
+                    {{ $tag->title }}
                     <x-svg icon="o-check" -circle class="ml-3 w-6 h-6 text-lio-500" x-cloak
-                        x-show="'{{ $tag->id() }}' === selectedTag" />
+                        x-show="'{{ $tag->getKey() }}' === selectedTag" />
                 </button>
             @endforeach
         </div>
@@ -46,10 +46,10 @@
     <div class="flex gap-x-2 justify-end p-4">
         <x-buttons.secondary-button @click="$dispatch('close-modal')">
             Cancel
-            </x-buttons.secondary-button>
+        </x-buttons.secondary-button>
 
-            <x-buttons.secondary-button wire:click="toggleTag('')" @click="$dispatch('close-modal')">
-                Remove filter
-                </x-buttons.secondary-button>
+        <x-buttons.secondary-button wire:click="toggleTag('')" @click="$dispatch('close-modal')">
+            Remove filter
+        </x-buttons.secondary-button>
     </div>
 </div>
