@@ -29,7 +29,7 @@
                 <div x-text="body + '\n'" class="invisible whitespace-pre-line border-none p-5 min-h-[5rem]"></div>
                 <textarea
                     class="w-full h-full absolute left-0 top-0 right-0 bottom-0 overflow-y-hidden resize-none border-none p-5 focus:border focus:border-lio-300 focus:ring focus:ring-lio-200 focus:ring-opacity-50"
-                    id="body" name="body" placeholder="{{ $placeholder }}" x-model=body required
+                    rows="12" id="body" name="body" placeholder="{{ $placeholder }}" x-model=body required
                     @keydown.cmd.enter="submit($event)" @keydown.ctrl.enter="submit($event)"></textarea>
             </div>
 
