@@ -22,7 +22,7 @@
     </div>
 
     <div class="mt-3 break-words">
-        <a href="{{ route('thread', $thread->slug()) }}" class="hover:underline">
+        <a href="{{ Panel::get($thread)->url() }}" class="hover:underline">
             <h3 class="text-xl text-gray-900 font-semibold">
                 {{ $thread->subject() }}
             </h3>

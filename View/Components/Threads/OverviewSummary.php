@@ -20,6 +20,7 @@ class OverviewSummary extends Component {
      */
     public function __construct(Thread $thread) {
         //dddx(get_class($thread)); //Modules\Forum\Models\Thread
+
         $this->thread = $thread;
     }
 
