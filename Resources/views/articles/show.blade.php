@@ -57,7 +57,7 @@ $article = $row;
 
                     <div class="flex flex-col gap-y-2 text-white pb-4 lg:pb-12 lg:flex-row lg:items-center">
                         <div class="flex items-center">
-                            <x-avatar :user="$article->author()" class="w-6 h-6 rounded-full mr-3" />
+                            <x-avatar :user="$article->author" class="w-6 h-6 rounded-full mr-3" />
 
                             <a href="{{-- route('profile',$article->author->username()) --}}{{ Panel::get($article->profile)->url() }}"
                                 class="hover:underline">

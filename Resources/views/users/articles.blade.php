@@ -44,13 +44,13 @@
                         </x-tag>
                     @endforeach
                 </div>
-                <a href="{{ route('articles.show', $article->slug()) }}" class="block">
+                <a href="{{ Panel::get($article)->url() }}" class="block">
                     <div class="mt-4 flex justify-between items-center">
                         <h3 class="text-xl leading-7 font-semibold text-gray-900">
                             {{ $article->title() }}
                         </h3>
                         <div class="flex">
-                            <a href="{{ route('articles.show', $article->slug()) }}" class="button mr-2">
+                            <a href="{{ Panel::get($article)->url() }}" class="button mr-2">
                                 View
                             </a>
                             <a href="{{ route('articles.edit', $article->slug()) }}" class="button button-primary">
@@ -67,7 +67,7 @@
                     <div class="flex items-center">
                         <div class="flex-shrink-0">
                             <a href="#">
-                                <x-avatar :user="$article->author()" class="h-10 w-10" />
+                                <x-avatar :user="$article->author" class="h-10 w-10" />
                             </a>
                         </div>
                         <div class="ml-3">
