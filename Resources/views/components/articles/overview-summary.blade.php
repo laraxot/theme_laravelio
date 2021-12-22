@@ -30,7 +30,7 @@
             <div class="break-words">
                 <a href="{{ Panel::get($article)->url() }}" class="hover:underline">
                     <h3 class="text-xl text-gray-900 font-semibold">
-                        {{ $article->title() }}
+                        {{ $article->title }}.
                     </h3>
                 </a>
 
