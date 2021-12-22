@@ -34,7 +34,11 @@ class Avatar extends Component {
         if (null == $this->user) {
             return 'not logged';
         }
+        $view = 'pub_theme::components.avatar';
+        $view_params = [
+            'view' => $view,
+        ];
 
-        return view()->make('pub_theme::components.avatar');
+        return view()->make($view, $view_params);
     }
 }

@@ -1,5 +1,5 @@
 @props(['article'])
-
+  
 <div class="h-full rounded-lg shadow-lg bg-white lg:p-5">
     <div class="flex flex-col gap-x-8 lg:flex-row">
         <a href="{{ Panel::get($article)->url() }}" class="block">
@@ -7,18 +7,21 @@
                 style="background-image: url({{ $article->heroImage() }});">
             </div>
         </a>
-
+        
         <div class="flex flex-col gap-y-3 p-4 lg:p-0 lg:gap-y-3.5">
             <div>
                 <div class="flex flex-col gap-y-2 lg:flex-row lg:items-center">
                     
+                    
                     <div class="flex">
+
                         <x-avatar :user="$article->author" class="w-6 h-6 rounded-full mr-3" />
 
                         <a href="{{ Panel::get($article->author)->url() }}" class="hover:underline">
                             <span class="text-gray-900 mr-5">{{ $article->author->username() }}</span>
                         </a>
                     </div>
+                    
                     
 
                     <span class="font-mono text-gray-700 mt-1 lg:mt-0">
@@ -65,5 +68,7 @@
                 </div>
             </div>
         </div>
+        
     </div>
 </div>
+
