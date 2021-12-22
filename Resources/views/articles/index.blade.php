@@ -12,7 +12,7 @@
     <div class="pt-5 pb-10 shadow-inner lg:pt-16 lg:pb-0">
         <div class="container mx-auto flex flex-col gap-x-12 px-4 lg:flex-row">
             <div class="lg:w-3/4">
-                <livewire:theme::show_articles />
+                <livewire:theme::show-articles />
             </div>
 
             <div class="lg:w-1/4">
