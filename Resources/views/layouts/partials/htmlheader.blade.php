@@ -62,4 +62,5 @@
     {!! Theme::showStyles(false) !!}
     @livewireStyles
     @stack('styles')
+    
 </head>
