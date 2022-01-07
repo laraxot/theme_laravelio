@@ -10,9 +10,11 @@
                         <x-avatar :user="$thread->author()" class="w-6 h-6 rounded-full mr-3" />
                     </a>
 
+                    @if( !empty($thread->authorRelation ))
                     <a href="{{ Panel::get($thread->author())->url() }}" class="hover:underline">
                         <span class="text-gray-900 mr-5">{{ $thread->authorRelation->username() }}</span>
                     </a>
+                    @endif
                 </div>
 
                 <span class="font-mono text-gray-700 mt-1 lg:mt-0">
