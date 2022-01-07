@@ -5,12 +5,13 @@
         <div>
             <div class="flex flex-col lg:flex-row lg:items-center">
                 <div class="flex">
+
                     <a href="{{ Panel::get($thread->author())->url() }}">
                         <x-avatar :user="$thread->author()" class="w-6 h-6 rounded-full mr-3" />
                     </a>
 
                     <a href="{{ Panel::get($thread->author())->url() }}" class="hover:underline">
-                        <span class="text-gray-900 mr-5">{{ $thread->author->username() }}</span>
+                        <span class="text-gray-900 mr-5">{{ $thread->authorRelation->username() }}</span>
                     </a>
                 </div>
 
