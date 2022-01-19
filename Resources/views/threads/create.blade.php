@@ -22,7 +22,7 @@
                 {{-- @include('forum.threads._form', [
                     'route' => ['threads.store'],
                 ]) --}}
-                @include($view.'._form',['form_action'=>$_panel->url(['act'=>'store'])])
+                @include($view.'._form',['form_action'=>$_panel->url('store')])
             </div>
 
             <x-forms.info>

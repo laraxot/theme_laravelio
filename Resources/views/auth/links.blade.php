@@ -20,7 +20,7 @@ $user = \Auth::user();
             @lang('lu::headernav.welcome') {{ \Auth::user()->handle }}!
         </a>
         <ul class="dropdown-menu">
-            <li><a href="{{ $profile_panel->url(['act' => 'show']) }}" class="dropdown-item" title="profile">Profile</a>
+            <li><a href="{{ $profile_panel->url('show') }}" class="dropdown-item" title="profile">Profile</a>
             </li>
             <li><a href="{{ route('logout') }}" class="dropdown-item" title="logout" onclick="event.preventDefault();
                      document.getElementById('logout-form').submit();">
