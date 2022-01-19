@@ -13,7 +13,7 @@
                             Forum
                         </h1>
                         <x-buttons.primary-button
-                            href="{{-- $_panel->url(['act'=>'create']) --}}{{ route('containers.show', ['container0' => 'pages', 'item0' => 'thread-create']) }}"
+                            href="{{-- $_panel->url('create') --}}{{ route('containers.show', ['container0' => 'pages', 'item0' => 'thread-create']) }}"
                             class="hidden lg:block">
                             Create Thread
                         </x-buttons.primary-button>

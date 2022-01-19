@@ -10,9 +10,6 @@ $article = $row;
     <link rel="canonical" href="{{ $article->canonicalUrl() }}" />
 @endpush
 
-
-
-
 @section('content')
     <article class="bg-white">
 
@@ -21,7 +18,7 @@ $article = $row;
             <div class="container mx-auto">
                 <div class="px-4 lg:px-0 lg:mx-48">
                     <div class="flex items-center justify-between pt-6 mb-28">
-                        <a href="{{ $_panel->url(['act' => 'index']) }}"
+                        <a href="{{ $_panel->url('index') }}"
                             class="hidden flex items-center text-base text-white hover:underline lg:flex">
                             <x-svg icon="s-arrow-leftclass"="w-4h-4fill-current" />
                             <span class="text-white ml-1 hover:text-gray-100">Back to articles</span>
