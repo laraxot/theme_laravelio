@@ -10,12 +10,16 @@ use Illuminate\View\Component;
  * Undocumented class.
  */
 class Thread extends Component {
+    public $thread;
+
     /**
      * Create a new component instance.
      *
      * @return void
      */
-    public function __construct() {
+    public function __construct($thread) {
+        dddx(get_class($thread));
+        $this->thread = $thread;
     }
 
     /**
