@@ -6,6 +6,7 @@
             <div class="flex flex-row justify-between items-start lg:items-center">
                 <div>
                     <div class="flex flex-col lg:flex-row lg:items-center">
+                        {{--  
                         @if($thread->author)
                         <div>
                             <a href="{{ Panel::get($thread->author)->url() }}"
@@ -15,7 +16,7 @@
                             </a>
                         </div>
                         @endif
-
+                        --}}
                         <span class="font-mono text-gray-700 mt-1 lg:mt-0">
                             {{ $thread->createdAt()->format('j M, Y \a\t h:i') }}
                         </span>
