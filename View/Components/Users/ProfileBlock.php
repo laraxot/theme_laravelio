@@ -10,12 +10,15 @@ use Illuminate\View\Component;
  * Undocumented class.
  */
 class ProfileBlock extends Component {
+    public $user;
+
     /**
      * Create a new component instance.
      *
      * @return void
      */
-    public function __construct() {
+    public function __construct($user) {
+        $this->user = $user;
     }
 
     /**
