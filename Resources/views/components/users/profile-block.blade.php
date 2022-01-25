@@ -16,7 +16,7 @@
         </a>
 
         <span class="text-gray-600 mb-4">
-            Joined {{ $user->createdAt()->format('j M Y') }}
+            Joined {{-- $user->createdAt()->format('jMY') --}}
         </span>
 
         <div class="flex items-center gap-x-3">
