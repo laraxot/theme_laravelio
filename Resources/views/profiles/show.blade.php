@@ -1,6 +1,5 @@
 @php($user = $row)
-{{ dddx($user) }}
-@php($title = "{$user->username()} ({$user->name()})")
+@php($title = "{$user->username} ({$user->name})")
 
 
 @extends('pub_theme::layouts.default')
