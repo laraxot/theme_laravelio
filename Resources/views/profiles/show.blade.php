@@ -18,7 +18,7 @@
                 <div class="w-full mb-10 lg:w-1/3 lg:mb-0">
                     <div>
                         <div class="flex items-center gap-x-4">
-                            <h1 class="text-4xl font-bold">{{ $user->name() }}</h1>
+                            <h1 class="text-4xl font-bold">{{ $user->name }}</h1>
                             {{-- @if ($user->isAdmin() || $user->isModerator())
                                 <span class="border border-lio-500 text-lio-500 rounded px-3 py-1">
                                     {{ $user->isAdmin() ? 'Admin' : 'Moderator' }}
@@ -27,13 +27,13 @@
                         </div>
 
                         <span class="text-gray-600">
-                            Joined {{ $user->created_at->format('j M Y') }}
+                            Joined {{-- $user->created_at->format('jMY') --}}
                         </span>
                     </div>
 
                     <div class="mt-4">
                         <span class="text-gray-900">
-                            {{ $user->bio() }}
+                            {{ $user->bio }}
                         </span>
                     </div>
                     {{-- <div class="mt-4 mb-6 flex items-center gap-x-3">
