@@ -9,7 +9,7 @@ use Illuminate\View\Component;
 /**
  * Undocumented class.
  */
-class Summary extends Component {
+class UserSummary extends Component {
     /**
      * Create a new component instance.
      *
