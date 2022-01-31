@@ -5,7 +5,7 @@
 @section('small-content')
     <p class="mb-4">{{ Session::get('status', 'Please fill in your email address below.') }}</p>
 
-    <form action="{{ route('password.forgot.post') }}" method="POST" class="w-full">
+    <form action="{{-- route('password.forgot.post') --}}" method="POST" class="w-full">
         @csrf
 
         
