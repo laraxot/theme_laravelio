@@ -11,14 +11,22 @@ use Illuminate\View\Component;
  */
 class Filter extends Component {
     public $selectedSortBy;
+    public  $selectedFilter;
+    public $activeTag;
 
     /**
      * Create a new component instance.
      *
      * @return void
      */
-    public function __construct($selectedSortBy) {
+    public function __construct($selectedSortBy = null, $selectedFilter = null, $activeTag = null) {
         $this->selectedSortBy = $selectedSortBy;
+        //dddx(['selectedFilter' => $selectedFilter,
+        //    'activeTag' => $activeTag,
+        //]);
+        $this->selectedFilter=$selectedFilter;
+        $this->activeTag=$activeTag;
+
     }
 
     /**
