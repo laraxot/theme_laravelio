@@ -1,0 +1,57 @@
+<x-icon-([a-z\-]*) 
+<x-svg icon="$1" 
+------------------ 
+<x-heroicon-([a-z\-]*) 
+<x-svg icon="$1" 
+-----------------
+route\(\'profile\',([^}]*) //in https://regex101.com/ route\('profile',([^}]*) // in vscode -----------------
+route('profile', $member->username)
+Panel::get($member)->url()
+-----------------
+route('profile', $article->author()->username())
+Panel::get($article->author())->url()
+--------------
+route('profile', $reply->author()->username())
+Panel::get($reply->author())->url()
+------------
+route('profile',$thread->author()->username())
+Panel::get($thread->author())->url()
+------------
+route('profile', $thread->author()->username())
+Panel::get($thread->author())->url()
+------------
+route('thread', $thread->slug())
+Panel::get($thread)->url()
+------------
+route('articles.show', $article->slug())
+Panel::get($article)->url()
+------------
+------------
+------------
+------------
+------------
+------------
+------------
+------------
+------------
+------------
+------------
+------------
+------------
+------------
+------------
+------------
+------------
+------------
+------------
+------------
+------------
+------------
+------------
+------------
+------------
+------------
+------------
+------------
+------------
+------------
