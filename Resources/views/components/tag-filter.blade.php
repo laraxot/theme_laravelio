@@ -33,7 +33,7 @@
             @foreach ($tags as $tag)
                 <a href="{{-- route('forum.tag',[$tag->slug(),'filter'=>$filter]) --}}" class="flex items-center py-3.5 hover:text-lio-500"
                     :class="{ 'text-lio-500': '{{ $tag->id }}' === activeTag }"
-                    x-show="isFiltered('{{ $tag->name() }}')">
+                    x-show="isFiltered('{{ $tag->name }}')">
                     {{ $tag->name() }}
                     <x-svg icon="o-check" -circle class="ml-3 w-6 h-6 text-lio-500" x-cloak
                         x-show="'{{ $tag->id }}' === activeTag" />
