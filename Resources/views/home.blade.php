@@ -25,25 +25,25 @@
 
                     <div>
                         @if (Auth::guest())
-                            <x-buttons.primary-cta href="{{ route('register') }}"
+                            <x-button.primary-cta href="{{ route('register') }}"
                                 class="w-full mb-3 lg:w-auto lg:mr-2">
                                 Join the community
-                                </x-buttons.primary-cta>
+                                </x-button.primary-cta>
 
-                                <x-buttons.secondary-cta href="{{ $_theme->url('thread', 'index') }}"
+                                <x-button.secondary-cta href="{{ $_theme->url('thread', 'index') }}"
                                     class="w-full lg:w-auto">
                                     Visit the forum
-                                </x-buttons.secondary-cta>
+                                </x-button.secondary-cta>
                             @else
-                                <x-buttons.primary-cta href="{{ $_theme->url('thread', 'index') }}"
+                                <x-button.primary-cta href="{{ $_theme->url('thread', 'index') }}"
                                     class="w-full mb-3 lg:w-auto lg:mr-2">
                                     Start a Thread
-                                </x-buttons.primary-cta>
+                                </x-button.primary-cta>
 
-                                <x-buttons.primary-cta href="{{ $_theme->url('article', 'index') }}"
+                                <x-button.primary-cta href="{{ $_theme->url('article', 'index') }}"
                                     class="w-full mb-3 lg:w-auto lg:mr-2">
                                     Share an Article
-                                </x-buttons.primary-cta>
+                                </x-button.primary-cta>
                         @endif
                     </div>
                 </div>
@@ -127,9 +127,9 @@
             </div>
 
             <div class="flex justify-center">
-                <x-buttons.primary-cta href="{{-- route('forum') --}}" class="w-full lg:w-auto">
+                <x-button.primary-cta href="{{-- route('forum') --}}" class="w-full lg:w-auto">
                     View all threads
-                </x-buttons.primary-cta>
+                </x-button.primary-cta>
             </div>
         </div>
     </section>
@@ -168,9 +168,9 @@
         </div>
         {{-- <x-articles.featured :articles="$latestArticles" /> --}}
         <div class="flex justify-center">
-            <x-buttons.primary-cta href="{{-- route('articles') --}}" class="w-full lg:w-auto">
+            <x-button.primary-cta href="{{-- route('articles') --}}" class="w-full lg:w-auto">
                 View all articles
-            </x-buttons.primary-cta>
+            </x-button.primary-cta>
         </div>
     </section>
     <!-- /Popular articles -->

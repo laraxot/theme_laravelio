@@ -37,9 +37,9 @@
             </div>
 
             <div class="px-4 py-3 bg-gray-50 text-right sm:px-6">
-                <x-buttons.primary-button type="submit">
+                <x-button.primary-button type="submit">
                     Update Password
-                </x-buttons.primary-button>
+                </x-button.primary-button>
             </div>
         </div>
     </x-form>

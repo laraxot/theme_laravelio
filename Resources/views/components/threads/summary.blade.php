@@ -31,8 +31,8 @@
             </p>
         </div>
 
-        <x-buttons.arrow-button href="{{ Panel::get($thread)->url() }}" class="items-end">
+        <x-button.arrow-button href="{{ Panel::get($thread)->url() }}" class="items-end">
             Open thread
-        </x-buttons.arrow-button>
+        </x-button.arrow-button>
     </div>
 </div>

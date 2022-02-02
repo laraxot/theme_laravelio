@@ -94,9 +94,9 @@
 
             <div class="px-4 py-3 bg-gray-50 text-right sm:px-6">
                 <span class="inline-flex rounded-md shadow-sm">
-                    <x-buttons.primary-button type="submit">
+                    <x-button.primary-button type="submit">
                         Update Profile
-                    </x-buttons.primary-button>
+                    </x-button.primary-button>
                 </span>
             </div>
         </div>
