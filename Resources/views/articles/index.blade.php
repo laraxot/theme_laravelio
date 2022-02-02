@@ -1,5 +1,5 @@
 @title('Community Articles')
-{{--  
+{{--
 @canonical($canonical)
 --}}
 
@@ -23,7 +23,7 @@
             </h2>
             <div class="mt-8 flex lg:mt-0 lg:shrink-0">
                 <div class="inline-flex rounded-md shadow">
-                    <x-buttons.primary-button href="{{-- route('articles.create') --}}" class="px-5 py-3 text-base font-medium">
+                    <x-button.primary-button href="{{-- route('articles.create') --}}" class="px-5 py-3 text-base font-medium">
                         Share Your Article
                     </x-buttons.primary-button>
                 </div>
@@ -50,7 +50,7 @@
                             <x-articles.filter :selectedFilter="$_theme->filter()" :activeTag="$_theme->activeTag()" />
 
                             <div class="shrink-0">
-                                <x-buttons.secondary-button class="flex items-center gap-x-2" @click="activeModal = 'tag-filter'">
+                                <x-button.secondary-button class="flex items-center gap-x-2" @click="activeModal = 'tag-filter'">
                                     <x-svg icon="o-filter" class="w-5 h-5" />
                                     Tag filter
                                 </x-buttons.secondary-button>
@@ -78,7 +78,7 @@
 
                     <div class="flex gap-x-4 mt-10">
                         <div class="w-1/2">
-                            <x-buttons.secondary-cta class="w-full" @click="activeModal = 'tag-filter'">
+                            <x-button.secondary-cta class="w-full" @click="activeModal = 'tag-filter'">
                                 <span class="flex items-center gap-x-2">
                                     <x-svg icon="o-filter" class="w-5 h-5" />
                                     Tag filter
@@ -87,7 +87,7 @@
                         </div>
 
                         <div class="w-1/2">
-                            <x-buttons.primary-cta href="{{-- route('articles.create') --}}" class="w-full">
+                            <x-button.primary-cta href="{{-- route('articles.create') --}}" class="w-full">
                                 Create Article
                             </x-buttons.primary-cta>
                         </div>
@@ -126,10 +126,10 @@
 
                 <div class="modal" x-show="activeModal === 'tag-filter'" x-cloak>
                     <div class="w-full h-full p-8 lg:w-96 lg:h-3/4 overflow-y-scroll">
-                        <x-tag-filter 
-                            :activeTag="$_theme->activeTag() ?? null" 
-                            :tags="$_theme->tags()" 
-                            :filter="$_theme->filter()" 
+                        <x-tag-filter
+                            :activeTag="$_theme->activeTag() ?? null"
+                            :tags="$_theme->tags()"
+                            :filter="$_theme->filter()"
                             route="articles"
                             cancelRoute="articles"
                             jumpTo="articles"
