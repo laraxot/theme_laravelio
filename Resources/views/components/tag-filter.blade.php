@@ -47,7 +47,7 @@
             Cancel
             </x-button.secondary-button>
 
-            <x-button.secondary-button href="{{ route('forum') }}" x-show="activeTag">
+            <x-button.secondary-button href="{{-- route('forum') --}}" x-show="activeTag">
                 Remove filter
                 </x-button.secondary-button>
     </div>
