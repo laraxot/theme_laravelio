@@ -43,12 +43,20 @@
     </div>
 
     <div class="flex gap-x-2 justify-end p-4">
-        <x-buttons.secondary-button @click="$dispatch('close-modal')">
+        <x-button.secondary-button @click="$dispatch('close-modal')">
             Cancel
+<<<<<<< HEAD
         </x-buttons.secondary-button>
 
         <x-buttons.secondary-button href="{{-- route('forum') --}}" x-show="activeTag">
             Remove filter
         </x-buttons.secondary-button>
+=======
+            </x-button.secondary-button>
+
+            <x-button.secondary-button href="{{ route('forum') }}" x-show="activeTag">
+                Remove filter
+                </x-button.secondary-button>
+>>>>>>> 6d22ecd (.)
     </div>
 </div>

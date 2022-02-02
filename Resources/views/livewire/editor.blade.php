@@ -37,7 +37,7 @@
                 <x-forms.editor.controls />
 
                 @if ($hasButton)
-                    <x-buttons.primary-cta type="{{ $buttonType }}" class="w-full md:w-auto">
+                    <x-button.primary-cta type="{{ $buttonType }}" class="w-full md:w-auto">
                         <span class="flex items-center">
                             {{ $buttonLabel }}
 
@@ -52,7 +52,7 @@
                                 </span>
                             @endif
                         </span>
-                    </x-buttons.primary-cta>
+                    </x-button.primary-cta>
                 @endif
             </div>
         </div>

@@ -156,13 +156,13 @@
 
                             <li>
                                 <div class="hidden lg:block">
-                                    <x-buttons.secondary-cta class="flex items-center"
+                                    <x-button.secondary-cta class="flex items-center"
                                         href="{{ route('login') }}">
                                         <span class="flex items-center">
                                             <x-svg icon="o-user" class="w-5 h-5 mr-1" />
                                             Login
                                         </span>
-                                    </x-buttons.secondary-cta>
+                                    </x-button.secondary-cta>
                                 </div>
 
                                 <a href="{{ route('login') }}"

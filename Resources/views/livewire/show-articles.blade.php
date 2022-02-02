@@ -5,11 +5,11 @@
                 Articles
             </h1>
 
-            <x-buttons.primary-button
+            <x-button.primary-button
                 href="{{ route('containers.show', ['container0' => 'pages', 'item0' => 'article-create']) }}"
                 class="hidden lg:block">
                 Create Article
-            </x-buttons.primary-button>
+            </x-button.primary-button>
         </div>
 
         <div class="flex items-center justify-between lg:mt-6">
@@ -21,10 +21,10 @@
                 <x-articles.filter :selectedSortBy="$selectedSortBy" />
 
                 <div class="flex-shrink-0">
-                    <x-buttons.secondary-button class="flex items-center gap-x-2" @click="activeModal = 'tag-filter'">
+                    <x-button.secondary-button class="flex items-center gap-x-2" @click="activeModal = 'tag-filter'">
                         <x-svg icon="o-filter" class="w-5 h-5" />
                         Tag filter
-                    </x-buttons.secondary-button>
+                    </x-button.secondary-button>
                 </div>
             </div>
         </div>
@@ -49,18 +49,18 @@
 
     <div class="flex gap-x-4 mt-10">
         <div class="w-1/2">
-            <x-buttons.secondary-cta class="w-full" @click="activeModal = 'tag-filter'">
+            <x-button.secondary-cta class="w-full" @click="activeModal = 'tag-filter'">
                 <span class="flex items-center gap-x-2">
                     <x-svg icon="o-filter" class="w-5 h-5" />
                     Tag filter
                 </span>
-            </x-buttons.secondary-cta>
+            </x-button.secondary-cta>
         </div>
 
         <div class="w-1/2">
-            <x-buttons.primary-cta href="{{-- route('articles.create') --}}" class="w-full">
+            <x-button.primary-cta href="{{-- route('articles.create') --}}" class="w-full">
                 Create Article3
-            </x-buttons.primary-cta>
+            </x-button.primary-cta>
         </div>
     </div>
 
