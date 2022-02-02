@@ -1,6 +1,3 @@
-<<<<<<< HEAD
-WIP
-=======
 @php($user = $row)
 @php($title = "{$user->username()} ({$user->name()})")
 
@@ -207,4 +204,3 @@ WIP
         ])
     @endcan
 @endsection
->>>>>>> 6d22ecd (.)

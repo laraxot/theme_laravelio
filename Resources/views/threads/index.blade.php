@@ -12,13 +12,8 @@
                         <h1 class="text-4xl text-gray-900 font-bold">
                             Forum
                         </h1>
-<<<<<<< HEAD
-                        <x-buttons.primary-button
-                            href="{{-- $_panel->url('create') --}}{{ route('containers.show', ['container0' => 'pages', 'item0' => 'thread-create']) }}"
-=======
                         <x-button.primary-button
                             href="{{-- $_panel->url(['act'=>'create']) --}}{{ route('containers.show', ['container0' => 'pages', 'item0' => 'thread-create']) }}"
->>>>>>> 6d22ecd (.)
                             class="hidden lg:block">
                             Create Thread
                         </x-button.primary-button>
