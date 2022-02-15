@@ -67,7 +67,7 @@ class ThemeComposer {
         }
 
         $model = xotModel($this->model_name);
-        $panel = PanelService::get($model);
+        $panel = PanelService::make()->get($model);
 
         return $panel->url($this->act);
     }
