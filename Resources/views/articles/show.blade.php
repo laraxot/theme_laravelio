@@ -58,7 +58,7 @@ $article = $row;
 
                                 <x-avatar :user="$article->author" class="w-6 h-6 rounded-full mr-3" />
 
-                                <a href="{{ Panel::get($article->author)->url() }}" class="hover:underline">
+                                <a href="{{ Panel::make()->get($article->author)->url() }}" class="hover:underline">
                                     <span class="mr-5">{{ $article->author->name }}</span>
                                 </a>
                             </div>

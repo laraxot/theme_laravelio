@@ -6,25 +6,25 @@
 -----------------
 route\(\'profile\',([^}]*) //in https://regex101.com/ route\('profile',([^}]*) // in vscode -----------------
 route('profile', $member->username)
-Panel::get($member)->url()
+Panel::make()->get($member)->url()
 -----------------
 route('profile', $article->author()->username())
-Panel::get($article->author())->url()
+Panel::make()->get($article->author())->url()
 --------------
 route('profile', $reply->author()->username())
-Panel::get($reply->author())->url()
+Panel::make()->get($reply->author())->url()
 ------------
 route('profile',$thread->author()->username())
-Panel::get($thread->author())->url()
+Panel::make()->get($thread->author())->url()
 ------------
 route('profile', $thread->author()->username())
-Panel::get($thread->author())->url()
+Panel::make()->get($thread->author())->url()
 ------------
 route('thread', $thread->slug())
-Panel::get($thread)->url()
+Panel::make()->get($thread)->url()
 ------------
 route('articles.show', $article->slug())
-Panel::get($article)->url()
+Panel::make()->get($article)->url()
 ------------
 ------------
 ------------

@@ -5,7 +5,7 @@ $user = \Auth::user();
 @if (\Auth::check())
     @php
         $profile = \Auth::user()->profile;
-        $profile_panel = Panel::get($profile);
+        $profile_panel = Panel::make()->get($profile);
     @endphp
     <li class="nav-item dropdown">
         <a class="nav-link dropdown-toggle" title="Welcome {{ \Auth::user()->handle }}" href="#"
