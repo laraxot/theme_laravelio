@@ -35,7 +35,7 @@
     <title>
         {{ isset($title) ? $title . ' | ' : '' }}
         {{ config('app.name') }}
-        {{ is_active('home') ? '- The Laravel Community Portal' : '' }}
+        {{ is_active(['home']) ? '- The Laravel Community Portal' : '' }}
     </title>
 
     <meta name="description"
