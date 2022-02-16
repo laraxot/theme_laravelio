@@ -6,7 +6,7 @@
             <div>
                 <div class="flex flex-col lg:flex-row lg:items-center">
                     <div>
-                        <a href="{{ Panel::get($reply->author())->url() }}"
+                        <a href="{{ Panel::make()->get($reply->author())->url() }}"
                             class="flex items-center hover:underline">
                             <x-avatar :user="$reply->author()" class="w-6 h-6 rounded-full mr-3" />
                             <span class="text-gray-900 mr-5">{{ $reply->author->username() }}</span>

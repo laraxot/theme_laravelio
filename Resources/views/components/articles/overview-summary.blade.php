@@ -2,7 +2,7 @@
 
 <div class="h-full rounded-lg shadow-lg bg-white lg:p-5">
     <div class="flex flex-col gap-x-8 lg:flex-row">
-        <a href="{{ Panel::get($article)->url() }}" class="block">
+        <a href="{{ Panel::make()->get($article)->url() }}" class="block">
             <div class="w-full h-32 rounded-t-lg bg-center bg-cover bg-gray-900 lg:w-48 lg:h-full lg:rounded-lg"
                 style="background-image: url({{ $article->heroImage() }});">
             </div>
@@ -15,7 +15,7 @@
                     @if ($article->author)
                         <div class="flex">
                             <x-avatar :user="$article->author" class="w-6 h-6 rounded-full mr-3" />
-                            <a href="{{ Panel::get($article->author)->url() }}" class="hover:underline">
+                            <a href="{{ Panel::make()->get($article->author)->url() }}" class="hover:underline">
                                 <span class="text-gray-900 mr-5">{{ $article->author->username() }}</span>
                             </a>
                         </div>
@@ -30,7 +30,7 @@
             </div>
 
             <div class="break-words">
-                <a href="{{ Panel::get($article)->url() }}" class="hover:underline">
+                <a href="{{ Panel::make()->get($article)->url() }}" class="hover:underline">
                     <h3 class="text-xl text-gray-900 font-semibold">
                         {{ $article->title }}.
                     </h3>
