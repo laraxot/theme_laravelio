@@ -32,7 +32,7 @@
     @endFormGroup
 
     <div class="flex justify-end items-center">
-        <a href="{{ isset($thread) ? Panel::get($thread)->url() : route('forum') }}" class="text-lio-700 mr-4">Cancel</a>
+        <a href="{{ isset($thread) ? Panel::make()->get($thread)->url() : route('forum') }}" class="text-lio-700 mr-4">Cancel</a>
         <button type="submit" class="button button-primary">{{ isset($thread) ? 'Update Thread' : 'Create Thread' }}</button>
     </div>
 </form>

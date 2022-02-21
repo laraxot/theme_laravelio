@@ -44,12 +44,12 @@
     </div>
 
     <div class="flex gap-x-2 justify-end p-4">
-        <x-buttons.secondary-button @click="$dispatch('close-modal')">
+        <x-button.secondary-button @click="$dispatch('close-modal')">
             Cancel
-        </x-buttons.secondary-button>
+        </x-button.secondary-button>
 
-        <x-buttons.secondary-button wire:click="toggleTag('')" @click="$dispatch('close-modal')">
+        <x-button.secondary-button wire:click="toggleTag('')" @click="$dispatch('close-modal')">
             Remove filter
-        </x-buttons.secondary-button>
+        </x-button.secondary-button>
     </div>
 </div>

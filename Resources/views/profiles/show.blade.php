@@ -51,42 +51,42 @@
 
                     <div class="flex flex-col gap-y-4">
                         @if ($user->isLoggedInUser())
-                            <x-buttons.secondary-button href="{{ route('settings.profile') }}"
+                            <x-button.secondary-button href="{{ route('settings.profile') }}"
                                 class="w-full">
                                 <span class="flex items-center gap-x-2">
                                     <x-svg icon="o-pencil" class="w-5 h-5" />
                                     Edit profile
                                 </span>
-                                </x-buttons.secondary-button>
+                                </x-button.secondary-button>
                         @endif
                         {{-- @can(App\Policies\UserPolicy::BAN, $user) --}}
                         @if ($user->isBanned())
-                            <x-buttons.secondary-button class="w-full"
+                            <x-button.secondary-button class="w-full"
                                 @click.prevent="activeModal = 'unbanUser'">
                                 <span class="flex items-center gap-x-2">
                                     <x-svg icon="o-check" class="w-5 h-5" />
                                     Unban User
                                 </span>
-                                </x-buttons.secondary-button>
+                                </x-button.secondary-button>
                             @else
-                                <x-buttons.danger-button class="w-full"
+                                <x-button.danger-button class="w-full"
                                     @click.prevent="activeModal = 'banUser'">
                                     <span class="flex items-center gap-x-2">
                                         <x-svg icon="hammer" class="w-5 h-5" />
                                         Ban User
                                     </span>
-                                    </x-buttons.danger-button>
+                                    </x-button.danger-button>
                         @endif
                         {{-- @endcan --}}
                         {{-- @if (Auth::check() && Auth::user()->isAdmin())
                             @can(App\Policies\UserPolicy::DELETE, $user)
-                                <x-buttons.danger-button class="w-full"
+                                <x-button.danger-button class="w-full"
                                     @click.prevent="activeModal = 'deleteUser'">
                                     <span class="flex items-center gap-x-2">
                                         <x-svg icon="o-trash" class="w-5 h-5" />
                                         Delete User
                                     </span>
-                                    </x-buttons.danger-button>
+                                    </x-button.danger-button>
                                 @endcan
                         @endif --}}
                     </div>

@@ -12,11 +12,11 @@
                         <h1 class="text-4xl text-gray-900 font-bold">
                             Forum
                         </h1>
-                        <x-buttons.primary-button
+                        <x-button.primary-button
                             href="{{-- $_panel->url(['act'=>'create']) --}}{{ route('containers.show', ['container0' => 'pages', 'item0' => 'thread-create']) }}"
                             class="hidden lg:block">
                             Create Thread
-                        </x-buttons.primary-button>
+                        </x-button.primary-button>
                     </div>
 
                     <div class="flex items-center justify-between lg:mt-6">
@@ -28,11 +28,11 @@
                             <x-threads.filter :filter="$filter" />
 
                             <div class="flex-shrink-0">
-                                <x-buttons.secondary-button class="flex items-center gap-x-2"
+                                <x-button.secondary-button class="flex items-center gap-x-2"
                                     @click="activeModal = 'tag-filter'">
                                     <x-svg icon="o-filter" class="w-5 h-5" />
                                     Tag filter
-                                </x-buttons.secondary-button>
+                                </x-button.secondary-button>
                             </div>
                         </div>
                     </div>
@@ -56,26 +56,26 @@
                     @include('pub_theme::layouts._ads._forum_sidebar')
 
                     <div class="flex justify-center mt-6">
-                        <x-buttons.dark-cta>
+                        <x-button.dark-cta>
                             <x-svg icon="s-rss" class="w-6 h-6 mr-2" />
                             RSS Feed
-                        </x-buttons.dark-cta>
+                        </x-button.dark-cta>
                     </div>
 
                     <div class="flex gap-x-4 mt-10">
                         <div class="w-1/2">
-                            <x-buttons.secondary-cta class="w-full" @click="activeModal = 'tag-filter'">
+                            <x-button.secondary-cta class="w-full" @click="activeModal = 'tag-filter'">
                                 <span class="flex items-center gap-x-2">
                                     <x-svg icon="o-filter" class="w-5 h-5" />
                                     Tag filter
                                 </span>
-                            </x-buttons.secondary-cta>
+                            </x-button.secondary-cta>
                         </div>
 
                         <div class="w-1/2">
-                            <x-buttons.primary-cta href="{{-- route('threads.create') --}}" class="w-full">
+                            <x-button.primary-cta href="{{-- route('threads.create') --}}" class="w-full">
                                 Create Thread
-                            </x-buttons.primary-cta>
+                            </x-button.primary-cta>
                         </div>
                     </div>
 
@@ -166,10 +166,10 @@
                 </div> --}}
 
                 <div class="hidden lg:block mt-6">
-                    <x-buttons.dark-cta class="w-full">
+                    <x-button.dark-cta class="w-full">
                         <x-svg icon="s-rss" class="w-6 h-6 mr-2" />
                         RSS Feed
-                    </x-buttons.dark-cta>
+                    </x-button.dark-cta>
                 </div>
             </div>
         </div>

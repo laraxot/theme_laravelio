@@ -67,12 +67,9 @@ class ThemeComposer {
         }
 
         $model = xotModel($this->model_name);
-        $panel = PanelService::get($model);
-        $parz = [
-            'act' => $this->act,
-        ];
+        $panel = PanelService::make()->get($model);
 
-        return $panel->url($parz);
+        return $panel->url($this->act);
     }
 
     /**
@@ -168,6 +165,20 @@ class ThemeComposer {
         return $trendingArticles;
     }
 
+    /*
+     public function tags() {
+        $tags = Tag::whereHas(
+            'articles',
+            function ($query) {
+                $query->published();
+            }
+        )->orderBy('name')
+        ->get();
+
+        return $tags;
+    }
+    */
+
     public function tags() {
         return Tag::all();
     }
@@ -175,5 +186,38 @@ class ThemeComposer {
     public function selectedTags() {
         return old('tags', []);
         //old('tags', $article->tags()->pluck('id')->toArray()),
+    }
+
+    public function getFilter(array $options = ['recent', 'resolved', 'unresolved'], string $default = 'recent'): string {
+        $filter = (string) request('filter');
+
+        return in_array($filter, $options) ? $filter : $default;
+    }
+
+    public function filter() {
+        $filter = $this->getFilter(['recent', 'popular', 'trending']);
+
+        return $filter;
+    }
+
+    public function activeTag() {
+        //nknown column 'slug' in 'where clause' (SQL: select * from `tags` where `slug` is null limit
+        /*
+        $activeTag = Tag::where('slug', request('tag'))->first();
+
+        return $activeTag;
+        */
+        return null;
+    }
+
+    public function topAuthors() {
+        /*
+         $topAuthors = Cache::remember('topAuthors', now()->addMinutes(30), function () {
+            return User::mostSubmissionsInLastDays(365)->take(5)->get();
+        });
+        */
+        return User::take(5)->get();
+
+        //    return $topAuthors;
     }
 }

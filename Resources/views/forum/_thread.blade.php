@@ -1,7 +1,7 @@
 <li class="px-4 lg:px-0">
     <article class="bg-white p-4 shadow rounded-lg" aria-labelledby="{{ $thread->slug() }}">
         <div class="md:flex md:justify-between">
-            <a href="{{ Panel::get($thread)->url() }}" class="hover:underline">
+            <a href="{{ Panel::make()->get($thread)->url() }}" class="hover:underline">
                 <h2 class="text-xl font-medium text-gray-900">
                     {{ $thread->subject() }}
                 </h2>
@@ -22,7 +22,7 @@
 
         <div class="mt-2 text-sm text-gray-700 space-y-4">
             <p>
-                <a href="{{ Panel::get($thread)->url() }}" class="hover:underline">
+                <a href="{{ Panel::make()->get($thread)->url() }}" class="hover:underline">
                     {!! $thread->excerpt() !!}
                 </a>
             </p>
@@ -31,14 +31,14 @@
         <div class="mt-4 flex justify-between space-x-8">
             <div class="flex space-x-3">
                 <div class="flex-shrink-0">
-                    <a href="{{ Panel::get($thread->author())->url() }}">
+                    <a href="{{ Panel::make()->get($thread->author())->url() }}">
                         <x-avatar :user="$thread->author()" class="h-10 w-10 sm:h-5 sm:w-5 rounded-full" />
                     </a>
                 </div>
 
                 <div class="min-w-0 flex-1">
                     <p class="text-sm text-gray-900">
-                        <a href="{{ Panel::get($thread->author())->url() }}"
+                        <a href="{{ Panel::make()->get($thread->author())->url() }}"
                             class="font-medium hover:underline">
                             {{ $thread->author->name() }}
                         </a>
@@ -56,7 +56,7 @@
                 @if ($thread->isSolved())
                     <span class="inline-flex items-center text-sm">
                         <div class="inline-flex space-x-2">
-                            <a href="{{ Panel::get($thread)->url() }}#{{ $thread->solution_reply_id }}"
+                            <a href="{{ Panel::make()->get($thread)->url() }}#{{ $thread->solution_reply_id }}"
                                 class="rounded-full p-1 bg-lio-100 text-lio-500" title="Resolved">
                                 <x-svg icon="o-check" class="h-5 w-5" />
                             </a>
