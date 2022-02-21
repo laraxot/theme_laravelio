@@ -5,7 +5,7 @@ $user = \Auth::user();
 @if (\Auth::check())
     @php
         $profile = \Auth::user()->profile;
-        $profile_panel = Panel::get($profile);
+        $profile_panel = Panel::make()->get($profile);
     @endphp
     <li class="nav-item dropdown">
         <a class="nav-link dropdown-toggle" title="Welcome {{ \Auth::user()->handle }}" href="#"
@@ -20,7 +20,7 @@ $user = \Auth::user();
             @lang('lu::headernav.welcome') {{ \Auth::user()->handle }}!
         </a>
         <ul class="dropdown-menu">
-            <li><a href="{{ $profile_panel->url(['act' => 'show']) }}" class="dropdown-item" title="profile">Profile</a>
+            <li><a href="{{ $profile_panel->url('show') }}" class="dropdown-item" title="profile">Profile</a>
             </li>
             <li><a href="{{ route('logout') }}" class="dropdown-item" title="logout" onclick="event.preventDefault();
                      document.getElementById('logout-form').submit();">

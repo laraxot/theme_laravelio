@@ -5,11 +5,11 @@
         <div>
             <div class="flex flex-col lg:flex-row lg:items-center">
                 <div class="flex">
-                    <a href="{{ Panel::get($reply->author())->url() }}">
+                    <a href="{{ Panel::make()->get($reply->author())->url() }}">
                         <x-avatar :user="$reply->author()" class="w-6 h-6 rounded-full mr-3" />
                     </a>
 
-                    <a href="{{ Panel::get($reply->author())->url() }}" class="hover:underline">
+                    <a href="{{ Panel::make()->get($reply->author())->url() }}" class="hover:underline">
                         <span class="text-gray-900 mr-5">{{ $reply->author->username() }}</span>
                     </a>
                 </div>
@@ -22,7 +22,7 @@
     </div>
 
     <div class="mt-3 break-words">
-        <a href="{{ Panel::get($thread)->url() }}" class="hover:underline">
+        <a href="{{ Panel::make()->get($thread)->url() }}" class="hover:underline">
             <h3 class="text-xl text-gray-900 font-semibold">
                 {{ $thread->subject() }}
             </h3>

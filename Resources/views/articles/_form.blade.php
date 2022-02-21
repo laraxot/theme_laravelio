@@ -70,7 +70,7 @@
 
         <div class="flex justify-end items-center">
              {{--  
-            <a href="{{ isset($article) ? Panel::get($article)->url() : route('user.articles') }}" class="text-lio-700 mr-4">
+            <a href="{{ isset($article) ? Panel::make()->get($article)->url() : route('user.articles') }}" class="text-lio-700 mr-4">
                 Cancel
             </a>
             --}}

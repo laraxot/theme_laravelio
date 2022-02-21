@@ -33,9 +33,9 @@
                         <p>The last reply to this thread was more than six months ago. Please consider opening a new thread if
                             you have a similar question.</p>
 
-                        <x-buttons.arrow-button href="{{ route('threads.create') }}" class="flex-shrink-0">
+                        <x-button.arrow-button href="{{ route('threads.create') }}" class="flex-shrink-0">
                             Create thread
-                        </x-buttons.arrow-button>
+                        </x-button.arrow-button>
                     </x-info-panel>
                 @else
                     <div class="my-8">
@@ -79,9 +79,9 @@
 
                         <form action="{{ route('verification.resend') }}" method="POST" class="block">
                             @csrf
-                            <x-buttons.arrow-button type="submit" class="flex-shrink-0">
+                            <x-button.arrow-button type="submit" class="flex-shrink-0">
                                 Click here to resend the verification link.
-                            </x-buttons.arrow-button>
+                            </x-button.arrow-button>
                         </form>
                     </x-info-panel>
                 @endif

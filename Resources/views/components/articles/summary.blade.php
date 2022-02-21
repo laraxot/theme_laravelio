@@ -35,7 +35,7 @@ $row_panel = $row_panel = $_panel->newPanel($article);
         </p>
     </div>
 
-    <x-buttons.arrow-button href="{{ $row_panel->url() }}" class="items-end py-2">
+    <x-button.arrow-button href="{{ $row_panel->url() }}" class="items-end py-2">
         Read article
-    </x-buttons.arrow-button>
+    </x-button.arrow-button>
 </div>

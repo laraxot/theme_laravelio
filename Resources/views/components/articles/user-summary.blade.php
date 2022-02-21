@@ -2,7 +2,7 @@
 
 <div class="h-full rounded-lg shadow-lg bg-white">
     <div class="flex flex-col h-full gap-x-8">
-        <a href="{{ Panel::get($article)->url() }}" class="block">
+        <a href="{{ Panel::make()->get($article)->url() }}" class="block">
             <div class="w-full h-32 rounded-t-lg bg-center bg-cover bg-gray-900 lg:h-40"
                 style="background-image: url({{ $article->heroImage() }});">
             </div>
@@ -24,7 +24,7 @@
             </div>
 
             <div class="break-words">
-                <a href="{{ Panel::get($article)->url() }}" class="hover:underline">
+                <a href="{{ Panel::make()->get($article)->url() }}" class="hover:underline">
                     <h3 class="text-xl text-gray-900 font-semibold">
                         {{ $article->title() }}
                     </h3>

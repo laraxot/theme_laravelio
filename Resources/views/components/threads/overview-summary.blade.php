@@ -5,13 +5,16 @@
         <div>
             <div class="flex flex-col lg:flex-row lg:items-center">
                 <div class="flex">
-                    <a href="{{ Panel::get($thread->author())->url() }}">
+
+                    <a href="{{ Panel::make()->get($thread->author())->url() }}">
                         <x-avatar :user="$thread->author()" class="w-6 h-6 rounded-full mr-3" />
                     </a>
 
-                    <a href="{{ Panel::get($thread->author())->url() }}" class="hover:underline">
-                        <span class="text-gray-900 mr-5">{{ $thread->author->username() }}</span>
+                    @if( !empty($thread->authorRelation ))
+                    <a href="{{ Panel::make()->get($thread->author())->url() }}" class="hover:underline">
+                        <span class="text-gray-900 mr-5">{{ $thread->authorRelation->username() }}</span>
                     </a>
+                    @endif
                 </div>
 
                 <span class="font-mono text-gray-700 mt-1 lg:mt-0">
@@ -34,7 +37,7 @@
     </div>
 
     <div class="mt-3 break-words">
-        <a href="{{ Panel::get($thread)->url() }}" class="hover:underline">
+        <a href="{{ Panel::make()->get($thread)->url() }}" class="hover:underline">
             <h3 class="text-xl text-gray-900 font-semibold">
                 {{ $thread->subject() }}
             </h3>
@@ -61,7 +64,7 @@
         </div>
 
         @if ($thread->isSolved())
-            <a href="{{ Panel::get($thread)->url() }}#{{ $thread->solution_reply_id }}"
+            <a href="{{ Panel::make()->get($thread)->url() }}#{{ $thread->solution_reply_id }}"
                 class="flex items-center gap-x-2 font-medium text-lio-500">
                 <x-svg icon="o-badge-check" class="w-6 h-6" />
                 <span class="hover:underline">Solved</span>

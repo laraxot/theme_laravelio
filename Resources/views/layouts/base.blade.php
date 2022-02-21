@@ -11,20 +11,20 @@
     <title>
         {{ isset($title) ? $title.' | ' : '' }}
         {{ config('app.name') }}
-        {{ is_active('home') ? '- The Laravel Community Portal' : '' }}
+        {{ is_active(['home']) ? '- The Laravel Community Portal' : '' }}
     </title>
 
     <meta name="description" content="The Laravel portal for problem solving, knowledge sharing and community building." />
 
     <!-- Scripts -->
-    {{--  
+    {{--
     <script src="{{ mix('js/app.js') }}" defer></script>
     --}}
     <script src="{{ Theme::asset('pub_theme::dist/js/app.js') }}" defer></script>
 
     <!-- Styles -->
     <link rel="stylesheet" href="https://rsms.me/inter/inter.css">
-    {{--  
+    {{--
     <link href="{{ mix('css/app.css') }}" rel="stylesheet">
     --}}
     <link href="{{ Theme::asset('pub_theme::dist/css/app.css') }}" rel="stylesheet">
@@ -33,7 +33,7 @@
     <script>
         window.Laravel = {!! json_encode(['csrfToken' => csrf_token()]) !!};
     </script>
-    {{-- vedere quale pacchetto   
+    {{-- vedere quale pacchetto
     @include('feed::links')
     --}}
     @include('pub_theme::layouts._favicons')

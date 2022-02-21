@@ -31,19 +31,19 @@
                                         <x-tables.table-data>
                                             <div class="flex items-center">
                                                 <div class="flex-shrink-0 h-10 w-10">
-                                                    <a href="{{ Panel::get($article->author)->url() }}">
+                                                    <a href="{{ Panel::make()->get($article->author)->url() }}">
                                                         <x-avatar :user="$article->author"
                                                             class="h-10 w-10 rounded-full" />
                                                     </a>
                                                 </div>
                                                 <div class="ml-4">
                                                     <div class="text-sm font-medium text-gray-900">
-                                                        <a href="{{ Panel::get($article->author)->url() }}">
+                                                        <a href="{{ Panel::make()->get($article->author)->url() }}">
                                                             {{ $article->author->name() }}
                                                         </a>
                                                     </div>
                                                     <div class="text-sm text-gray-500">
-                                                        <a href="{{ Panel::get($article->author)->url() }}">
+                                                        <a href="{{ Panel::make()->get($article->author)->url() }}">
                                                             {{ $article->author->username() }}
                                                         </a>
                                                     </div>
@@ -60,7 +60,7 @@
                                         </x-tables.table-data>
 
                                         <x-tables.table-data class="text-center w-10">
-                                            <a href="{{ Panel::get($article)->url() }}"
+                                            <a href="{{ Panel::make()->get($article)->url() }}"
                                                 class="text-lio-600 hover:text-lio-800">
                                                 <x-svg icon="o-eye" class="w-5 h-5 inline" />
                                             </a>

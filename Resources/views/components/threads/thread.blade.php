@@ -6,14 +6,17 @@
             <div class="flex flex-row justify-between items-start lg:items-center">
                 <div>
                     <div class="flex flex-col lg:flex-row lg:items-center">
+                        {{--  
+                        @if($thread->author)
                         <div>
-                            <a href="{{ Panel::get($thread->author())->url() }}"
+                            <a href="{{ Panel::make()->get($thread->author)->url() }}"
                                 class="flex items-center hover:underline">
-                                <x-avatar :user="$thread->author()" class="w-6 h-6 rounded-full mr-3" />
+                                <x-avatar :user="$thread->author" class="w-6 h-6 rounded-full mr-3" />
                                 <span class="text-gray-900 mr-5">{{ $thread->author->username() }}</span>
                             </a>
                         </div>
-
+                        @endif
+                        --}}
                         <span class="font-mono text-gray-700 mt-1 lg:mt-0">
                             {{ $thread->createdAt()->format('j M, Y \a\t h:i') }}
                         </span>
@@ -24,7 +27,7 @@
                     @if (count($tags = $thread->tags()))
                         <div class="hidden flex-wrap gap-2 mt-2 lg:mt-0 lg:gap-x-4 lg:flex lg:flex-nowrap">
                             @foreach ($tags as $tag)
-                                <a href="{{ route('forum.tag', $tag->slug()) }}">
+                                <a href="{{-- route('forum.tag',$tag->slug()) --}}">
                                     <x-tag>
                                         {{ $tag->name() }}
                                     </x-tag>

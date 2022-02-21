@@ -5,10 +5,10 @@
         <div class="break-words">
             <div class="flex items-center justify-between mb-2.5">
                 <div class="flex items-center">
-                    <a href="{{ Panel::get($thread->author())->url() }}">
+                    <a href="{{ Panel::make()->get($thread->author())->url() }}">
                         <x-avatar :user="$thread->author()" class="w-8 h-8 rounded-full mr-2" />
                     </a>
-                    <a href="{{ Panel::get($thread->author())->url() }}">
+                    <a href="{{ Panel::make()->get($thread->author())->url() }}">
                         <span class="font-heading text-sm text-black">{{ $thread->author->username() }}</span>
                     </a>
                 </div>
@@ -21,7 +21,7 @@
             </div>
 
             <h3 class="text-gray-900 text-2xl mb-2 leading-8">
-                <a href="{{ Panel::get($thread)->url() }}">
+                <a href="{{ Panel::make()->get($thread)->url() }}">
                     {{ $thread->subject() }}
                 </a>
             </h3>
@@ -31,8 +31,8 @@
             </p>
         </div>
 
-        <x-buttons.arrow-button href="{{ Panel::get($thread)->url() }}" class="items-end">
+        <x-button.arrow-button href="{{ Panel::make()->get($thread)->url() }}" class="items-end">
             Open thread
-        </x-buttons.arrow-button>
+        </x-button.arrow-button>
     </div>
 </div>

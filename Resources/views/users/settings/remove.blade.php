@@ -13,9 +13,9 @@
             </div>
             <div class="px-4 py-3 bg-gray-50 text-right sm:px-6">
                 <span class="inline-flex rounded-md shadow-sm">
-                    <x-buttons.danger-button @click.prevent="activeModal = 'delete-user'">
+                    <x-button.danger-button @click.prevent="activeModal = 'delete-user'">
                         Delete Account
-                        </x-buttons.danger-button>
+                        </x-button.danger-button>
                 </span>
             </div>
         </div>

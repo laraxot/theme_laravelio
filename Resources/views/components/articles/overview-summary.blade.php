@@ -1,28 +1,27 @@
 @props(['article'])
-  
+
 <div class="h-full rounded-lg shadow-lg bg-white lg:p-5">
     <div class="flex flex-col gap-x-8 lg:flex-row">
-        <a href="{{ Panel::get($article)->url() }}" class="block">
+        <a href="{{ Panel::make()->get($article)->url() }}" class="block">
             <div class="w-full h-32 rounded-t-lg bg-center bg-cover bg-gray-900 lg:w-48 lg:h-full lg:rounded-lg"
                 style="background-image: url({{ $article->heroImage() }});">
             </div>
         </a>
-        
+
         <div class="flex flex-col gap-y-3 p-4 lg:p-0 lg:gap-y-3.5">
             <div>
                 <div class="flex flex-col gap-y-2 lg:flex-row lg:items-center">
-                    
-                    
-                    <div class="flex">
 
-                        <x-avatar :user="$article->author" class="w-6 h-6 rounded-full mr-3" />
+                    @if ($article->author)
+                        <div class="flex">
+                            <x-avatar :user="$article->author" class="w-6 h-6 rounded-full mr-3" />
+                            <a href="{{ Panel::make()->get($article->author)->url() }}" class="hover:underline">
+                                <span class="text-gray-900 mr-5">{{ $article->author->username() }}</span>
+                            </a>
+                        </div>
+                    @endif
 
-                        <a href="{{ Panel::get($article->author)->url() }}" class="hover:underline">
-                            <span class="text-gray-900 mr-5">{{ $article->author->username() }}</span>
-                        </a>
-                    </div>
-                    
-                    
+
 
                     <span class="font-mono text-gray-700 mt-1 lg:mt-0">
                         {{ $article->createdAt() }}
@@ -31,7 +30,7 @@
             </div>
 
             <div class="break-words">
-                <a href="{{ Panel::get($article)->url() }}" class="hover:underline">
+                <a href="{{ Panel::make()->get($article)->url() }}" class="hover:underline">
                     <h3 class="text-xl text-gray-900 font-semibold">
                         {{ $article->title }}.
                     </h3>
@@ -44,15 +43,15 @@
 
             <div class="flex flex-col gap-y-3 lg:flex-row lg:items-center lg:justify-between lg:flex-row-reverse">
                 <div>
-                    
-                        <div class="flex flex-wrap gap-2 lg:gap-x-4">
-                            @foreach ($article->tags as $tag)
-                                <x-tag>
-                                    {{ $tag->title }}
-                                </x-tag>
-                            @endforeach
-                        </div>
-                    
+
+                    <div class="flex flex-wrap gap-2 lg:gap-x-4">
+                        @foreach ($article->tags as $tag)
+                            <x-tag>
+                                {{ $tag->title }}
+                            </x-tag>
+                        @endforeach
+                    </div>
+
                 </div>
 
                 <div class="flex items-center gap-x-5">
@@ -68,7 +67,6 @@
                 </div>
             </div>
         </div>
-        
+
     </div>
 </div>
-
