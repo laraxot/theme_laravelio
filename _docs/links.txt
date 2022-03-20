@@ -1,0 +1,15 @@
+https://github.com/laravelio
+
+http://flarum.org
+
+https://www.phpbb.com/
+
+http://www.mybb.com/
+
+http://www.simplemachines.org/
+
+http://www.vbulletin.com/ (not free)
+
+https://webmobtuts.com/backend-development/using-laravel-and-symfony-panther-to-scrape-javascript-websites/
+
+https://github.com/laravelio/laravel.io
