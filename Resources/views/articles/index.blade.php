@@ -7,6 +7,17 @@
 @php($articles=$rows)
 
 @section('content')
+
+<nav aria-label="Page navigation example">
+    <ul class="pagination pl-0">
+        <li class="page-item disabled"><a class="page-link" href="#">Previous</a></li>
+        <li class="page-item active"><a class="page-link" href="#">1</a></li>
+        <li class="page-item"><a class="page-link" href="#">2</a></li>
+        <li class="page-item"><a class="page-link" href="#">3</a></li>
+        <li class="page-item"><a class="page-link" href="#">Next</a></li>
+    </ul>
+</nav>
+
     <div class="bg-white pt-5 lg:pt-2">
         <div class="container mx-auto flex flex-col gap-x-12 px-4 lg:flex-row">
             <x-articles.featured :articles="$_theme->pinnedArticles()" />
