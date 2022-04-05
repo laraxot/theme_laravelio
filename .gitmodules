@@ -1,0 +1,3 @@
+[submodule "Resources/js/components"]
+	path = Resources/js/components
+	url = https://github.com/laraxot/vue_components.git
