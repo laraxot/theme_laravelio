@@ -19,7 +19,11 @@
             <div class="sm:px-6 lg:px-0 lg:col-span-9">
                 {{-- <x-threads.form:tags="$tags":route="['threads.store']"/> --}}
                 {{-- @livewire('forum::thread.create', ['model_name' => 'thread']) --}}
+<<<<<<< HEAD
                 <livewire:crud.create modelName="thread" />
+=======
+                <livewire:theme::crud.create modelName="thread" />
+>>>>>>> a662815 (first)
 
                 {{-- <x-forms.info>
                     Please search for your question before posting your thread by using the search box in the navigation
