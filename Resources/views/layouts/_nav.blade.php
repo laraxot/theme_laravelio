@@ -1,22 +1,12 @@
 <nav class="{{ isset($hasShadow) ? 'shadow mb-1' : '' }}">
-<<<<<<< HEAD
-    <div class="container mx-auto text-gray-800 lg:block lg:py-8"
-        x-data="{ nav: false, search: false, community: false, chat: false, settings: false }"
-        @click.away="nav = false">
-=======
     <div class="container mx-auto text-gray-800 lg:block lg:py-8" x-data="{ nav: false, search: false, community: false, chat: false, settings: false }" @click.away="nav = false">
->>>>>>> 7b59d73 (first)
         <div class="block bg-white 2xl:-mx-10">
             <div class="lg:px-4 lg:flex">
                 <div class="block lg:flex lg:items-center lg:flex-shrink-0">
                     <div class="flex justify-between items-center p-4 lg:p-0">
                         <a href="{{ route('home') }}" class="mr-4">
-<<<<<<< HEAD
-                            <img class="h-6 w-auto lg:h-8" src="{{ Theme::asset('pub_theme::images/laravelio-logo.svg') }}" alt="" />
-=======
                             <img class="h-6 w-auto lg:h-8"
                                 src="{{ Theme::asset('pub_theme::images/laravelio-logo.svg') }}" alt="" />
->>>>>>> 7b59d73 (first)
                         </a>
 
                         <div class="flex lg:hidden">
@@ -37,23 +27,15 @@
                     <div class="mt-2 border-b lg:block lg:mt-0 lg:border-0" x-cloak
                         :class="{ 'block': nav, 'hidden': !nav }">
                         <ul class="flex flex-col px-4 mb-2 gap-y-2 lg:flex-row lg:mb-0 lg:gap-6">
-<<<<<<< HEAD
-                            <li class="rounded lg:mb-0 lg:hover:bg-gray-100 @if (is_active(['forum', 'threads*', 'thread'])) bg-gray-100 @endif">
-=======
                             <li
                                 class="rounded lg:mb-0 lg:hover:bg-gray-100 @if (is_active(['forum', 'threads*', 'thread'])) bg-gray-100 @endif">
->>>>>>> 7b59d73 (first)
                                 <a href="{{ $_theme->url('thread', 'index') }}" class="inline-block w-full px-2 py-1">
                                     Forum
                                 </a>
                             </li>
 
-<<<<<<< HEAD
-                            <li class="rounded lg:mb-0 lg:hover:bg-gray-100 @if (is_active(['articles', 'articles*'])) bg-gray-100 @endif">
-=======
                             <li
                                 class="rounded lg:mb-0 lg:hover:bg-gray-100 @if (is_active(['articles', 'articles*'])) bg-gray-100 @endif">
->>>>>>> 7b59d73 (first)
                                 <a href="{{ $_theme->url('article', 'index') }}"
                                     class="inline-block w-full px-2 py-1">
                                     Articles
@@ -175,12 +157,7 @@
 
                             <li>
                                 <div class="hidden lg:block">
-<<<<<<< HEAD
-                                    <x-button.secondary-cta class="flex items-center"
-                                        href="{{ route('login') }}">
-=======
                                     <x-button.secondary-cta class="flex items-center" href="{{ route('login') }}">
->>>>>>> 7b59d73 (first)
                                         <span class="flex items-center">
                                             <x-svg icon="o-user" class="w-5 h-5 mr-1" />
                                             Login
@@ -200,11 +177,7 @@
                                         <span class="block relative">
                                             <x-svg icon="o-bell"
                                                 class="h-5 w-5 hover:fill-current hover:text-lio-500" />
-<<<<<<< HEAD
                                             <livewire:theme::notification-indicator />
-=======
-                                            <livewire:notification-indicator />
->>>>>>> 7b59d73 (first)
                                         </span>
                                     </a>
 
@@ -213,15 +186,8 @@
                                     <div @click.away="settings = false">
                                         <button @click="settings = !settings" class="flex items-center">
                                             {{ Auth::user()->username() }}
-<<<<<<< HEAD
-                                            <x-svg icon="s-chevron-down" x-show="!settings"
-                                                class="w-4 h-4 ml-1" />
-                                            <x-svg icon="s-chevron-left" x-show="settings"
-                                                class="w-4 h-4 ml-1" />
-=======
                                             <x-svg icon="s-chevron-down" x-show="!settings" class="w-4 h-4 ml-1" />
                                             <x-svg icon="s-chevron-left" x-show="settings" class="w-4 h-4 ml-1" />
->>>>>>> 7b59d73 (first)
                                         </button>
                                     </div>
                                 </div>
