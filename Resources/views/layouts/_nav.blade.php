@@ -177,7 +177,7 @@
                                         <span class="block relative">
                                             <x-svg icon="o-bell"
                                                 class="h-5 w-5 hover:fill-current hover:text-lio-500" />
-                                            <livewire:theme::notification-indicator />
+                                            <livewire:notification-indicator />
                                         </span>
                                     </a>
 
