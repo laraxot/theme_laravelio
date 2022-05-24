@@ -6,6 +6,8 @@
 @extends('pub_theme::layouts.default')
 @php($articles=$rows)
 
+
+
 @section('content')
 
     <div class="bg-white pt-5 lg:pt-2">
