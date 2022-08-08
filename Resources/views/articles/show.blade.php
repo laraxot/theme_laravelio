@@ -59,7 +59,7 @@ $article = $row;
                                 <x-avatar :user="$article->author" class="w-6 h-6 rounded-full mr-3" />
 
                                 <a href="{{ Panel::make()->get($article->author)->url() }}" class="hover:underline">
-                                    <span class="mr-5">{{ $article->author->name }}</span>
+                                    <span class="mr-5">{{ $article->author->handle }}</span>
                                 </a>
                             </div>
                         @endif
