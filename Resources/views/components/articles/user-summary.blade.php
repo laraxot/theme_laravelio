@@ -37,11 +37,11 @@
 
             <div class="flex flex-col h-full justify-end gap-y-3">
                 <div>
-                    @if (count($tags = $article->tags()))
+                    @if (count($tags = $article->tags))
                         <div class="flex flex-wrap gap-2">
                             @foreach ($tags as $tag)
                                 <x-tag>
-                                    {{ $tag->name() }}
+                                    {{ $tag->name }}
                                 </x-tag>
                             @endforeach
                         </div>

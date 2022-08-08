@@ -69,13 +69,13 @@
                                 </span>
                                 </x-button.secondary-button>
                             @else
-                                <x-button.danger-button class="w-full"
+                                <x-button type="danger" class="w-full"
                                     @click.prevent="activeModal = 'banUser'">
                                     <span class="flex items-center gap-x-2">
                                         <x-svg icon="hammer" class="w-5 h-5" />
                                         Ban User
                                     </span>
-                                    </x-button.danger-button>
+                                </x-button>
                         @endif
                         {{-- @endcan --}}
                         {{-- @if (Auth::check() && Auth::user()->isAdmin())
@@ -101,14 +101,18 @@
                         <div class="w-full flex justify-between px-5 py-2.5 bg-gray-100">
                             <span>Threads</span>
                             <span class="text-lio-500">
+                                
                                 {{ number_format($user->countThreads()) }}
+                                
                             </span>
                         </div>
 
                         <div class="w-full flex justify-between px-5 py-2.5 bg-white lg:bg-gray-100">
                             <span>Replies</span>
                             <span class="text-lio-500">
+                                
                                 {{ number_format($user->countReplies()) }}
+                                
                             </span>
                         </div>
 
@@ -165,17 +169,21 @@
             <div class="bg-gray-100 py-14 px-4">
                 <div class="container mx-auto">
                     <div x-show="tab === 'threads'">
+                        {{--
                         @include('pub_theme::users._latest_threads')
+                        --}}
                     </div>
 
                     <div x-show="tab === 'replies'" x-cloak>
+                        {{--
                         @include('pub_theme::users._latest_replies')
+                        --}}
                     </div>
                 </div>
             </div>
         </div>
     </section>
-
+    {{--
     @can('userBan', $user)
         @if ($user->isBanned())
             @include('pub_theme::_partials._update_modal', [
@@ -193,7 +201,7 @@
             ])
         @endif
     @endcan
-
+    
     @can('userDelete', $user)
         @include('pub_theme::_partials._delete_modal', [
         'identifier' => 'deleteUser',
@@ -203,4 +211,5 @@
             be undone.</p>',
         ])
     @endcan
+    --}}
 @endsection
