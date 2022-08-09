@@ -14,7 +14,7 @@
                     <div class="flex">
                         <x-avatar :user="$article->author" class="w-6 h-6 rounded-full mr-3" />
 
-                        <span class="text-gray-900 mr-5">{{ $article->author->username() }}</span>
+                        <span class="text-gray-900 mr-5">{{ $article->author->username }}</span>
                     </div>
 
                     <span class="font-mono text-gray-700 mt-1">
@@ -37,7 +37,8 @@
 
             <div class="flex flex-col h-full justify-end gap-y-3">
                 <div>
-                    @if (count($tags = $article->tags))
+                    
+                    @if (count($tags = $article->tags()->get()))
                         <div class="flex flex-wrap gap-2">
                             @foreach ($tags as $tag)
                                 <x-tag>

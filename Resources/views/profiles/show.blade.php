@@ -1,5 +1,5 @@
 @php($user = $row)
-@php($title = "{$user->username()} ({$user->name()})")
+@title($article->title())
 
 @extends('pub_theme::layouts.default')
 
@@ -17,7 +17,7 @@
                 <div class="w-full mb-10 lg:w-1/3 lg:mb-0">
                     <div>
                         <div class="flex items-center gap-x-4">
-                            <h1 class="text-4xl font-bold">{{ $user->name() }}</h1>
+                            <h1 class="text-4xl font-bold">{{ $user->name }}</h1>
                             {{-- @if ($user->isAdmin() || $user->isModerator())
                                 <span class="border border-lio-500 text-lio-500 rounded px-3 py-1">
                                     {{ $user->isAdmin() ? 'Admin' : 'Moderator' }}
@@ -32,7 +32,7 @@
 
                     <div class="mt-4">
                         <span class="text-gray-900">
-                            {{ $user->bio() }}
+                            {{ $user->bio }}
                         </span>
                     </div>
                     {{-- <div class="mt-4 mb-6 flex items-center gap-x-3">
@@ -183,33 +183,3 @@
             </div>
         </div>
     </section>
-    {{--
-    @can('userBan', $user)
-        @if ($user->isBanned())
-            @include('pub_theme::_partials._update_modal', [
-            'identifier' => 'unbanUser',
-            'route' => ['admin.users.unban', $user->username()],
-            'title' => "Unban {$user->username()}",
-            'body' => '<p>Unbanning this user will allow them to login again and post content.</p>',
-            ])
-        @else
-            @include('pub_theme::_partials._update_modal', [
-            'identifier' => 'banUser',
-            'route' => ['admin.users.ban', $user->username()],
-            'title' => "Ban {$user->username()}",
-            'body' => '<p>Banning this user will prevent them from logging in, posting threads and replying to threads.</p>',
-            ])
-        @endif
-    @endcan
-    
-    @can('userDelete', $user)
-        @include('pub_theme::_partials._delete_modal', [
-        'identifier' => 'deleteUser',
-        'route' => ['admin.users.delete', $user->username()],
-        'title' => "Delete {$user->username()}",
-        'body' => '<p>Deleting this user will remove their account and any related content like threads & replies. This cannot
-            be undone.</p>',
-        ])
-    @endcan
-    --}}
-@endsection
