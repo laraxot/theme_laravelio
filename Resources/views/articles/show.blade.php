@@ -1,4 +1,8 @@
-@php($user = $row)
+@php
+    //dddx(get_defined_vars());
+@endphp
+
+@php($article = $row)
 @title($article->title())
 {{-- @shareImage(route('articles.image', $article->slug())) --}}
 @extends('pub_theme::layouts.app')
