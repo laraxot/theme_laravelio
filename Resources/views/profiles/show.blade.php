@@ -1,5 +1,5 @@
 @php($user = $row)
-@title($article->title())
+
 
 @extends('pub_theme::layouts.default')
 
