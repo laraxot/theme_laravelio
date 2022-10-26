@@ -7,7 +7,7 @@ namespace Themes\LaravelIo\Http\Livewire;
 use Livewire\Component;
 
 /**
- * Undocumented class
+ * Undocumented class.
  */
 class Editor extends Component {
     public $label;
