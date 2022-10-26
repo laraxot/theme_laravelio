@@ -2,8 +2,8 @@
     <div class="border-gray-300 border-2 border-b-0 rounded-t p-2 bg-gray-200">
         <ul class="flex">
             <li>
-                <button 
-                    type="button" 
+                <button
+                    type="button"
                     class="text-gray-600 mr-4 cursor-pointer"
                     @click="handleClick('header', $el)"
                 >
@@ -11,8 +11,8 @@
                 </button>
             </li>
             <li>
-                <button 
-                    type="button" 
+                <button
+                    type="button"
                     class="text-gray-600 mr-4 cursor-pointer"
                     @click="handleClick('bold', $el)"
                 >
@@ -20,8 +20,8 @@
                 </button>
             </li>
             <li>
-                <button 
-                    type="button" 
+                <button
+                    type="button"
                     class="text-gray-600 mr-4 cursor-pointer"
                     @click="handleClick('italic', $el)"
                 >
@@ -29,8 +29,8 @@
                 </button>
             </li>
             <li>
-                <button 
-                    type="button" 
+                <button
+                    type="button"
                     class="text-gray-600 mr-4 cursor-pointer"
                     @click="handleClick('quote', $el)"
                 >
@@ -38,8 +38,8 @@
                 </button>
             </li>
             <li>
-                <button 
-                    type="button" 
+                <button
+                    type="button"
                     class="text-gray-600 mr-4 cursor-pointer"
                     @click="handleClick('code', $el)"
                 >
@@ -47,8 +47,8 @@
                 </button>
             </li>
             <li>
-                <button 
-                    type="button" 
+                <button
+                    type="button"
                     class="text-gray-600 mr-4 cursor-pointer"
                     @click="handleClick('link', $el)"
                 >
@@ -56,8 +56,8 @@
                 </button>
             </li>
             <li>
-                <button 
-                    type="button" 
+                <button
+                    type="button"
                     class="text-gray-600 mr-4 cursor-pointer"
                     @click="handleClick('image', $el)"
                 >

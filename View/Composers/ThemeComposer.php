@@ -5,7 +5,7 @@ declare(strict_types=1);
 namespace Themes\LaravelIo\View\Composers;
 
 use Illuminate\Support\Facades\Cache;
-//use Themes\LaravelIo\Services\AdminLTE;
+// use Themes\LaravelIo\Services\AdminLTE;
 use Illuminate\View\View;
 use Modules\Blog\Models\Article;
 use Modules\Forum\Models\Reply;
@@ -15,7 +15,7 @@ use Modules\Tag\Models\Tag;
 use Modules\Xot\Services\PanelService;
 
 class ThemeComposer {
-    /*
+    /**
      * @var AdminLte
      */
     /*
@@ -39,7 +39,7 @@ class ThemeComposer {
      */
     public function totalUsers(): int {
         $totalUsers = Cache::remember('totalUsers', now()->addDay(), function () {
-            //return number_format(User::count());
+            // return number_format(User::count());
             return User::count();
         });
 
@@ -59,10 +59,10 @@ class ThemeComposer {
     }
 
     public function url(?string $model_name = null, ?string $act = null): string {
-        if (null != $model_name) {
+        if (null !== $model_name) {
             $this->setModelName($model_name);
         }
-        if (null != $act) {
+        if (null !== $act) {
             $this->setAct($act);
         }
 
@@ -185,13 +185,13 @@ class ThemeComposer {
 
     public function selectedTags() {
         return old('tags', []);
-        //old('tags', $article->tags()->pluck('id')->toArray()),
+        // old('tags', $article->tags()->pluck('id')->toArray()),
     }
 
     public function getFilter(array $options = ['recent', 'resolved', 'unresolved'], string $default = 'recent'): string {
         $filter = (string) request('filter');
 
-        return in_array($filter, $options) ? $filter : $default;
+        return \in_array($filter, $options, true) ? $filter : $default;
     }
 
     public function filter() {
@@ -201,7 +201,7 @@ class ThemeComposer {
     }
 
     public function activeTag() {
-        //nknown column 'slug' in 'where clause' (SQL: select * from `tags` where `slug` is null limit
+        // nknown column 'slug' in 'where clause' (SQL: select * from `tags` where `slug` is null limit
         /*
         $activeTag = Tag::where('slug', request('tag'))->first();
 

@@ -6,7 +6,7 @@ namespace Themes\LaravelIo\Http\Livewire;
 
 use Illuminate\Foundation\Bus\DispatchesJobs;
 use Illuminate\Support\Facades\Auth;
-//use Themes\LaravelIo\Models\Article;
+// use Themes\LaravelIo\Models\Article;
 use Livewire\Component;
 use Modules\Blog\Models\Article;
 use Themes\LaravelIo\Jobs\LikeArticle as LikeArticleJob;

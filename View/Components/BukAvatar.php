@@ -25,6 +25,6 @@ class BukAvatar extends Component {
      */
     public function render() {
         return 'buk avatar';
-        //return view()->make('pub_theme::components.buk-avatar');
+        // return view()->make('pub_theme::components.buk-avatar');
     }
 }

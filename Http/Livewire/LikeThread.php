@@ -1,28 +1,27 @@
 <?php
 
+declare(strict_types=1);
+
 namespace Themes\LaravelIo\Http\Livewire;
 
-use Themes\LaravelIo\Jobs\LikeThread as LikeThreadJob;
-use Themes\LaravelIo\Jobs\UnlikeThread as UnlikeThreadJob;
-use Themes\LaravelIo\Models\Thread;
 use Illuminate\Foundation\Bus\DispatchesJobs;
 use Illuminate\Support\Facades\Auth;
 use Livewire\Component;
+use Themes\LaravelIo\Jobs\LikeThread as LikeThreadJob;
+use Themes\LaravelIo\Jobs\UnlikeThread as UnlikeThreadJob;
+use Themes\LaravelIo\Models\Thread;
 
-final class LikeThread extends Component
-{
+final class LikeThread extends Component {
     use DispatchesJobs;
 
     /** @var \App\Models\Thread */
     public $thread;
 
-    public function mount(Thread $thread): void
-    {
+    public function mount(Thread $thread): void {
         $this->thread = $thread;
     }
 
-    public function toggleLike(): void
-    {
+    public function toggleLike(): void {
         if (Auth::guest()) {
             return;
         }

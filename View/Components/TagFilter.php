@@ -20,6 +20,13 @@ class TagFilter extends Component {
     /**
      * Create a new component instance.
      *
+     * @param mixed $activeTag
+     * @param mixed $tags
+     * @param mixed $filter
+     * @param mixed $route
+     * @param mixed $cancelRoute
+     * @param mixed $jumpTo
+     *
      * @return void
      */
     public function __construct($activeTag, $tags, $filter, $route, $cancelRoute, $jumpTo) {

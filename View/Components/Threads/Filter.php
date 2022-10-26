@@ -15,6 +15,8 @@ class Filter extends Component {
     /**
      * Create a new component instance.
      *
+     * @param mixed $filter
+     *
      * @return void
      */
     public function __construct($filter) {

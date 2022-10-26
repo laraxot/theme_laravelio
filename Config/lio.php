@@ -1,7 +1,8 @@
 <?php
 
-return [
+declare(strict_types=1);
 
+return [
     'ads' => [
         ['url' => 'https://devsquad.com', 'image' => 'devsquad', 'alt' => 'Devsquad', 'goal' => 'MMCR7T3S'],
         ['url' => 'https://larajobs.com', 'image' => 'larajobs', 'alt' => 'LaraJobs', 'goal' => '9C3CAYKR'],
@@ -19,5 +20,4 @@ return [
         'email' => env('LIO_HORIZON_EMAIL'),
         'webhook' => env('LIO_HORIZON_WEBHOOK'),
     ],
-
 ];

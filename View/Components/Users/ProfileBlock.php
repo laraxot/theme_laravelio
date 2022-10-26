@@ -15,6 +15,8 @@ class ProfileBlock extends Component {
     /**
      * Create a new component instance.
      *
+     * @param mixed $user
+     *
      * @return void
      */
     public function __construct($user) {

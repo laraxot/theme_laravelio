@@ -1,7 +1,8 @@
 <?php
 
-return [
+declare(strict_types=1);
 
+return [
     /*
     |--------------------------------------------------------------------------
     | Authentication Language Lines
@@ -23,5 +24,4 @@ return [
         'success' => 'Your email address was successfully verified.',
         'no_match' => 'We could not verify your email address. The given email address and code did not match.',
     ],
-
 ];

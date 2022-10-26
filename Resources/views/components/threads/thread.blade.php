@@ -6,7 +6,7 @@
             <div class="flex flex-row justify-between items-start lg:items-center">
                 <div>
                     <div class="flex flex-col lg:flex-row lg:items-center">
-                        {{--  
+                        {{--
                         @if($thread->author)
                         <div>
                             <a href="{{ Panel::make()->get($thread->author)->url() }}"

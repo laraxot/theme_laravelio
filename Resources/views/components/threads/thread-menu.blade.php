@@ -1,5 +1,5 @@
 @props(['thread'])
-{{--  
+{{--
 @canany([App\Policies\ThreadPolicy::UPDATE, App\Policies\ThreadPolicy::DELETE], $thread)
     <div class="flex items-center gap-x-3">
         <div class="relative -mr-3" x-data="{ open: false }" @click.away="open = false">

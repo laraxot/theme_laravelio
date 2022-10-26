@@ -31,7 +31,7 @@ class Avatar extends Component {
      * @return \Illuminate\Contracts\View\View|string
      */
     public function render() {
-        if (null == $this->user) {
+        if (null === $this->user) {
             return 'not logged';
         }
         $view = 'pub_theme::components.avatar';

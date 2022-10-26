@@ -19,7 +19,7 @@ class Thread extends Component {
      * @return void
      */
     public function __construct(ThreadModel $thread) {
-        //dddx(get_class($thread));//Modules\Forum\Models\Thread
+        // dddx(get_class($thread));//Modules\Forum\Models\Thread
         $this->thread = $thread;
     }
 

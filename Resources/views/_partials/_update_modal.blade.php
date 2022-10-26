@@ -9,7 +9,7 @@
                     <div class="overflow-auto">
                         <div class="modal-header">
                             <button type="button" class="close" aria-hidden="true" @click.prevent="activeModal = false">&times;</button>
-                            
+
                             <h4 class="modal-title">{{ $title }}</h4>
                         </div>
 
@@ -17,10 +17,10 @@
                             {!! $body !!}
                         </div>
                     </div>
-                    
+
                     <div class="modal-footer">
                         <button type="button" class="text-gray-600 mr-4" @click.prevent="activeModal = false">Cancel</button>
-                        
+
                         <button type="submit" class="button button-primary">{{ $submit ?? $title }}</button>
                     </div>
                 </div>

@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 return [
     'banned' => 'This account is banned.',
     'fields' => 'Something went wrong. Please review the fields below.',

@@ -15,6 +15,8 @@ class Moderators extends Component {
     /**
      * Create a new component instance.
      *
+     * @param mixed $moderators
+     *
      * @return void
      */
     public function __construct($moderators) {

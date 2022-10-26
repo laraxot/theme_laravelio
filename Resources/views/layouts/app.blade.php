@@ -7,7 +7,7 @@
     x-data="{ activeModal: null }" @close-modal.window="activeModal = false"
     @open-modal.window="activeModal = $event.detail">
 
-  
+
 
     @include('pub_theme::layouts._ads._banner')
     @include('pub_theme::layouts._nav')

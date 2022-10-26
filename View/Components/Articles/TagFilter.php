@@ -16,6 +16,9 @@ class TagFilter extends Component {
     /**
      * Create a new component instance.
      *
+     * @param mixed $selectedTag
+     * @param mixed $tags
+     *
      * @return void
      */
     public function __construct($selectedTag, $tags) {

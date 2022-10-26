@@ -14,7 +14,7 @@ class ControlButton extends Component {
     public string $title;
     public string $icon;
     public string $control;
-    //title="Heading" icon="heading" control
+    // title="Heading" icon="heading" control
 
     public function __construct(string $title, string $icon, string $control) {
         $this->title = $title;

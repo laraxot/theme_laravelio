@@ -101,18 +101,18 @@
                         <div class="w-full flex justify-between px-5 py-2.5 bg-gray-100">
                             <span>Threads</span>
                             <span class="text-lio-500">
-                                
+
                                 {{ number_format($user->countThreads()) }}
-                                
+
                             </span>
                         </div>
 
                         <div class="w-full flex justify-between px-5 py-2.5 bg-white lg:bg-gray-100">
                             <span>Replies</span>
                             <span class="text-lio-500">
-                                
+
                                 {{ number_format($user->countReplies()) }}
-                                
+
                             </span>
                         </div>
 

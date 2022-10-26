@@ -1,7 +1,8 @@
 <?php
 
-return [
+declare(strict_types=1);
 
+return [
     /*
     |--------------------------------------------------------------------------
     | Third Party Services
@@ -50,5 +51,4 @@ return [
         'access_token' => env('TWITTER_ACCESS_TOKEN'),
         'access_secret' => env('TWITTER_ACCESS_SECRET'),
     ],
-
 ];
