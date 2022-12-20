@@ -12,7 +12,7 @@ use Modules\Forum\Models\Reply;
 use Modules\Forum\Models\Thread;
 use Modules\LU\Models\User;
 use Modules\Tag\Models\Tag;
-use Modules\Xot\Services\PanelService;
+use Modules\Cms\Services\PanelService;
 
 class ThemeComposer {
     /**
