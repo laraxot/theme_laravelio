@@ -23,7 +23,7 @@
                         </p>
                     </div>
 
-                    <div>
+                    {{-- <div>
                         @if (Auth::guest())
                             <x-button.primary-cta href="{{ route('register') }}"
                                 class="w-full mb-3 lg:w-auto lg:mr-2">
@@ -45,7 +45,7 @@
                                     Share an Article
                                 </x-button.primary-cta>
                         @endif
-                    </div>
+                    </div> --}}
                 </div>
                 {{-- <div class="lg:w-1/2">
                     <x-community-members :members="$communityMembers" />
@@ -126,11 +126,11 @@
                 @endforeach --}}
             </div>
 
-            <div class="flex justify-center">
-                <x-button.primary-cta href="{{-- route('forum') --}}" class="w-full lg:w-auto">
+            {{-- <div class="flex justify-center">
+                <x-button.primary-cta href="" class="w-full lg:w-auto">
                     View all threads
                 </x-button.primary-cta>
-            </div>
+            </div> --}}
         </div>
     </section>
     <!-- /Help others -->
@@ -167,11 +167,11 @@
             </p>
         </div>
         {{-- <x-articles.featured :articles="$latestArticles" /> --}}
-        <div class="flex justify-center">
-            <x-button.primary-cta href="{{-- route('articles') --}}" class="w-full lg:w-auto">
+        {{-- <div class="flex justify-center">
+            <x-button.primary-cta href="" class="w-full lg:w-auto">
                 View all articles
             </x-button.primary-cta>
-        </div>
+        </div> --}}
     </section>
     <!-- /Popular articles -->
 @endsection
